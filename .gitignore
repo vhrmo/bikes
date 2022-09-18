@@ -1,0 +1,35 @@
+# eclipse settings #
+.classpath
+.project
+.metadata
+.springBeans
+.settings
+.factorypath
+RemoteSystemsTempFiles
+
+# idea settings #
+.idea
+*.iml
+
+# java artifacts #
+*.class
+*.jar
+*.war
+*.ear
+target
+
+# misc #
+*.swp
+*.orig
+*.log
+*.log.*
+
+# ms office #
+*.xls
+*.xlsx
+*.doc
+*.docx
+
+# bin
+bin/
+

@@ -1,0 +1,51 @@
+/*body {*/
+/*    background-color: #455a64;*/
+/*}*/
+
+._navbar, ._footer {
+    color: white !important;
+    /*background-color: #424242;*/
+    /*background-color: #37474f;*/
+    background-color: #455a64;
+    min-height: 8px;
+}
+
+._footer {
+    height: 30px;
+    margin-top: 20px;
+}
+
+#gallery {
+    display: none;
+}
+
+table > tbody > tr > td {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+table.striped > tbody > tr:nth-child(odd) {
+    background-color: whitesmoke;
+}
+
+span.badge.hes {
+    background-color: mediumseagreen;
+    margin-right: 5px;
+}
+
+span.badge.spen {
+    background-color: cornflowerblue;
+    margin-right: 5px;
+}
+
+div.card.article {
+    background-color: whitesmoke;
+    /*vertical-align: top !important;*/
+}
+
+table {
+    /*border-collapse: unset;*/
+    /*border-bottom-: 1px;*/
+    /*border-spacing: 1px;*/
+
+}
