@@ -16,7 +16,7 @@ jQuery(document).ready(function () {
     let carousel_space_between_tiles = 4;
     let tileSize = Math.floor((getWidth() - 10 - (carousel_space_between_tiles * count)) / count);
     // console.log("width", getWidth(), "tileSize", tileSize, "count", count, "calcTotal", count * tileSize)
-    jQuery("#gallery").unitegallery({
+    jQuery("#carousel").unitegallery({
         carousel_padding: 0, // top and bottom padding
         carousel_space_between_tiles: carousel_space_between_tiles,
         theme_enable_navigation: false,
