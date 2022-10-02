@@ -1,8 +1,8 @@
 
 jQuery(document).ready(function () {
     jQuery("#gallery1").unitegallery({
-        gallery_width: "100%",
-        theme_gallery_padding:"80",
+        // gallery_width: "100%",
+        //theme_gallery_padding:"80",
         theme_enable_navigation: false,
         lightbox_type: "compact",
         tile_enable_border: false,
