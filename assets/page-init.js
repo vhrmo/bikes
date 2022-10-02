@@ -53,6 +53,25 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $(".video-gallery").each(function () {
+        $(this).unitegallery({
+            gallery_theme: "video"
+            // //theme_gallery_padding:"80",
+            // theme_enable_navigation: false,
+            // lightbox_type: "compact",
+            // tile_enable_border: false,
+            // // tiles_type:"nested",
+            // tiles_type: "justified",
+            //
+            // tile_enable_textpanel: false,
+            // tile_textpanel_title_text_align: "center",
+            // textpanel_enable_description: true,
+        })
+    });
+});
+
+
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.materialboxed');
     M.Materialbox.init(elems, {});
