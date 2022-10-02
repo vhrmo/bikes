@@ -47,7 +47,7 @@ footer {
     display: unset;
 }
 
-.gallery {
+.gallery, .carousel {
     display: none;
 }
 
@@ -83,6 +83,7 @@ span.badge.spen {
     font-weight: bold;
     font-family: "Courier";
 }
+
 li {
     list-style-type: disc !important;
     margin-left: 20px;
