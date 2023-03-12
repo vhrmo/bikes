@@ -70,6 +70,11 @@ span.badge.spen {
     margin-right: 5px;
 }
 
+span.badge.spdh {
+    background-color: rgb(53, 61, 69) ;
+    margin-right: 5px;
+}
+
 .card .card-content, .card .card-action {
     padding: 10px !important;
 }
