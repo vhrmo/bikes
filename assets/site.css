@@ -54,6 +54,15 @@ footer {
 table > tbody > tr > td {
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
+    white-space: nowrap;
+}
+
+col.date {
+    width: 10%;
+}
+
+col.badges {
+    width: 1px;
 }
 
 table.striped > tbody > tr:nth-child(odd) {
