@@ -84,6 +84,11 @@ span.badge.spdh {
     margin-right: 5px;
 }
 
+tr.spdh {
+    /* turn on/off display of spdh races */
+    display: none;
+}
+
 .card .card-content, .card .card-action {
     padding: 10px !important;
 }
