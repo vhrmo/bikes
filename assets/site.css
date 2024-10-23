@@ -108,3 +108,8 @@ li {
     margin-left: 20px;
     padding-left: 20px;
 }
+
+.centered {
+    width: fit-content;
+    margin: 0 auto;
+}
