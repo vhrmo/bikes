@@ -84,9 +84,14 @@ span.badge.spdh {
     margin-right: 5px;
 }
 
-tr.spdh {
+.c2023  tr.spdh {
     /* turn on/off display of spdh races */
     display: none;
+}
+
+.c2025  tr.spdh {
+    /* turn on/off display of spdh races */
+    /*display: none;*/
 }
 
 .card .card-content, .card .card-action {
