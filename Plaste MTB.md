@@ -3,10 +3,11 @@
 |                               |   | Schwalbe    |      |      | Maxxis         |      |
 |-------------------------------|---|-------------|------|------|----------------|------|
 | Aggressive front wheel        | X | Magic Marry | 37.8 |      | Assegai        | 37.8 |
-|                               |   | Big Betty   |      |      | Minion DHF     | 42.6 |
+|                               |   | Big Betty   | 43.1 |      | Minion DHF     | 42.6 |
 |                               |   | Tacky Chan  |      |      | Minion DHR II  |      |
-|                               |   | Hans Dampf  |      |      |                |      |
-| Fast rolling trail rear wheel | X | Nobby Nic   |      |      | High Roller II | 38.9 |
+|                               |   | Hans Dampf  |      |      | High Roller II | 38.9 |
+|                               |   |             |      |      | Agresor        |      |
+| Fast rolling trail rear wheel | X | Nobby Nic   |      |      | Dissector      |      |
 | Mud lower                     |   | Dirty Dan   | 33.8 |      | Shorty         | 28.3 |
 
 ## Selecting
@@ -16,11 +17,149 @@
 
 ### Combos
 
+Maxxis Shorty front + High roller rear - muddy conditions
+Assegai front, DHR II rear
+DHF front, High roller or Dissector rear
+Hans Dampf - front and rear
+Magic Marry - muddy conditions
 
+## Maxxis
+
+## Tread Pattern and Grip
+
+**Minion DHF/DHR:**
+
+- DHF designed for front use with focus on cornering traction
+- DHR optimized for rear use, emphasizing braking and acceleration
+- Consistent performance across most terrain types
+
+**Assegai:**
+
+- Aggressive tread pattern for enduro and downhill riding
+- Exceptional grip in mixed conditions
+
+**High Roller 3:**
+
+- Well-balanced tread design for speed and traction
+- Suitable for various enduro conditions
+
+**Dissector:**
+
+- Low-profile ramped central knobs for reduced rolling resistance
+- Aggressive side lugs for cornering traction
+- Excels in dry and loose conditions
+
+**Aggressor:**
+
+- Similar pedaling characteristics to the Dissector
+- Provides ample grip on climbs
+
+## Rolling Speed
+
+**Assegai:** Slow
+**Minion DHF/DHR:** Moderate
+**High Roller 3:** Moderate to Fast
+**Aggressor:** Fast, similar to Dissector
+**Dissector:** Fast, efficient rolling
+
+## Intended Use
+
+**Minion DHF/DHR:** Enduro and downhill
+**Assegai:** Aggressive enduro and downhill
+**High Roller 3:** Enduro
+**Dissector:** Versatile for dry and fast conditions, front or rear
+**Aggressor:** Trail and enduro, primarily as a rear tire
+
+## Performance Characteristics
+
+| Characteristic | Assegai    | Minion DHF/DHR | High Roller 3 | Aggressor  | Dissector    |
+|:---------------|:-----------|:---------------|:--------------|:-----------|:-------------|
+| Cornering      | Excellent  | Excellent      | Good          | Good       | Excellent    |
+| Braking        | Excellent  | Excellent      | Good          | Good       | Excellent    |
+| Rolling Speed  | Slow (2/5) | Moderate       | Moderate-Fast | Fast (3/5) | Fast (3.5/5) |
+| Mud Clearing   | Good       | Good           | Good          | Moderate   | Moderate     |
+| Dry Conditions | Excellent  | Good           | Good          | Excellent  | Excellent    |
+
+In summary, the Dissector stands out for its fast-rolling efficiency and excellent cornering in dry and loose conditions, making it a versatile option for both front and rear use[^2][^4]. The Aggressor shares similar
+pedaling characteristics with the Dissector and is primarily used as a rear tire for trail and enduro riding. Both offer good performance in dry conditions, with the Dissector providing a bit more versatility across
+different terrains.
 
 ## Schwalbe
 
 [Schwalbe tyre range](https://flowmountainbike.com/tests/schwalbe-magic-mary-big-betty-hans-dampf-nobby-nic-wicked-will-racing-ralph-review/)
+
+| Characteristic | Big Betty | Hans Dampf | Nobby Nic |
+|----------------|-----------|------------|-----------|
+| Cornering      | Excellent | Good       | Good      |
+| Braking        | Excellent | Excellent  | Good      |
+| Rolling Speed  | Moderate  | Good       | Excellent |
+| Mud Clearing   | Excellent | Good       | Moderate  |
+| Versatility    | Moderate  | Good       | Excellent |
+
+### Tread Pattern and Grip
+
+Big Betty:
+
+* Features large, widely-spaced central horizontal blocks for excellent braking traction and mud-clearing ability
+* Aggressive side knobs designed to improve cornering grip
+* Provides supreme confidence during hard cornering and offers impressive braking traction
+
+Hans Dampf:
+
+* Recently redesigned with beefier shoulder tread for better grip in turns
+* Offers good blend of hard- and soft-terrain grip
+* Excellent straight-line traction on rocky trails
+
+Nobby Nic:
+
+* All-round trail tire with a less aggressive tread pattern
+* Narrow pair, wide pair, and trio of lugs in the middle, flanked by alternating square and rectangular edge blocks
+* Grips well on all surfaces, including loose dirt and mud
+
+### Rolling Speed
+
+Big Betty:
+
+* Reasonable rolling speed, but not ideal for long rides on hardpacked terrain
+
+Hans Dampf:
+
+* Rolls faster than most of its rear-specific peers
+
+Nobby Nic:
+
+* Renowned for rapid rolling speed, almost comparable to cross-country or semi-slick tires
+
+### Compound and Casing Options
+
+Big Betty:
+
+* Available in various compounds, including Addix Soft
+* Offered in different casings, including Super Gravity (tough, well-damped)
+
+Hans Dampf:
+
+* Available with SuperGravity casing and Addix Soft compound
+* SuperGravity casing offers stiff sidewall near the bead and more supple construction under the tread
+
+Nobby Nic:
+
+* Available in Super Ground or Super Trail casings
+* Offered in Addix Soft and SpeedGrip compounds
+
+### Intended Use
+
+Big Betty:
+
+* Popular choice for rear tire in aggressive trail and enduro riding
+
+Hans Dampf:
+
+* Versatile tire suitable for all-mountain and trail riding
+
+Nobby Nic:
+
+* All-round trail tire, ideal for riders prioritizing rolling speed and versatility
 
 ### Schwalbe Magic Mary
 
