@@ -1,14 +1,14 @@
 ## MTB tyres
 
-|                               |   | Schwalbe    |      |      | Maxxis         |      |
-|-------------------------------|---|-------------|------|------|----------------|------|
-| Aggressive front wheel        | X | Magic Marry | 37.8 |      | Assegai        | 37.8 |
-|                               |   | Big Betty   | 43.1 |      | Minion DHF     | 42.6 |
-|                               |   | Tacky Chan  |      |      | Minion DHR II  |      |
-|                               |   | Hans Dampf  |      |      | High Roller II | 38.9 |
-|                               |   |             |      |      | Agresor        |      |
-| Fast rolling trail rear wheel | X | Nobby Nic   |      |      | Dissector      |      |
-| Mud lower                     |   | Dirty Dan   | 33.8 |      | Shorty         | 28.3 |
+|                               |   | Schwalbe    |      |   | Maxxis         |      |
+|-------------------------------|---|-------------|------|---|----------------|------|
+| Aggressive front wheel        | X | Magic Marry | 37.8 | X | Assegai        | 37.8 |
+|                               |   | Big Betty   | 43.1 |   | Minion DHF     | 42.6 |
+|                               |   | Tacky Chan  |      |   | Minion DHR II  |      |
+|                               |   | Hans Dampf  | 39.1 | X | High Roller II | 38.9 |
+|                               |   |             |      |   | Agresor        |      |
+| Fast rolling trail rear wheel | X | Nobby Nic   |      |   | Dissector      |      |
+| Mud lower                     |   | Dirty Dan   | 33.8 |   | Shorty         | 28.3 |
 
 ## Selecting
 
@@ -24,6 +24,23 @@ Hans Dampf - front and rear
 Magic Marry - muddy conditions
 
 ## Maxxis
+
+[Maxxis tyre range](https://flowmountainbike.com/tests/maxxis-tyre-review-9-tyres-ridden-reviewed/)
+
+### Casing
+
+* EXO - lightest casing
+* EXO+ - medium-duty puncture protection
+* DoubleDown
+* Downhill
+
+### Compounds
+
+* Dual Compound - lower-cost alternatives with increased durability and lower rolling resistance; however, they do sacrifice some grip.
+* MaxxSpeed - XC racing
+* 3C MaxxTerra
+* 3CMaxxGrip - stickiest, slowest rebounding rubber
+
 
 ## Tread Pattern and Grip
 
@@ -95,6 +112,20 @@ different terrains.
 | Rolling Speed  | Moderate  | Good       | Excellent |
 | Mud Clearing   | Excellent | Good       | Moderate  |
 | Versatility    | Moderate  | Good       | Excellent |
+
+### Casing
+
+Super DH
+Super Gravity
+Super Trail -  lighter enduro racers could even consider this casing if the terrain isn’t super rocky.
+Super Ground- aggressive XC and trail bikes with 110-140mm of travel,
+
+### Compound
+
+ADDIX Ultra Soft
+ADDIX Soft
+ADDIX SpeedGrip
+ADDIX Speed
 
 ### Tread Pattern and Grip
 
