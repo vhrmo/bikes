@@ -17,11 +17,16 @@
 
 ### Combos
 
-Maxxis Shorty front + High roller rear - muddy conditions
-Assegai front, DHR II rear
-DHF front, High roller or Dissector rear
-Hans Dampf - front and rear
-Magic Marry - muddy conditions
+#### Maxxis
+
+* Maxxis Shorty front + High roller rear - muddy conditions
+* Assegai or DHF front, High roller or Dissector rear
+* Assegai front, DHR II rear
+
+#### Schwalbe
+
+* Hans Dampf - front and rear
+* Magic Marry - muddy conditions
 
 ## Maxxis
 
@@ -41,6 +46,24 @@ Magic Marry - muddy conditions
 * 3C MaxxTerra
 * 3CMaxxGrip - stickiest, slowest rebounding rubber
 
+### Weights 27,5'
+
+|           | EXO | EXO+ | DoubleDown | Downhill |
+|-----------|-----|------|------------|----------|
+| Assegai   |     | 1070 | 1310       | 1402     |
+| Dissector | 889 | 951  | 1083       | 1171     |
+
+### Weights 29'
+
+|                           | **EXO** | **EXO+** | **DoubleDown** | **Downhill** |
+|:--------------------------|:-------:|:--------:|:--------------:|:------------:|
+| Assegai                   |         |   1146   |      1395      |     1493     |
+| Assegai Bike24 MaxTerra   |  1020   |   1125   |                |              |
+| Assegai Bike24 MaxGrip    |         |   1140   |      1305      | 1335 / 1493  |
+|                           | **EXO** | **EXO+** | **DoubleDown** | **Downhill** |
+| Dissector                 |   956   |   1022   |      1154      |     1249     |
+| Dissector Bike24 MaxTerra |   870   |   1105   |      1125      |              |
+| Dissector Bike24 MaxGrip  |         |          |      1145      |     1215     |
 
 ## Tread Pattern and Grip
 
@@ -117,7 +140,7 @@ different terrains.
 
 Super DH
 Super Gravity
-Super Trail -  lighter enduro racers could even consider this casing if the terrain isn’t super rocky.
+Super Trail - lighter enduro racers could even consider this casing if the terrain isn’t super rocky.
 Super Ground- aggressive XC and trail bikes with 110-140mm of travel,
 
 ### Compound
