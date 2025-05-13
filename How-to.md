@@ -1,7 +1,10 @@
 Ako získať link na foto v google photos:
 
-- otvor si development tools a v network tabe filtruj 'lh3'
+- vytvor album
+- daj zdielať - vytvor link a otvor
+- otvor si development tools a v network tabe filtruj 'lh3.googleusercontent.com/pw'
 - nájdi fotky a skopíruj linky
+- updatni na konci linky width to 1280, odstráň auth...
 
 Ako získať link na video v google photos:
 
