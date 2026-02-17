@@ -22,8 +22,8 @@ Ventil na bezduse - 35mm dlzka
 
 ### Špice
 
-    27,2 mm
-    27,4 mm
+    272 mm
+    274 mm
 
 ## Mondraker zadné koleso 29"
 
@@ -33,11 +33,11 @@ Ventil na bezduse - 35mm dlzka
     157mm
     61mm rozteč dier na prirube
     priruba
-        vpravo 52.7 mm od kraja náboja
-        vlavo 38.8 mm od kraja náboja
+        vpravo 52.8 mm od kraja náboja
+        vlavo 38.9 mm od kraja náboja
         rozostup prírub 65.5 mm
-        offset od stredu vpravo 25,8 mm
-        offset od stredu vľavo 39,7 mm
+        offset od stredu vpravo 27,3 mm
+        offset od stredu vľavo 41,2 mm
 
 ### Rafik 29''
 
@@ -47,8 +47,38 @@ Ventil na bezduse - 35mm dlzka
 
 ### Špice
 
-    29,7 mm
-    29,8 mm
+    296 mm
+    297 mm
+
+## Prerobené zadné koleso 27,5"
+
+    Zadny naboj Mondraker 157mm Suber Boost
+    Špice z Propainu 272 - 274 mm
+    Idealme ERD 556 mm
+
+### S ráfikom e*thirteen 27,5"
+
+    ERD 561 mm
+    Váha 534g
+
+    Potrebné špice (vypočítané):
+    277,13 vlavo
+    275,42 vpravo
+
+    Podľa tabulky na e13 stránkach"
+    278 vlavo
+    277 vpravo
+
+
+
+## Predný náboj OneUp
+
+    Flange diameter: 52mm left, 48mm right
+    Center to flange: 28mm left, 40mm right
+
+    Pri rafiku s ERD 600 potrebujem špice:
+    295,37 vlavo
+    297,07 vpravo
 
 
 ## Váha
