@@ -73,6 +73,85 @@ $(document).ready(function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    if (!window.M || !M.Materialbox) {
+        return;
+    }
+
     var elems = document.querySelectorAll('.materialboxed');
     M.Materialbox.init(elems, {});
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.M && M.Collapsible) {
+        var collapsibles = document.querySelectorAll('.collapsible.expandable');
+        M.Collapsible.init(collapsibles, {
+            accordion: false
+        });
+
+        collapsibles.forEach(function (element) {
+            var instance = M.Collapsible.getInstance(element);
+            Array.from(element.children).forEach(function (_, index) {
+                instance.open(index);
+            });
+        });
+
+        function expandHashTarget(hash) {
+            if (!hash || !hash.startsWith('#year-')) {
+                return;
+            }
+
+            var target = document.querySelector(hash);
+            if (!target) {
+                return;
+            }
+
+            var parent = target.closest('.collapsible');
+            if (!parent) {
+                return;
+            }
+
+            var instance = M.Collapsible.getInstance(parent);
+            var items = Array.from(parent.children);
+            var index = items.indexOf(target);
+            if (instance && index >= 0) {
+                instance.open(index);
+            }
+        }
+
+        document.querySelectorAll('a[href^="#year-"]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                expandHashTarget(link.getAttribute('href'));
+            });
+        });
+
+        expandHashTarget(window.location.hash);
+    }
+
+    document.querySelectorAll('.race-table tbody tr').forEach(function (row) {
+        var resultCell = row.querySelector('td:last-child');
+        if (!resultCell) {
+            return;
+        }
+
+        var text = resultCell.textContent.trim().toLowerCase();
+        resultCell.classList.add('result-cell');
+
+        if (!text) {
+            resultCell.classList.add('status-future');
+            resultCell.innerHTML = '<span class="status-pill">Plánované</span>';
+            return;
+        }
+
+        if (text.includes('zrušen')) {
+            resultCell.classList.add('status-cancelled');
+            return;
+        }
+
+        if (text.includes('vynechan') || text.includes('nedokončen') || text.includes('absolvovaný len tréning')) {
+            resultCell.classList.add('status-skipped');
+            return;
+        }
+
+        resultCell.classList.add('status-completed');
+    });
 });

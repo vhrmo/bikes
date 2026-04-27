@@ -1,615 +1,628 @@
 <!DOCTYPE html>
-<html lang="sk" xmlns="http://www.w3.org/1999/html">
+<html lang="sk">
 <head>
     <title>My Bikes</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/materialize1.0.0.css" rel="stylesheet">
-    <link rel='stylesheet' href='assets/unitegallery/css/unite-gallery.css' type='text/css'/>
-    <link rel='stylesheet' href='assets/site.css' type='text/css'/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/unitegallery/css/unite-gallery.css" type="text/css"/>
+    <style>
+        :root {
+            color-scheme: light;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(251, 191, 36, 0.14), transparent 28%),
+                linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+        }
+
+        details > summary {
+            list-style: none;
+        }
+
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .season-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            border-radius: 9999px;
+            padding: 0.28rem 0.65rem;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            vertical-align: middle;
+            margin-right: 0.35rem;
+        }
+
+        .badge.spen {
+            background: rgba(59, 130, 246, 0.14);
+            color: rgb(30, 64, 175);
+        }
+
+        .badge.hes {
+            background: rgba(34, 197, 94, 0.14);
+            color: rgb(21, 128, 61);
+        }
+
+        .badge.spdh {
+            background: rgb(51, 65, 85);
+            color: white;
+        }
+
+        .race-table {
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .race-table th,
+        .race-table td {
+            border-bottom: 1px solid rgb(226, 232, 240);
+            padding: 0.9rem 1rem;
+            vertical-align: top;
+        }
+
+        .race-table thead th {
+            background: rgb(248, 250, 252);
+            color: rgb(30, 41, 59);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .race-table tbody tr:nth-child(odd) {
+            background: rgba(248, 250, 252, 0.72);
+        }
+
+        .race-table tbody tr:hover {
+            background: rgba(219, 234, 254, 0.45);
+        }
+
+        .result-cell {
+            white-space: normal;
+            border-left: 4px solid transparent;
+            padding-left: 0.9rem !important;
+            font-weight: 500;
+        }
+
+        .status-completed {
+            border-left-color: rgb(34, 197, 94);
+            background: rgba(34, 197, 94, 0.08);
+        }
+
+        .status-skipped {
+            border-left-color: rgb(245, 158, 11);
+            background: rgba(245, 158, 11, 0.08);
+            color: rgb(120, 53, 15);
+        }
+
+        .status-cancelled {
+            border-left-color: rgb(239, 68, 68);
+            background: rgba(239, 68, 68, 0.08);
+            color: rgb(127, 29, 29);
+        }
+
+        .status-future {
+            border-left-color: rgb(148, 163, 184);
+            background: rgba(148, 163, 184, 0.12);
+            color: rgb(71, 85, 105);
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 9999px;
+            background: rgba(148, 163, 184, 0.18);
+            padding: 0.2rem 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .story-card {
+            scroll-margin-top: 5rem;
+        }
+    </style>
 </head>
-<body>
-
-<header>
-    <nav class="_navbar">
-        <div class="nav-wrapper center">
-            <a href="#" class="brand-logo center">Bikes</a>
+<body class="min-h-screen text-slate-900">
+<header class="border-b border-slate-900/80 bg-slate-950 text-white">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
+        <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-300">Bike journal</p>
+            <h1 class="text-3xl font-black tracking-tight md:text-5xl">Bikes</h1>
         </div>
-    </nav>
-
-    <div class="_navbar">
-        <div id="carousel" class="carousel">
-            <img src="img/Cube_stereo.jpg" alt="Cube Stereo">
-            <img
-                src="https://lh3.googleusercontent.com/pw/AL9nZEW5ED_Ba5n3SUu7g4GVGviyf60U609xOGaLYdaCaxajLedsmxYhvEUALd7f-Qxm1VCHpZLKfSaYk6w8HMhrfup8DHXUANSpe2PMjTylESwoUadQ04ntddAffdvzN8qfAk8PsS5isLn5HvifNP0AnDqGpw=w2044-h1394-no"
-                alt="Propain Spindrift" referrerpolicy="no-referrer">
-            <img src="data/2022/img/Partizanske1.jpg" alt="Partizánske">
-            <img src="data/2022/img/Partizanske2.jpg" alt="Partizánske">
-            <img
-                src="https://lh3.googleusercontent.com/pw/AL9nZEXs9cEPI1b-b2MKq8MtmMd0CX29E9UyO04hf0ARPt4rwpzoAaXKRGItkjU4-Gn-bnTnJ-yIV8lod6BhKCFlcsY0Wgq1tVZnhCKnuX1hLcSMyCuNQzZ-je3Xa5ERtz9QHtbPsy6P_QbYWJy5cixn9Ys-VQ=w2361-h1800-no"
-                alt="Veľká Lehôtka" referrerpolicy="no-referrer">
-            <img src="data/2022/img/Velka%20Lehotka%20start.jpg" alt="Veľká Lehôtka">
-            <img src="data/2022/img/Velka%20Lehotka%20start2.jpg" alt="Veľká Lehôtka">
-            <img src="data/2022/img/Velka%20Lehotka.jpg" alt="Veľká Lehôtka">
-            <img src="data/2024/SPEN5_Bojnice/img/boj-1627.jpg" alt="2024 SPEN5">
-            <img src="img/Mondraker.jpg" alt="Mondraker Superfoxy R">
-
-        </div>
+        <a href="2026_spen_calendar.html" class="hidden rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10 md:inline-flex">
+            SPEN 2026
+        </a>
     </div>
-
-    <div class="_navbar">
+    <div class="border-t border-white/10 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
+        <div class="mx-auto max-w-7xl px-4 py-4 md:px-6">
+            <div id="carousel" class="carousel overflow-hidden rounded-3xl border border-white/10 bg-slate-900 shadow-2xl">
+                <img src="img/Cube_stereo.jpg" alt="Cube Stereo">
+                <img src="https://lh3.googleusercontent.com/pw/AL9nZEW5ED_Ba5n3SUu7g4GVGviyf60U609xOGaLYdaCaxajLedsmxYhvEUALd7f-Qxm1VCHpZLKfSaYk6w8HMhrfup8DHXUANSpe2PMjTylESwoUadQ04ntddAffdvzN8qfAk8PsS5isLn5HvifNP0AnDqGpw=w2044-h1394-no" alt="Propain Spindrift" referrerpolicy="no-referrer">
+                <img src="data/2022/img/Partizanske1.jpg" alt="Partizánske">
+                <img src="data/2022/img/Partizanske2.jpg" alt="Partizánske">
+                <img src="https://lh3.googleusercontent.com/pw/AL9nZEXs9cEPI1b-b2MKq8MtmMd0CX29E9UyO04hf0ARPt4rwpzoAaXKRGItkjU4-Gn-bnTnJ-yIV8lod6BhKCFlcsY0Wgq1tVZnhCKnuX1hLcSMyCuNQzZ-je3Xa5ERtz9QHtbPsy6P_QbYWJy5cixn9Ys-VQ=w2361-h1800-no" alt="Veľká Lehôtka" referrerpolicy="no-referrer">
+                <img src="data/2022/img/Velka%20Lehotka%20start.jpg" alt="Veľká Lehôtka">
+                <img src="data/2022/img/Velka%20Lehotka%20start2.jpg" alt="Veľká Lehôtka">
+                <img src="data/2022/img/Velka%20Lehotka.jpg" alt="Veľká Lehôtka">
+                <img src="data/2024/SPEN5_Bojnice/img/boj-1627.jpg" alt="2024 SPEN5">
+                <img src="img/Mondraker.jpg" alt="Mondraker Superfoxy R">
+            </div>
+        </div>
     </div>
 </header>
 
-<main>
-    <div>
-        <div class="row">
-            <div class="col l3 hide-on-med-and-down">
-                <div class="left_panel ">
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="card article">
-                                <div class="card-image">
-                                    <img src="data/2026/spen2026_pozvanka.jpg" alt="SPEN 2026">
-                                </div>
-                                <div class="card-content">
-                                    <a href="2026_spen_calendar.html" class="card-title">Slovenský pohár v enduro 2026</a>
-                                </div>
-                            </div>
-                        </div>
+<main class="mx-auto max-w-7xl px-4 py-8 md:px-6">
+    <div class="grid gap-8 lg:grid-cols-[19rem_minmax(0,1fr)]">
+        <aside class="space-y-4 lg:sticky lg:top-6 lg:self-start">
+            <div class="rounded-3xl bg-white/90 p-5 shadow-lg ring-1 ring-slate-200 backdrop-blur">
+                <h2 class="text-lg font-bold tracking-tight">Sezóny</h2>
+                <p class="mt-1 text-sm text-slate-500">Rýchly výber podľa roka, série a počtu kôl.</p>
+            </div>
+
+            <a href="#year-2026" class="block overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-xl">
+                <img src="data/2026/spen2026_pozvanka.jpg" alt="SPEN 2026" class="h-44 w-full object-cover">
+                <div class="space-y-2 p-5">
+                    <div class="flex items-center justify-between gap-3">
+                        <span class="season-badge bg-amber-300/90 text-slate-950">2026</span>
+                        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">SPEN</span>
                     </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="card article">
-                                <div class="card-image">
-                                    <img src="data/2025/spen2025_pozvanka.jpg" alt="SPEN 2025">
-                                </div>
-                                <div class="card-content">
-                                    <a href="#" class="card-title">Slovenský pohár v enduro 2025</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="card article">
-                                <div class="card-image">
-                                    <img src="data/2024/spen2024_pozvanka_v2.jpeg" alt="SPEN 2024">
-                                </div>
-                                <div class="card-content">
-                                    <a href="#" class="card-title">Slovenský pohár v enduro 2024</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="card article">
-                                <div class="card-image">
-                                    <img src="data/2024/HES2024_pozvanka_v2.png" alt="HES 2024">
-                                </div>
-                                <div class="card-content">
-                                    <a href="#" class="card-title">Hornonitrianska enduro séria 2024</a>
-                                </div>
-                                <div class="card-action">
-                                    <a class="badge bg-info"
-                                       href="https://www.facebook.com/hornonitrianskaenduroseria/">Facebook</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="card article">
-                                <div class="card-image">
-                                    <img src="data/2023/hes_2023_pozvanka.jpeg" alt="pozvanka">
-                                </div>
-                                <div class="card-content">
-                                    <a href="#" class="card-title">Hornonitrianska enduro séria 2023</a>
-                                </div>
-                                <div class="card-action">
-                                    <a class="badge bg-primary"
-                                       href="https://bicyklizmus.sk/hes-seria-enduro-pretekov-2023/">MTBIKER</a>
-                                    <a class="badge bg-info"
-                                       href="https://www.facebook.com/hornonitrianskaenduroseria/">Facebook</a>
-                                    <a class="badge bg-warning"
-                                       href="https://mobilnacasomiera.sk/vysledky/hes2023.html">Výsledky</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="data/2022/img/Pozvanka_spen1.jpeg" alt="pozvanka">
-                                </div>
-                                <div class="card-content">
-                                    <a href="#" class="card-title">Slovenský pohár v enduro </a>
-                                </div>
-                                <div class="card-action">
-                                    <a href="https://spdh.sk/enduro/">SPEN</a>
-                                    <a href="https://www.facebook.com/spdhi">Facebook</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="card article">
-                                <div class="card-image">
-                                    <img src="data/2022/img/hes1_pozvanka.jpeg" alt="pozvanka">
-                                </div>
-                                <div class="card-content">
-                                    <a href="#" class="card-title">Hornonitrianska enduro séria 2022</a>
-                                </div>
-                                <div class="card-action">
-                                    <a class="badge bg-primary"
-                                       href="https://www.mtbiker.sk/clanky/125048/pozvanka-mtbiker-hornonitrianska-enduro-seria-2022-zabava-na-trailoch.html">MTBIKER</a>
-                                    <a class="badge bg-info"
-                                       href="https://www.facebook.com/hornonitrianskaenduroseria/">Facebook</a>
-                                    <a class="badge bg-warning"
-                                       href="https://mobilnacasomiera.sk/vysledky/hes2022.html">Výsledky</a>
-                                </div>
-                            </div>
-                        </div>
+                    <h3 class="text-lg font-bold tracking-tight">Slovenský pohár v enduro 2026</h3>
+                    <p class="text-sm text-slate-500">5 kôl, kalendár sezóny, finále v Bojniciach.</p>
+                    <div class="flex gap-2 pt-1 text-sm font-semibold">
+                        <span class="rounded-full bg-slate-950 px-3 py-1 text-white">Termíny</span>
+                        <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-700">Kalendár</span>
                     </div>
                 </div>
-            </div>
-            <div class="col xl8 l9 m12 s12">
-                <div class="center_panel">
-                    <div class="section">
-                        <h5>Preteky 2026</h5>
-                        <table class="striped c2026">
-                            <colgroup>
-                                <col class="date">
-                                <col class="badges">
-                            </colgroup>
-                            <thead>
-                            <tr>
-                                <th>Dátum</th>
-                                <th colspan="2">Pretek</th>
-                                <th>Výsledok</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr class="spen">
-                                <td>10.-11.10.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span></td>
-                                <td><a href="2026_spen_calendar.html">Bojnice (finále)</a></td>
-                                <td></td>
-                            </tr>
-                            <tr class="spen">
-                                <td>12.-13.9.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span></td>
-                                <td><a href="2026_spen_calendar.html">Donovaly</a></td>
-                                <td></td>
-                            </tr>
-                            <tr class="spen">
-                                <td>19.-20.6.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span></td>
-                                <td><a href="2026_spen_calendar.html">Partizánske (MSR Enduro)</a></td>
-                                <td></td>
-                            </tr>
-                            <tr class="spen">
-                                <td>30.5.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span></td>
-                                <td><a href="2026_spen_calendar.html">Kálnica</a></td>
-                                <td></td>
-                            </tr>
-                            <tr class="spen">
-                                <td>09.-10.5.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span></td>
-                                <td><a href="2026_spen_calendar.html">Mokrá Lúka</a></td>
-                                <td></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="section">
-                        <h5>Preteky 2025</h5>
-                        <table class="striped c2025">
-                            <colgroup>
-                                <col class="date">
-                                <col class="badges">
-                            </colgroup>
-                            <thead>
-                            <tr>
-                                <th>Dátum</th>
-                                <th colspan="2">Pretek</th>
-                                <th>Výsledok</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+            </a>
 
-                            <tr class="spdh"><td>5.10.</td><td><span class="badge new spdh" data-badge-caption="">SPDH</span></td>   <td>KOŠÚTKA II</td>           <td></td></tr>
-                            <tr class="spen"><td>21.9.</td><td><span class="badge new spen" data-badge-caption="">SPEN</span></td>
-                                <td><a href="2025_spen5_partizanske.html">Partizánske</a></td>
-                                <td>Vynechané pre zranenie.</td>
-                            </tr>
-                            <tr class="spdh"><td>14.9.</td><td><span class="badge new spdh" data-badge-caption="">SPDH</span></td>   <td>Malinô Brdo</td>          <td></td></tr>
-                            <tr class="spen"><td>24.8.</td><td><span class="badge new spen" data-badge-caption="">SPEN</span></td>
-                                <td><a href="2025_spen4_drozdovo.html">Drozdovo</a></td>
-                                <td>
-                                    Čas:     17:50.4 (12:46.2 - 22:35.9) (<a href="data/2025/SPEN4_Drozdovo/20250824_drozdovo_spen1.pdf">race</a>, <a href="data/2025/SPEN4_Drozdovo/20250824_drozdovo_challenge.pdf">hobby</a>)<br>
-                                    7. miesto z 8 v kategórii Muži 40+ <br>
-                                    63. miesto zo 73 celkovo Enduro Challenge
-                                </td>
-                            </tr>
-                            <tr class="spen"><td>27.7.</td><td><span class="badge new spen" data-badge-caption="">SPEN</span></td>
-                                <td><a href="2025_spen3_bojnice.html">Bojnice (SPEN MSR)</a></td>
-                                <td>Vynechané pre počasie.</td>
-                            </tr>
-                            <tr class="spdh"><td>22.6.</td><td><span class="badge new spdh" data-badge-caption="">SPDH</span></td>   <td>Kubínska Hoľa (SPDH MSR)</td>  <td></td></tr>
-                            <tr class="spen"><td>15.6.</td><td><span class="badge new spen" data-badge-caption="">SPEN</span></td>
-                                <td><a href="2025_spen2_kosutka.html">Košútka</a></td>
-                                <td>
-                                    Čas:     16:50.6 (12:26.3 - 20:56.9) (<a href="data/2025/SPEN2_Kosutka/20250615_Kosutka_Race.pdf">race</a>, <a href="data/2025/SPEN2_Kosutka/20250615_Kosutka_Hobby.pdf">hobby</a>)<br>
-                                    10. miesto z 12 v kategórii Muži 40+ <br>
-                                    61. miesto zo 73 celkovo Enduro Challenge
-                                </td>
-                            </tr>
-                            <tr class="spdh"><td>8.6.</td><td><span class="badge new spdh" data-badge-caption="">SPDH</span></td>    <td>Mýto pod Ďumbierom</td>   <td></td></tr>
-                            <tr class="spen"><td>1.6.</td><td><span class="badge new spen" data-badge-caption="">SPEN</span></td>
-                                <td><a href="2025_spen1_kalnica.html">Kálnica</a></td>
-                                <td>
-                                    Čas: 15:08.8 (+4.09.4) (časy 10:59.3 - 19:38.9) (<a href="data/2025/SPEN1_Kalnica/20250531_kalnica_Enduro_Race.pdf">race</a>, <a href="data/2025/SPEN1_Kalnica/20250531_kalnica_Enduro_Challenge.pdf">hobby</a>)<br>
-                                    14. miesto z 15 v kategórii Muži 40+<br>
-                                    101. miesto zo 123 celkovo Enduro Challenge
-                                </td>
-                            </tr>
-                            <tr class="spdh"><td>4.5.</td><td><span class="badge new spdh" data-badge-caption="">SPDH</span></td>    <td>KOŠÚTKA I</td>            <td></td></tr>
-
-                            </tbody>
-                        </table>
+            <a href="#year-2025" class="block overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-xl">
+                <img src="data/2025/spen2025_pozvanka.jpg" alt="SPEN 2025" class="h-44 w-full object-cover">
+                <div class="space-y-2 p-5">
+                    <div class="flex items-center justify-between gap-3">
+                        <span class="season-badge bg-slate-900 text-white">2025</span>
+                        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">SPEN/SPDH</span>
                     </div>
-                    <div class="divider"></div>
-                    <div class="section">
-                        <a href="mondraker.html"><span class="title">New bike day - Mondraker Superfoxy R</span></a>
-                        <p class="">13.4.2025 - Objednané z bike-discount.com a dovezené 13.4.2025. 29" palcové kolesá, Fox Float 38" performance vpredu a &Ouml;hlins TTX vzadu.
-                        </p>
+                    <h3 class="text-lg font-bold tracking-tight">Slovenský pohár v enduro 2025</h3>
+                    <p class="text-sm text-slate-500">Termíny, reporty a výsledky z aktuálnej sezóny.</p>
+                    <div class="flex gap-2 pt-1 text-sm font-semibold">
+                        <span class="rounded-full bg-slate-950 px-3 py-1 text-white">Preteky</span>
                     </div>
-                    <div class="divider"></div>
-
-                    <div class="section">
-                        <h5>Preteky 2024</h5>
-                        <table class="striped">
-                            <colgroup>
-                                <col class="date">
-                                <col class="badges">
-                            </colgroup>
-                            <thead>
-                            <tr>
-                                <th>Dátum</th>
-                                <th colspan="2">Pretek</th>
-                                <th>Výsledok</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>20.10.</td>
-                                <td>
-                                    <span class="badge new spen" data-badge-caption="">SPEN</span>
-                                </td>
-                                <td>
-                                    <a href="2024_spen6_partizanske.html">Partizánske</a>
-                                </td>
-                                <td>
-                                    Čas: 18:42.5  (12:44.5 - 19:27.3)  (<a href="data/2024/SPEN6_Partizanske/20241020_partizanske_spen.pdf">race</a>, <a href="data/2024/SPEN6_Partizanske/20241020_partizanskechalenge.pdf">hobby</a>)<br>
-                                    6. miesto zo 7 v kategórii Muži 40+<br>
-                                    50. miesto z 54 celkovo Enduro Challenge<br>
-                                    <small><i>Preložené z Pezinskej Baby - nepovolený pretek kvôli jelenej ruji.</i></small>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>22.09.</td>
-                                <td>
-                                    <span class="badge new spen" data-badge-caption="">SPEN</span><span class="badge new hes" data-badge-caption="">HES</span>
-                                </td>
-                                <td>
-                                    <a href="2024_spen5_bojnice.html">Bojnice</a>
-                                </td>
-                                <td>
-                                    Čas: 13:58.1 (10:05.5 - 18:50.1) (<a href="data/2024/SPEN5_Bojnice/20240922_bojnice_spen.pdf">race</a>, <a href="data/2024/SPEN5_Bojnice/20240922_bojnice_challenge.pdf">hobby</a>)<br>
-                                    10. miesto z 12 v kategórii Muži 40+<br>
-                                    83. miesto z 92 celkovo Enduro Challenge
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>18.08.</td>
-                                <td>
-                                    <span class="badge new spen" data-badge-caption="">SPEN</span><span class="badge new hes" data-badge-caption="">HES</span>
-                                </td>
-                                <td>
-                                    <a href="2024_spen4_drozdovo.html">Drozdovo</a>
-                                </td>
-                                <td>
-                                    Vynechané, absolvovaný len tréning. (<a href="data/2024/SPEN4_Drozdovo/img/drozdovo_mapa.jpg">mapa</a>)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>28.07.</td>
-                                <td>
-                                    <span class="badge new spen" data-badge-caption="">SPEN</span><span class="badge new hes" data-badge-caption="">HES</span>
-                                </td>
-                                <td>
-                                    <a href="2024_spen3_zilina.html">Žilina</a>
-                                </td>
-                                <td>Nedokončené pre zranenie (<a href="data/2024/SPEN3_Zilina/20240728_spen_zilina_SPEN.pdf">race</a>, <a
-                                    href="data/2024/SPEN3_Zilina/20240728_spen_zilina_Challengee.pdf">hobby</a>)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>07.07.</td>
-                                <td>
-                                    <span class="badge new spen" data-badge-caption="">SPEN</span><span class="badge new hes" data-badge-caption="">HES</span>
-                                </td>
-                                <td>
-                                    Košútka
-                                </td>
-                                <td>Vynechané pre dovolenku (<a href="data/2024/SPEN2_Kosutka/spen2_mapa.jpeg">mapa</a>)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>01.06.</td>
-                                <td>
-                                    <span class="badge new spen" data-badge-caption="">SPEN</span>
-                                </td>
-                                <td><a href="2024_spen1_kalnica.html">Kálnica</a></td>
-                                <td>
-                                    Čas 17:44.8 (12:32.0 - 28:12.4)
-                                    (<a href="data/2024/SPEN1_Kalnica/20240601_bikefest_enduro_SPEN.pdf">race</a>, <a
-                                    href="data/2024/SPEN1_Kalnica/20240601_bikefest_enduro_chalenge.pdf">hobby</a>)<br>
-                                    9. miesto zo 14 v kategórii HOBBY Super Masters 40+<br>
-                                    (74. zo 111 celkovo v Hobby)
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="section">
-                        <h5>Preteky 2023</h5>
-                        <table class="striped c2023">
-                            <thead>
-                            <tr>
-                                <th>Dátum</th>
-                                <th>Pretek</th>
-                                <th>Výsledok</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>15.10.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span><a
-                                    href="2023_spen4_tbk.html">Bratislava</a>
-                                </td>
-                                <td>
-                                    Čas: 25:43.75 (18:27.8 - 30:12.1) (<a
-                                    href="data/2023/SPEN4_Bratislava/20231015_baenduro_spen.pdf">race</a>, <a
-                                    href="data/2023/SPEN4_Bratislava/20231015_baenduro_hobby.pdf">hobby</a>)
-                                    <br>
-                                    17. miesto z 21 v kategórii HOBBY Super Masters 40+
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>08.10.</td>
-                                <td><span class="badge new hes" data-badge-caption="">HES</span><a
-                                    href="2023_hes4_bojnice.html">Bojnice</a>
-                                </td>
-                                <td>
-                                    Čas: 16:51.5 (10:51.7 - 20:39.2) (<a href="data/2023/HES4_Bojnice/2023_HES4.pdf">komplet výsledky</a>)
-                                    <br>
-                                    59. miesto zo 61 v kategórii Muži (101. miesto zo 104 celkovo)
-                                </td>
-                            </tr>
-                            <tr class="spdh">
-                                <td>01.10.</td>
-                                <td><span class="badge new spdh" data-badge-caption="">SPDH</span>Košútka II</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>10.09.</td>
-                                <td><span class="badge new hes" data-badge-caption="">HES</span><a
-                                    href="2023_hes3_velka_lehotka.html">Veľká Lehôtka</a>
-                                </td>
-                                <td>
-                                    Čas: 12:16.0 (8:54.9 - 16:12.0) (<a href="data/2023/HES3_Velka_Lehotka/2023_HES3.pdf">komplet výsledky</a>)
-                                    <br>
-                                    54. miesto zo 74 v kategórii Muži (98. miesto zo 137 celkovo)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>03.09.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span>Mýto pod Ďumbierom
-                                </td>
-                                <td>Zrušené</td>
-                            </tr>
-                            <tr class="spdh">
-                                <td>13.08.</td>
-                                <td><span class="badge new spdh" data-badge-caption="">SPDH</span>Malino brdo</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>30.07.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span>Košice</td>
-                                <td>Vynechané (<a href="data/2023/spen2_mapa.jpeg">mapa</a>)</td>
-                            </tr>
-                            <tr class="spdh">
-                                <td>23.07.</td>
-                                <td><span class="badge new spdh" data-badge-caption="">SPDH</span>Vrátna</td>
-                                <td></td>
-                            </tr>
-                            <tr class="spdh">
-                                <td>25.06.</td>
-                                <td><span class="badge new spdh" data-badge-caption="">SPDH</span>Mýto pod Ďumbierom
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>11.06.</td>
-                                <td><span class="badge new hes" data-badge-caption="">HES</span><a
-                                    href="2023_hes2_jasenska.html">Jasenská dolina</a>
-                                </td>
-                                <td>
-                                    Čas: 10:08.8 (7:16.7 - 13:17.4) (<a href="data/2023/HES2_Jasenska/2023_HES2.pdf">komplet výsledky</a>)
-                                    <br>
-                                    38. miesto zo 45 v kategórii Muži (72. miesto z 88 celkovo)
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>03.06.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span><a
-                                    href="2023_spen1_kalnica.html">Kálnica</a>
-                                </td>
-                                <td>
-                                    Čas 12:24.4 (10:57.4 - 15:08.9) (<a href="data/2023/SPEN1_Kalnica/20230603_enduro_chalenge.pdf">komplet
-                                    výsledky</a>)
-                                    <br>
-                                    9. miesto z 15 v kategórii Hobby (Enduro Challenge)
-                                </td>
-                            </tr>
-                            <tr class="spdh">
-                                <td>28.05.</td>
-                                <td><span class="badge new spdh" data-badge-caption="">SPDH</span>Veľká Rača</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>14.05.</td>
-                                <td><span class="badge new hes" data-badge-caption="">HES</span><a
-                                    href="2023_hes1_partizanske.html">Partizánske</a></td>
-                                <td>
-                                    Čas 19:25.0 (13:40.9 - 38:39.2) (<a href="data/2023/HES1_Partizanske/2023_HES1.pdf">komplet výsledky</a>)
-                                    <br>
-                                    45. miesto z 50 v kategórii Muži (90. zo 101 celkovo)
-                                </td>
-                            </tr>
-                            <tr class="spdh">
-                                <td>30.04.</td>
-                                <td><span class="badge new spdh" data-badge-caption="">SPDH</span>Košútka I</td>
-                                <td></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="section">
-                        <h5>Preteky 2022</h5>
-                        <table class="striped">
-                            <thead>
-                            <tr>
-                                <th>Dátum</th>
-                                <th>Pretek</th>
-                                <th>Výsledok</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>16.10.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span><a
-                                    href="2022_spen5_tbk.html">Bratislava
-                                    TBK</a></td>
-                                <td>Čas 25:13.8 (18:18.6 - 31:44.2) (<a href="data/2022/20221016_baenduro_race.pdf">race</a>,
-                                    <a
-                                        href="data/2022/20221016_baenduro_hoby.pdf">hobby</a>) <br>
-                                    10. miesto z 22 v kategórii HOBBY Super Masters 40+
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>25.09.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span>Malino Brdo</td>
-                                <td>Zrušené.</td>
-                            </tr>
-                            <tr>
-                                <td>28.08.</td>
-                                <td><span class="badge new hes" data-badge-caption="">HES</span>Bojnice</td>
-                                <td>Vynechané pre dovolenku.</td>
-                            </tr>
-                            <tr>
-                                <td>14.08.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span>Mýto pod Ďumbierom
-                                </td>
-                                <td>Vynechané pre zranenie.</td>
-                            </tr>
-                            <tr>
-                                <td>24.07.</td>
-                                <td><span class="badge new hes" data-badge-caption="">HES</span><a
-                                    href="2022_hes3_velka_lehotka.html">Veľká Lehôtka</a></td>
-                                <td>Čas 12:26.4 (9:10.1 - 14:50.4) (<a href="data/2022/2022_HES3.pdf">komplet výsledky</a>)
-                                    <br>
-                                    37. miesto z 53 v kategórii Muži (61. z 88 celkovo)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>19.06.</td>
-                                <td><span class="badge new hes" data-badge-caption="">HES</span>Drozdovo</td>
-                                <td>Vynechané - broken linkage.</td>
-                            </tr>
-                            <tr>
-                                <td>04.06.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span><a
-                                    href="2022_spen2_kalnica.html">Bikefest Kálnica</a></td>
-                                <td>Nedokončené - broken linkage.</td>
-                            </tr>
-                            <tr>
-                                <td>15.05.</td>
-                                <td><span class="badge new hes" data-badge-caption="">HES</span><a
-                                    href="2022_hes1_partizanske.html">Partizánske</a>
-                                </td>
-                                <td>Čas 13:20.6 (10:51.7 - 15:51.2) (<a href="data/2022/2022_HES1.pdf">komplet výsledky</a>)
-                                    <br>
-                                    40. miesto zo 65 v kategórii Muži (73. zo 115 celkovo)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>08.05.</td>
-                                <td><span class="badge new spen" data-badge-caption="">SPEN</span><a
-                                    href="2022_spen1_oscadnica.html">Oščadnica</a>
-                                </td>
-                                <td>Čas 32:07.8 (17:48.0 - 34:08.4) (<a href="data/2022/20220508_spen1_race.pdf">race</a>, <a
-                                    href="data/2022/20220508_spen1_hobby.pdf">hobby</a>) <br>
-                                    12. miesto zo 14 v kategórii RACE Masters 35+
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-
-                    <div class="divider"></div>
-                    <div class="section">
-                        <a href="2021_spen5_tbk.html"><span class="title">TBK Enduro 2021</span></a>
-                        <p class="">10.10.2021 - Prvý pokus na enduro pretekoch.
-                        </p>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="section">
-                        <a href="propain.html"><span class="title">New bike day - Propain Spindrift</span></a>
-                        <p class="">9.3.2021 - Po takmer troch mesiacoch čakania konečne dorazil. Objednané 21.12.2020, doručené
-                            9.3.2021.
-                        </p>
-                    </div>
-                    <div class="divider"></div>
                 </div>
+            </a>
+
+            <a href="#year-2024" class="block overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-xl">
+                <img src="data/2024/spen2024_pozvanka_v2.jpeg" alt="SPEN 2024" class="h-44 w-full object-cover">
+                <div class="space-y-2 p-5">
+                    <div class="flex items-center justify-between gap-3">
+                        <span class="season-badge bg-emerald-500/15 text-emerald-700">2024</span>
+                        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">SPEN/HES</span>
+                    </div>
+                    <h3 class="text-lg font-bold tracking-tight">Preteky 2024</h3>
+                    <p class="text-sm text-slate-500">SPEN, HES a priebežné reporty z roka 2024.</p>
+                    <div class="flex gap-2 pt-1 text-sm font-semibold">
+                        <span class="rounded-full bg-slate-950 px-3 py-1 text-white">Preteky</span>
+                        <a class="rounded-full bg-emerald-50 px-3 py-1 text-emerald-700" href="https://www.facebook.com/hornonitrianskaenduroseria/">HES</a>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#year-2023" class="block overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-xl">
+                <img src="data/2023/hes_2023_pozvanka.jpeg" alt="HES 2023" class="h-44 w-full object-cover">
+                <div class="space-y-2 p-5">
+                    <div class="flex items-center justify-between gap-3">
+                        <span class="season-badge bg-sky-500/15 text-sky-700">2023</span>
+                        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">HES</span>
+                    </div>
+                    <h3 class="text-lg font-bold tracking-tight">Preteky 2023</h3>
+                    <p class="text-sm text-slate-500">HES, SPEN a skryté SPDH termíny.</p>
+                    <div class="flex gap-2 pt-1 text-sm font-semibold">
+                        <span class="rounded-full bg-slate-950 px-3 py-1 text-white">Preteky</span>
+                        <a class="rounded-full bg-sky-50 px-3 py-1 text-sky-700" href="https://mobilnacasomiera.sk/vysledky/hes2023.html">Výsledky</a>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#year-2022" class="block overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-xl">
+                <img src="data/2022/img/Pozvanka_spen1.jpeg" alt="SPEN 2022" class="h-44 w-full object-cover">
+                <div class="space-y-2 p-5">
+                    <div class="flex items-center justify-between gap-3">
+                        <span class="season-badge bg-violet-500/15 text-violet-700">2022</span>
+                        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">SPEN/HES</span>
+                    </div>
+                    <h3 class="text-lg font-bold tracking-tight">Preteky 2022</h3>
+                    <p class="text-sm text-slate-500">Začiatky enduro sezón, SPEN aj HES.</p>
+                    <div class="flex gap-2 pt-1 text-sm font-semibold">
+                        <span class="rounded-full bg-slate-950 px-3 py-1 text-white">Preteky</span>
+                        <a class="rounded-full bg-violet-50 px-3 py-1 text-violet-700" href="https://spdh.sk/enduro/">SPEN</a>
+                    </div>
+                </div>
+            </a>
+        </aside>
+
+        <section class="space-y-8">
+            <div class="rounded-3xl bg-white/90 p-6 shadow-lg ring-1 ring-slate-200 backdrop-blur">
+                <h2 class="text-2xl font-bold tracking-tight">Preteky podľa rokov</h2>
+                <p class="mt-1 text-sm text-slate-500">Aktuálna sezóna je otvorená navrchu, staršie roky sa dajú rozbaliť podľa potreby.</p>
             </div>
-        </div>
+
+            <details id="year-2026" open class="story-card rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
+                <summary class="flex cursor-pointer items-center justify-between gap-4 rounded-3xl bg-slate-950 px-5 py-4 text-white transition hover:bg-slate-900">
+                    <span class="text-lg font-bold">2026</span>
+                    <span class="text-sm text-amber-300">5 kôl SPEN, zatiaľ kalendár</span>
+                </summary>
+                <div class="overflow-x-auto p-4 md:p-6">
+                    <table class="race-table w-full text-left text-sm">
+                        <colgroup>
+                            <col class="w-24">
+                            <col class="w-28">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>Dátum</th>
+                            <th colspan="2">Pretek</th>
+                            <th>Výsledok</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="spen">
+                            <td>10.-11.10.</td>
+                            <td><span class="badge spen">SPEN</span></td>
+                            <td><a href="2026_spen_calendar.html">Bojnice (finále)</a></td>
+                            <td></td>
+                        </tr>
+                        <tr class="spen">
+                            <td>12.-13.9.</td>
+                            <td><span class="badge spen">SPEN</span></td>
+                            <td><a href="2026_spen_calendar.html">Donovaly</a></td>
+                            <td></td>
+                        </tr>
+                        <tr class="spen">
+                            <td>19.-20.6.</td>
+                            <td><span class="badge spen">SPEN</span></td>
+                            <td><a href="2026_spen_calendar.html">Partizánske (MSR Enduro)</a></td>
+                            <td></td>
+                        </tr>
+                        <tr class="spen">
+                            <td>30.5.</td>
+                            <td><span class="badge spen">SPEN</span></td>
+                            <td><a href="2026_spen_calendar.html">Kálnica</a></td>
+                            <td></td>
+                        </tr>
+                        <tr class="spen">
+                            <td>09.-10.5.</td>
+                            <td><span class="badge spen">SPEN</span></td>
+                            <td><a href="2026_spen_calendar.html">Mokrá Lúka</a></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details id="year-2025" open class="story-card rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
+                <summary class="flex cursor-pointer items-center justify-between gap-4 rounded-3xl bg-slate-900 px-5 py-4 text-white transition hover:bg-slate-800">
+                    <span class="text-lg font-bold">2025</span>
+                    <span class="text-sm text-slate-300">SPEN, SPDH a reporty z pretekov</span>
+                </summary>
+                <div class="overflow-x-auto p-4 md:p-6">
+                    <table class="race-table c2025 w-full text-left text-sm">
+                        <colgroup>
+                            <col class="w-24">
+                            <col class="w-28">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>Dátum</th>
+                            <th colspan="2">Pretek</th>
+                            <th>Výsledok</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="spdh"><td>5.10.</td><td><span class="badge spdh">SPDH</span></td><td>KOŠÚTKA II</td><td></td></tr>
+                        <tr class="spen"><td>21.9.</td><td><span class="badge spen">SPEN</span></td><td><a href="2025_spen5_partizanske.html">Partizánske</a></td><td>Vynechané pre zranenie.</td></tr>
+                        <tr class="spdh"><td>14.9.</td><td><span class="badge spdh">SPDH</span></td><td>Malinô Brdo</td><td></td></tr>
+                        <tr class="spen"><td>24.8.</td><td><span class="badge spen">SPEN</span></td><td><a href="2025_spen4_drozdovo.html">Drozdovo</a></td><td>Čas: 17:50.4 (12:46.2 - 22:35.9) (<a href="data/2025/SPEN4_Drozdovo/20250824_drozdovo_spen1.pdf">race</a>, <a href="data/2025/SPEN4_Drozdovo/20250824_drozdovo_challenge.pdf">hobby</a>)<br>7. miesto z 8 v kategórii Muži 40+<br>63. miesto zo 73 celkovo Enduro Challenge</td></tr>
+                        <tr class="spen"><td>27.7.</td><td><span class="badge spen">SPEN</span></td><td><a href="2025_spen3_bojnice.html">Bojnice (SPEN MSR)</a></td><td>Vynechané pre počasie.</td></tr>
+                        <tr class="spdh"><td>22.6.</td><td><span class="badge spdh">SPDH</span></td><td>Kubínska Hoľa (SPDH MSR)</td><td></td></tr>
+                        <tr class="spen"><td>15.6.</td><td><span class="badge spen">SPEN</span></td><td><a href="2025_spen2_kosutka.html">Košútka</a></td><td>Čas: 16:50.6 (12:26.3 - 20:56.9) (<a href="data/2025/SPEN2_Kosutka/20250615_Kosutka_Race.pdf">race</a>, <a href="data/2025/SPEN2_Kosutka/20250615_Kosutka_Hobby.pdf">hobby</a>)<br>10. miesto z 12 v kategórii Muži 40+<br>61. miesto zo 73 celkovo Enduro Challenge</td></tr>
+                        <tr class="spdh"><td>8.6.</td><td><span class="badge spdh">SPDH</span></td><td>Mýto pod Ďumbierom</td><td></td></tr>
+                        <tr class="spen"><td>1.6.</td><td><span class="badge spen">SPEN</span></td><td><a href="2025_spen1_kalnica.html">Kálnica</a></td><td>Čas: 15:08.8 (+4.09.4) (časy 10:59.3 - 19:38.9) (<a href="data/2025/SPEN1_Kalnica/20250531_kalnica_Enduro_Race.pdf">race</a>, <a href="data/2025/SPEN1_Kalnica/20250531_kalnica_Enduro_Challenge.pdf">hobby</a>)<br>14. miesto z 15 v kategórii Muži 40+<br>101. miesto zo 123 celkovo Enduro Challenge</td></tr>
+                        <tr class="spdh"><td>4.5.</td><td><span class="badge spdh">SPDH</span></td><td>KOŠÚTKA I</td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details id="year-2024" open class="story-card rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
+                <summary class="flex cursor-pointer items-center justify-between gap-4 rounded-3xl bg-slate-900 px-5 py-4 text-white transition hover:bg-slate-800">
+                    <span class="text-lg font-bold">2024</span>
+                    <span class="text-sm text-slate-300">SPEN a HES, výsledky aj tréningové dni</span>
+                </summary>
+                <div class="overflow-x-auto p-4 md:p-6">
+                    <table class="race-table w-full text-left text-sm">
+                        <colgroup>
+                            <col class="w-24">
+                            <col class="w-28">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>Dátum</th>
+                            <th colspan="2">Pretek</th>
+                            <th>Výsledok</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>20.10.</td>
+                            <td><span class="badge spen">SPEN</span></td>
+                            <td><a href="2024_spen6_partizanske.html">Partizánske</a></td>
+                            <td>Čas: 18:42.5 (12:44.5 - 19:27.3) (<a href="data/2024/SPEN6_Partizanske/20241020_partizanske_spen.pdf">race</a>, <a href="data/2024/SPEN6_Partizanske/20241020_partizanskechalenge.pdf">hobby</a>)<br>6. miesto zo 7 v kategórii Muži 40+<br>50. miesto z 54 celkovo Enduro Challenge<br><small><i>Preložené z Pezinskej Baby - nepovolený pretek kvôli jelenej ruji.</i></small></td>
+                        </tr>
+                        <tr>
+                            <td>22.09.</td>
+                            <td><span class="badge spen">SPEN</span><span class="badge hes">HES</span></td>
+                            <td><a href="2024_spen5_bojnice.html">Bojnice</a></td>
+                            <td>Čas: 13:58.1 (10:05.5 - 18:50.1) (<a href="data/2024/SPEN5_Bojnice/20240922_bojnice_spen.pdf">race</a>, <a href="data/2024/SPEN5_Bojnice/20240922_bojnice_challenge.pdf">hobby</a>)<br>10. miesto z 12 v kategórii Muži 40+<br>83. miesto z 92 celkovo Enduro Challenge</td>
+                        </tr>
+                        <tr>
+                            <td>18.08.</td>
+                            <td><span class="badge spen">SPEN</span><span class="badge hes">HES</span></td>
+                            <td><a href="2024_spen4_drozdovo.html">Drozdovo</a></td>
+                            <td>Vynechané, absolvovaný len tréning. (<a href="data/2024/SPEN4_Drozdovo/img/drozdovo_mapa.jpg">mapa</a>)</td>
+                        </tr>
+                        <tr>
+                            <td>28.07.</td>
+                            <td><span class="badge spen">SPEN</span><span class="badge hes">HES</span></td>
+                            <td><a href="2024_spen3_zilina.html">Žilina</a></td>
+                            <td>Nedokončené pre zranenie (<a href="data/2024/SPEN3_Zilina/20240728_spen_zilina_SPEN.pdf">race</a>, <a href="data/2024/SPEN3_Zilina/20240728_spen_zilina_Challengee.pdf">hobby</a>)</td>
+                        </tr>
+                        <tr>
+                            <td>07.07.</td>
+                            <td><span class="badge spen">SPEN</span><span class="badge hes">HES</span></td>
+                            <td>Košútka</td>
+                            <td>Vynechané pre dovolenku (<a href="data/2024/SPEN2_Kosutka/spen2_mapa.jpeg">mapa</a>)</td>
+                        </tr>
+                        <tr>
+                            <td>01.06.</td>
+                            <td><span class="badge spen">SPEN</span></td>
+                            <td><a href="2024_spen1_kalnica.html">Kálnica</a></td>
+                            <td>Čas 17:44.8 (12:32.0 - 28:12.4) (<a href="data/2024/SPEN1_Kalnica/20240601_bikefest_enduro_SPEN.pdf">race</a>, <a href="data/2024/SPEN1_Kalnica/20240601_bikefest_enduro_chalenge.pdf">hobby</a>)<br>9. miesto zo 14 v kategórii HOBBY Super Masters 40+<br>(74. zo 111 celkovo v Hobby)</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details id="year-2023" open class="story-card rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
+                <summary class="flex cursor-pointer items-center justify-between gap-4 rounded-3xl bg-slate-900 px-5 py-4 text-white transition hover:bg-slate-800">
+                    <span class="text-lg font-bold">2023</span>
+                    <span class="text-sm text-slate-300">HES, SPEN a archivované SPDH termíny</span>
+                </summary>
+                <div class="overflow-x-auto p-4 md:p-6">
+                    <table class="race-table c2023 w-full text-left text-sm">
+                        <thead>
+                        <tr>
+                            <th>Dátum</th>
+                            <th>Pretek</th>
+                            <th>Výsledok</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>15.10.</td>
+                            <td><span class="badge spen">SPEN</span><a href="2023_spen4_tbk.html">Bratislava</a></td>
+                            <td>Čas: 25:43.75 (18:27.8 - 30:12.1) (<a href="data/2023/SPEN4_Bratislava/20231015_baenduro_spen.pdf">race</a>, <a href="data/2023/SPEN4_Bratislava/20231015_baenduro_hobby.pdf">hobby</a>)<br>17. miesto z 21 v kategórii HOBBY Super Masters 40+</td>
+                        </tr>
+                        <tr>
+                            <td>08.10.</td>
+                            <td><span class="badge hes">HES</span><a href="2023_hes4_bojnice.html">Bojnice</a></td>
+                            <td>Čas: 16:51.5 (10:51.7 - 20:39.2) (<a href="data/2023/HES4_Bojnice/2023_HES4.pdf">komplet výsledky</a>)<br>59. miesto zo 61 v kategórii Muži (101. miesto zo 104 celkovo)</td>
+                        </tr>
+                        <tr class="spdh">
+                            <td>01.10.</td>
+                            <td><span class="badge spdh">SPDH</span>Košútka II</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10.09.</td>
+                            <td><span class="badge hes">HES</span><a href="2023_hes3_velka_lehotka.html">Veľká Lehôtka</a></td>
+                            <td>Čas: 12:16.0 (8:54.9 - 16:12.0) (<a href="data/2023/HES3_Velka_Lehotka/2023_HES3.pdf">komplet výsledky</a>)<br>54. miesto zo 74 v kategórii Muži (98. miesto zo 137 celkovo)</td>
+                        </tr>
+                        <tr>
+                            <td>03.09.</td>
+                            <td><span class="badge spen">SPEN</span>Mýto pod Ďumbierom</td>
+                            <td>Zrušené</td>
+                        </tr>
+                        <tr class="spdh">
+                            <td>13.08.</td>
+                            <td><span class="badge spdh">SPDH</span>Malino brdo</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>30.07.</td>
+                            <td><span class="badge spen">SPEN</span>Košice</td>
+                            <td>Vynechané (<a href="data/2023/spen2_mapa.jpeg">mapa</a>)</td>
+                        </tr>
+                        <tr class="spdh">
+                            <td>23.07.</td>
+                            <td><span class="badge spdh">SPDH</span>Vrátna</td>
+                            <td></td>
+                        </tr>
+                        <tr class="spdh">
+                            <td>25.06.</td>
+                            <td><span class="badge spdh">SPDH</span>Mýto pod Ďumbierom</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>11.06.</td>
+                            <td><span class="badge hes">HES</span><a href="2023_hes2_jasenska.html">Jasenská dolina</a></td>
+                            <td>Čas: 10:08.8 (7:16.7 - 13:17.4) (<a href="data/2023/HES2_Jasenska/2023_HES2.pdf">komplet výsledky</a>)<br>38. miesto zo 45 v kategórii Muži (72. miesto z 88 celkovo)</td>
+                        </tr>
+                        <tr>
+                            <td>03.06.</td>
+                            <td><span class="badge spen">SPEN</span><a href="2023_spen1_kalnica.html">Kálnica</a></td>
+                            <td>Čas 12:24.4 (10:57.4 - 15:08.9) (<a href="data/2023/SPEN1_Kalnica/20230603_enduro_chalenge.pdf">komplet výsledky</a>)<br>9. miesto z 15 v kategórii Hobby (Enduro Challenge)</td>
+                        </tr>
+                        <tr class="spdh">
+                            <td>28.05.</td>
+                            <td><span class="badge spdh">SPDH</span>Veľká Rača</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>14.05.</td>
+                            <td><span class="badge hes">HES</span><a href="2023_hes1_partizanske.html">Partizánske</a></td>
+                            <td>Čas 19:25.0 (13:40.9 - 38:39.2) (<a href="data/2023/HES1_Partizanske/2023_HES1.pdf">komplet výsledky</a>)<br>45. miesto z 50 v kategórii Muži (90. zo 101 celkovo)</td>
+                        </tr>
+                        <tr class="spdh">
+                            <td>30.04.</td>
+                            <td><span class="badge spdh">SPDH</span>Košútka I</td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details id="year-2022" open class="story-card rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
+                <summary class="flex cursor-pointer items-center justify-between gap-4 rounded-3xl bg-slate-900 px-5 py-4 text-white transition hover:bg-slate-800">
+                    <span class="text-lg font-bold">2022</span>
+                    <span class="text-sm text-slate-300">SPEN a HES začiatky</span>
+                </summary>
+                <div class="overflow-x-auto p-4 md:p-6">
+                    <table class="race-table w-full text-left text-sm">
+                        <thead>
+                        <tr>
+                            <th>Dátum</th>
+                            <th>Pretek</th>
+                            <th>Výsledok</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>16.10.</td>
+                            <td><span class="badge spen">SPEN</span><a href="2022_spen5_tbk.html">Bratislava TBK</a></td>
+                            <td>Čas 25:13.8 (18:18.6 - 31:44.2) (<a href="data/2022/20221016_baenduro_race.pdf">race</a>, <a href="data/2022/20221016_baenduro_hoby.pdf">hobby</a>)<br>10. miesto z 22 v kategórii HOBBY Super Masters 40+</td>
+                        </tr>
+                        <tr>
+                            <td>25.09.</td>
+                            <td><span class="badge spen">SPEN</span>Malino Brdo</td>
+                            <td>Zrušené.</td>
+                        </tr>
+                        <tr>
+                            <td>28.08.</td>
+                            <td><span class="badge hes">HES</span>Bojnice</td>
+                            <td>Vynechané pre dovolenku.</td>
+                        </tr>
+                        <tr>
+                            <td>14.08.</td>
+                            <td><span class="badge spen">SPEN</span>Mýto pod Ďumbierom</td>
+                            <td>Vynechané pre zranenie.</td>
+                        </tr>
+                        <tr>
+                            <td>24.07.</td>
+                            <td><span class="badge hes">HES</span><a href="2022_hes3_velka_lehotka.html">Veľká Lehôtka</a></td>
+                            <td>Čas 12:26.4 (9:10.1 - 14:50.4) (<a href="data/2022/2022_HES3.pdf">komplet výsledky</a>)<br>37. miesto z 53 v kategórii Muži (61. z 88 celkovo)</td>
+                        </tr>
+                        <tr>
+                            <td>19.06.</td>
+                            <td><span class="badge hes">HES</span>Drozdovo</td>
+                            <td>Vynechané - broken linkage.</td>
+                        </tr>
+                        <tr>
+                            <td>04.06.</td>
+                            <td><span class="badge spen">SPEN</span><a href="2022_spen2_kalnica.html">Bikefest Kálnica</a></td>
+                            <td>Nedokončené - broken linkage.</td>
+                        </tr>
+                        <tr>
+                            <td>15.05.</td>
+                            <td><span class="badge hes">HES</span><a href="2022_hes1_partizanske.html">Partizánske</a></td>
+                            <td>Čas 13:20.6 (10:51.7 - 15:51.2) (<a href="data/2022/2022_HES1.pdf">komplet výsledky</a>)<br>40. miesto zo 65 v kategórii Muži (73. zo 115 celkovo)</td>
+                        </tr>
+                        <tr>
+                            <td>08.05.</td>
+                            <td><span class="badge spen">SPEN</span><a href="2022_spen1_oscadnica.html">Oščadnica</a></td>
+                            <td>Čas 32:07.8 (17:48.0 - 34:08.4) (<a href="data/2022/20220508_spen1_race.pdf">race</a>, <a href="data/2022/20220508_spen1_hobby.pdf">hobby</a>)<br>12. miesto zo 14 v kategórii RACE Masters 35+</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details open class="story-card rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
+                <summary class="flex cursor-pointer items-center justify-between gap-4 rounded-3xl bg-slate-800 px-5 py-4 text-white transition hover:bg-slate-700">
+                    <span class="text-lg font-bold">New bike day - Mondraker Superfoxy R</span>
+                    <span class="text-sm text-slate-300">13.4.2025</span>
+                </summary>
+                <div class="p-5 md:p-6">
+                    <a href="mondraker.html" class="text-2xl font-bold tracking-tight text-slate-950 hover:text-slate-700">New bike day - Mondraker Superfoxy R</a>
+                    <p class="mt-2 max-w-3xl text-sm leading-6 text-slate-600">13.4.2025 - Objednané z bike-discount.com a dovezené 13.4.2025. 29&quot; palcové kolesá, Fox Float 38&quot; performance vpredu a &Ouml;hlins TTX vzadu.</p>
+                </div>
+            </details>
+
+            <details open class="story-card rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
+                <summary class="flex cursor-pointer items-center justify-between gap-4 rounded-3xl bg-slate-800 px-5 py-4 text-white transition hover:bg-slate-700">
+                    <span class="text-lg font-bold">TBK Enduro 2021</span>
+                    <span class="text-sm text-slate-300">10.10.2021</span>
+                </summary>
+                <div class="p-5 md:p-6">
+                    <a href="2021_spen5_tbk.html" class="text-2xl font-bold tracking-tight text-slate-950 hover:text-slate-700">TBK Enduro 2021</a>
+                    <p class="mt-2 max-w-3xl text-sm leading-6 text-slate-600">10.10.2021 - Prvý pokus na enduro pretekoch.</p>
+                </div>
+            </details>
+
+            <details open class="story-card rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
+                <summary class="flex cursor-pointer items-center justify-between gap-4 rounded-3xl bg-slate-800 px-5 py-4 text-white transition hover:bg-slate-700">
+                    <span class="text-lg font-bold">New bike day - Propain Spindrift</span>
+                    <span class="text-sm text-slate-300">9.3.2021</span>
+                </summary>
+                <div class="p-5 md:p-6">
+                    <a href="propain.html" class="text-2xl font-bold tracking-tight text-slate-950 hover:text-slate-700">New bike day - Propain Spindrift</a>
+                    <p class="mt-2 max-w-3xl text-sm leading-6 text-slate-600">9.3.2021 - Po takmer troch mesiacoch čakania konečne dorazil. Objednané 21.12.2020, doručené 9.3.2021.</p>
+                </div>
+            </details>
+        </section>
     </div>
-
 </main>
 
-<footer class="page-footer">
-</footer>
+<footer class="h-8"></footer>
 
-
-<script src="assets/materialize1.0.0.js"></script>
-<!--<script type='text/javascript' src='assets/unitegallery/js/jquery-11.0.min.js'></script>-->
-<script type='text/javascript' src='assets/jquery-3.6.1.js'></script>
-<script type='text/javascript' src='assets/unitegallery/js/unitegallery.min.js'></script>
-<script type='text/javascript' src='assets/unitegallery/themes/carousel/ug-theme-carousel.js'></script>
+<script src="assets/jquery-3.6.1.js"></script>
+<script src="assets/unitegallery/js/unitegallery.min.js"></script>
+<script src="assets/unitegallery/themes/carousel/ug-theme-carousel.js"></script>
 <script src="assets/page-init.js"></script>
+<script>
+    document.querySelectorAll('a[href^="#year-"]').forEach(function (link) {
+        link.addEventListener('click', function () {
+            var target = document.querySelector(link.getAttribute('href'));
+            if (target && target.tagName === 'DETAILS') {
+                target.open = true;
+            }
+        });
+    });
 
+    if (window.location.hash) {
+        var hashTarget = document.querySelector(window.location.hash);
+        if (hashTarget && hashTarget.tagName === 'DETAILS') {
+            hashTarget.open = true;
+        }
+    }
+</script>
 </body>
 </html>

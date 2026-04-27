@@ -21,6 +21,33 @@ main {
     padding: 2%;
 }
 
+.season-nav {
+    padding-bottom: 0;
+}
+
+.season-nav h5 {
+    margin-top: 0;
+    margin-bottom: 0.35rem;
+}
+
+.season-nav-intro {
+    margin-top: 0;
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+.season-card .card-content p {
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+    color: #6c757d;
+    line-height: 1.4;
+}
+
+.section-intro p {
+    margin-top: 0;
+    color: #6c757d;
+}
+
 .title {
     font-size: 23px;
 }
@@ -55,6 +82,7 @@ table > tbody > tr > td {
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
     white-space: nowrap;
+    vertical-align: top;
 }
 
 col.date {
@@ -95,7 +123,90 @@ span.badge.spdh {
 }
 
 .card .card-content, .card .card-action {
-    padding: 10px !important;
+    padding: 16px !important;
+}
+
+.story-section {
+    padding: 0.5rem 0.25rem 0.25rem;
+}
+
+.year-collapsible {
+    margin-top: 0;
+    box-shadow: none;
+    border: 0;
+}
+
+.year-collapsible .collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    border-bottom: 0;
+    background: linear-gradient(90deg, rgba(43, 49, 56, 0.96), rgba(53, 61, 69, 0.9));
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.year-collapsible .collapsible-body {
+    border-bottom: 0;
+    padding: 0 0 1.25rem 0;
+}
+
+.year-collapsible li {
+    list-style-type: none !important;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.year-label {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.year-summary {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.95rem;
+    text-align: right;
+}
+
+.result-cell {
+    font-weight: 500;
+    white-space: normal;
+    border-left: 4px solid transparent;
+    padding-left: 0.85rem !important;
+}
+
+.status-completed {
+    border-left-color: mediumseagreen;
+    background: rgba(60, 179, 113, 0.08);
+}
+
+.status-skipped {
+    border-left-color: #ffb300;
+    background: rgba(255, 179, 0, 0.08);
+    color: #7a5a00;
+}
+
+.status-cancelled {
+    border-left-color: #e53935;
+    background: rgba(229, 57, 53, 0.08);
+    color: #8b1e1b;
+}
+
+.status-future {
+    border-left-color: #90a4ae;
+    background: rgba(144, 164, 174, 0.1);
+    color: #546e7a;
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(84, 110, 122, 0.13);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
 }
 
 .date {
@@ -117,4 +228,15 @@ li {
 .centered {
     width: fit-content;
     margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+    .year-collapsible .collapsible-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .year-summary {
+        text-align: left;
+    }
 }
