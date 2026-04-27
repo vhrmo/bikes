@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <title>SPEN 2026 Kalendár</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/bootstrap5.2.1.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css" type="text/css"/>
+    <style>
+        body {
+            background:
+                linear-gradient(180deg, rgba(255, 214, 10, 0.1), rgba(255, 214, 10, 0) 220px),
+                #f5f5f5;
+            color: #212529;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1f1f1f, #3f3f3f);
+            color: #fff;
+        }
+
+        .hero img {
+            border-radius: 1rem;
+            box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.25);
+        }
+
+        .season-badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            background: #ffe53b;
+            color: #1f1f1f;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .event-card {
+            border: 0;
+            border-radius: 1rem;
+            box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .event-card .card-header {
+            background: #212529;
+            color: #ffe53b;
+            font-weight: 700;
+            border-bottom: 0;
+        }
+
+        .event-date {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .event-month {
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.85rem;
+        }
+
+        .feature-strip {
+            background: #212529;
+            color: #fff;
+            border-radius: 1rem;
+        }
+
+        .feature-strip strong {
+            color: #ffe53b;
+        }
+    </style>
+</head>
+<body>
+<header class="hero py-5">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+                <span class="season-badge">Slovenský pohár v endure 2026</span>
+                <h1 class="display-4 fw-bold mt-3 mb-3">Kalendár pretekov SPEN 2026</h1>
+                <p class="lead mb-4">
+                    Päť kôl od mája do októbra. Sezóna zahŕňa Bikefest Kálnica, dvojdňové preteky v Partizánskom a Donovaloch
+                    aj finále v Bojniciach.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a class="btn btn-warning btn-lg" href="#preteky">Zobraziť termíny</a>
+                    <a class="btn btn-outline-light btn-lg" href="index_bs.html">Späť na Bikes</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img class="img-fluid" src="data/2026/spen2026_pozvanka.jpg" alt="Pozvánka SPEN 2026">
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="py-5">
+    <div class="container">
+        <section class="feature-strip p-4 p-lg-5 mb-5">
+            <div class="row g-3 text-center text-lg-start">
+                <div class="col-lg-4">
+                    <strong>Generálny partner:</strong> KENNY
+                </div>
+                <div class="col-lg-4">
+                    <strong>Organizátor série:</strong> Hornonitrianske stopy, o.z.
+                </div>
+                <div class="col-lg-4">
+                    <strong>Zdroj:</strong> kalendár podľa <code>data/2026/spen2026_pozvanka.jpg</code>
+                </div>
+            </div>
+        </section>
+
+        <section id="preteky" class="mb-5">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <div>
+                    <h2 class="mb-1">Termíny 2026</h2>
+                    <p class="text-muted mb-0">Prehľad všetkých kôl zo sezónnej pozvánky.</p>
+                </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+                <div class="col">
+                    <article class="card event-card h-100">
+                        <div class="card-header">1. kolo</div>
+                        <div class="card-body">
+                            <div class="event-date">09. - 10. 05.</div>
+                            <div class="event-month mt-2">Máj 2026</div>
+                            <h3 class="h4 mt-3">Mokrá Lúka</h3>
+                            <p class="mb-0 text-muted">Úvodné dvojdňové podujatie série.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="card event-card h-100">
+                        <div class="card-header">2. kolo</div>
+                        <div class="card-body">
+                            <div class="event-date">30. 05.</div>
+                            <div class="event-month mt-2">Máj 2026</div>
+                            <h3 class="h4 mt-3">Kálnica</h3>
+                            <p class="mb-0 text-muted">Bikefest Kálnica v jednodňovom formáte.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="card event-card h-100">
+                        <div class="card-header">3. kolo</div>
+                        <div class="card-body">
+                            <div class="event-date">19. - 20. 06.</div>
+                            <div class="event-month mt-2">Jún 2026</div>
+                            <h3 class="h4 mt-3">Partizánske</h3>
+                            <p class="mb-0 text-muted">Majstrovstvá SR v endure.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="card event-card h-100">
+                        <div class="card-header">4. kolo</div>
+                        <div class="card-body">
+                            <div class="event-date">12. - 13. 09.</div>
+                            <div class="event-month mt-2">September 2026</div>
+                            <h3 class="h4 mt-3">Donovaly</h3>
+                            <p class="mb-0 text-muted">Jesenné dvojdňové preteky v Riders Park Donovaly.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="card event-card h-100">
+                        <div class="card-header">5. kolo</div>
+                        <div class="card-body">
+                            <div class="event-date">10. - 11. 10.</div>
+                            <div class="event-month mt-2">Október 2026</div>
+                            <h3 class="h4 mt-3">Bojnice</h3>
+                            <p class="mb-0 text-muted">Finále série SPEN 2026.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="row g-4">
+            <div class="col-lg-7">
+                <div class="card event-card h-100">
+                    <div class="card-header">Tabuľkový prehľad</div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-striped mb-0 align-middle">
+                                <thead>
+                                <tr>
+                                    <th>Kolo</th>
+                                    <th>Dátum</th>
+                                    <th>Lokalita</th>
+                                    <th>Poznámka</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>09. - 10. 05. 2026</td>
+                                    <td>Mokrá Lúka</td>
+                                    <td>Otvorenie sezóny</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>30. 05. 2026</td>
+                                    <td>Kálnica</td>
+                                    <td>Bikefest</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>19. - 20. 06. 2026</td>
+                                    <td>Partizánske</td>
+                                    <td>Majstrovstvá SR</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>12. - 13. 09. 2026</td>
+                                    <td>Donovaly</td>
+                                    <td>Riders Park</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>10. - 11. 10. 2026</td>
+                                    <td>Bojnice</td>
+                                    <td>Finále</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="card event-card h-100">
+                    <div class="card-header">Poznámky</div>
+                    <div class="card-body">
+                        <p>
+                            Stránka preberá termíny a lokality priamo z oficiálnej pozvánky pre sezónu 2026.
+                        </p>
+                        <p>
+                            Na plagáte sú navyše zvýraznené partnerské značky, generálny partner Kenny a organizátor
+                            Hornonitrianske stopy, o.z.
+                        </p>
+                        <p class="mb-0">
+                            Keď budú dostupné propozície alebo samostatné reporty z jednotlivých kôl, táto stránka sa dá rozšíriť o odkazy na podstránky.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script src="assets/bootstrap5.2.1.bundle.js"></script>
+</body>
+</html>
