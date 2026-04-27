@@ -33,3 +33,4 @@ target
 # bin
 bin/
 
+.DS_Store
