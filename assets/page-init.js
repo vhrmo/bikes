@@ -127,6 +127,19 @@ document.addEventListener('DOMContentLoaded', function () {
         expandHashTarget(window.location.hash);
     }
 
+    function parseRaceEndDate(dateText, year) {
+        var numbers = dateText.match(/\d{1,2}/g);
+        if (!numbers || numbers.length < 2) {
+            return null;
+        }
+        var month = parseInt(numbers[numbers.length - 1], 10);
+        var day = parseInt(numbers[numbers.length - 2], 10);
+        if (isNaN(month) || isNaN(day)) {
+            return null;
+        }
+        return new Date(year, month - 1, day, 23, 59, 59);
+    }
+
     document.querySelectorAll('.race-table tbody tr').forEach(function (row) {
         var resultCell = row.querySelector('td:last-child');
         if (!resultCell) {
@@ -137,8 +150,15 @@ document.addEventListener('DOMContentLoaded', function () {
         resultCell.classList.add('result-cell');
 
         if (!text) {
-            resultCell.classList.add('status-future');
-            resultCell.innerHTML = '<span class="status-pill">Plánované</span>';
+            var yearSection = row.closest('[id^="year-"]');
+            var year = yearSection ? parseInt(yearSection.id.replace('year-', ''), 10) : NaN;
+            var dateCell = row.querySelector('td:first-child');
+            var endDate = !isNaN(year) && dateCell ? parseRaceEndDate(dateCell.textContent.trim(), year) : null;
+
+            if (!endDate || endDate >= new Date()) {
+                resultCell.classList.add('status-future');
+                resultCell.innerHTML = '<span class="status-pill">Plánované</span>';
+            }
             return;
         }
 
