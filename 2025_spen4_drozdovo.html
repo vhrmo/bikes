@@ -5,8 +5,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="referrer" content="no-referrer"/>
-    <link rel='stylesheet' href='assets/unitegallery/css/unite-gallery.css' type='text/css'/>
+    <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
     <link rel='stylesheet' href='assets/site.css' type='text/css'/>
+    <style>
+        /* PhotoSwipe masonry gallery (matches variant1-hero-dark) */
+        #gallery.gallery {
+            display: block;
+            columns: 4;
+            column-gap: 12px;
+        }
+        #gallery.gallery img {
+            width: 100%;
+            margin-bottom: 12px;
+            display: block;
+            border-radius: 12px;
+            filter: saturate(1.05);
+            cursor: zoom-in;
+        }
+        @media (max-width: 900px) {
+            #gallery.gallery { columns: 2; }
+        }
+        #results-gallery img,
+        #map-gallery img { cursor: zoom-in; }
+    </style>
 </head>
 <body class="race-hero">
 <header class="hero">
@@ -82,12 +103,12 @@
       <div class="card">
         <h3>Odkazy</h3>
         <div class="linklist">
+          <a href="https://www.biker.sk/166040/kenny-slovensky-pohar-v-endure-pokracuje-4-kolom-v-bikeparku-drozdovo-uz-24-augusta/" target="_blank" rel="noopener">Pozvánka na biker.sk ↗</a>
           <a href="data/2025/SPEN4_Drozdovo/20250824_drozdovo_spen1.pdf" target="_blank" rel="noopener">Kompletné výsledky — Race (PDF) ↗</a>
           <a href="data/2025/SPEN4_Drozdovo/20250824_drozdovo_challenge.pdf" target="_blank" rel="noopener">Kompletné výsledky — Hobby (PDF) ↗</a>
-          <a href="https://www.biker.sk/166040/kenny-slovensky-pohar-v-endure-pokracuje-4-kolom-v-bikeparku-drozdovo-uz-24-augusta/" target="_blank" rel="noopener">Pozvánka na biker.sk ↗</a>
         </div>
       </div>
-      <div class="card">
+      <div class="card" id="map-gallery">
         <h3>Mapa trate</h3>
         <img src="data/2025/SPEN4_Drozdovo/mapa-Drozdovo.jpg" alt="Mapa Drozdovo">
       </div>
@@ -187,8 +208,9 @@
 <section class="wrap">
   <div class="eyebrow">Výsledkové listiny</div>
   <h2>Hobby Challenge 40+</h2>
-  <a class="result-shot-link" href="#lb-vysledky"><img class="result-shot" src="data/2025/SPEN4_Drozdovo/vysledky.png" alt="Výsledková listina Hobby Challenge 40+"></a>
-  <a class="lightbox" id="lb-vysledky" href="#!"><img src="data/2025/SPEN4_Drozdovo/vysledky.png" alt="Výsledková listina Hobby Challenge 40+"></a>
+  <div id="results-gallery">
+    <img class="result-shot" src="data/2025/SPEN4_Drozdovo/vysledky.png" alt="Výsledková listina Hobby Challenge 40+">
+  </div>
 </section>
 
 <section class="wrap">
@@ -202,9 +224,27 @@
 
 <footer class="race-footer">SPEN4/HES3 Drozdovo 2025</footer>
 
-<script type='text/javascript' src='assets/jquery-3.6.1.js'></script>
-<script type='text/javascript' src='assets/unitegallery/js/unitegallery.min.js'></script>
-<script type='text/javascript' src='assets/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
-<script type="text/javascript" src="assets/page-init.js"></script>
+<script type="module">
+    import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
+
+    const pswpModule = () => import('./assets/photoswipe/photoswipe.esm.min.js');
+
+    function initGallery(selector) {
+        const lightbox = new PhotoSwipeLightbox({ gallery: selector, children: 'img', pswpModule });
+        lightbox.addFilter('domItemData', (itemData, element) => {
+            itemData.src = element.currentSrc || element.src;
+            itemData.width = element.naturalWidth || 1600;
+            itemData.height = element.naturalHeight || 1067;
+            itemData.msrc = element.currentSrc || element.src;
+            itemData.element = element;
+            return itemData;
+        });
+        lightbox.init();
+    }
+
+    initGallery('#gallery');
+    initGallery('#results-gallery');
+    initGallery('#map-gallery');
+</script>
 </body>
 </html>
