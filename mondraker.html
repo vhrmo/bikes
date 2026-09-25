@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="sk" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>New bike day</title>
+    <title>Mondraker Superfoxy R — New bike day</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/materialize1.0.0.css" rel="stylesheet">
-    <link rel='stylesheet' href='assets/unitegallery/css/unite-gallery.css' type='text/css'/>
+    <meta name="referrer" content="no-referrer"/>
+    <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
     <link rel='stylesheet' href='assets/site.css' type='text/css'/>
+    <style>
+        body.race-hero { --hero-pos: 50% 45%; }
+        .race-hero .spec { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; overflow-x: auto; }
+        .race-hero .spec pre { margin: 0; white-space: pre; font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 13px; line-height: 1.5; color: #d3d9e4; }
+    </style>
 </head>
-<body>
-<header>
-    <nav class="_navbar">
-        <a href="#" class="brand-logo center">Mondraker Superfoxy R</a>
-    </nav>
+<body class="race-hero">
+<header class="hero">
+  <img class="hero-bg" src="img/Mondraker_promo_img.jpg" alt="">
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="kicker"><span class="dot"></span>New bike day</span>
+      <h1>Mondraker<br>Superfoxy R</h1>
+      <div class="meta">SuperFoxy 29 Carbon · 170 / 160 mm · Zero Suspension System</div>
+      <div class="badges">
+        <span class="badge series">Enduro</span>
+        <span class="badge">170 / 160 mm</span>
+        <span class="badge">16,6 kg</span>
+      </div>
+    </div>
+  </div>
 </header>
 
 <main>
-    <div class="valign-wrapper">
-    </div>
 
-
-    <div class="container valign-wrapper">
-    <div class="row">
-        <img width="500px" class="materialboxed responsive-img" src="img/Mondraker_promo_img.jpg" alt="Mondraker Superfoxy R">
-    </div>
-    </div>
-
-    <div class="container valign-wrapper">
-        <div class="row">
-            <h4 class="center-align">Specs</h4>
-            <div class="divider"></div>
-            <blockquote>
+<section class="wrap report-narrative">
+  <div class="eyebrow">Špecifikácia</div>
+  <h2>Specs</h2>
+  <div class="spec">
             <pre>
 Frame:              SuperFoxy 29 Stealth Air full Carbon, Zero Suspension System
 Travel:             170 mm / 160 mm
@@ -61,19 +66,13 @@ Rims:               e*thirteen LG1 Enduro, IW30 Hookless, 6069 Welded Aluminum, 
 
 Derailleur hanger:  Mondraker M071
 Weight:             16.6 kg</pre>
-            </blockquote>
-        </div>
-    </div>
+  </div>
+</section>
 
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <div class="divider"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <div id="gallery1" class="gallery">
+<section class="wrap">
+  <div class="eyebrow">Galéria</div>
+  <h2>Fotky</h2>
+  <div id="gallery" class="gallery">
                     <img src="https://lh3.googleusercontent.com/pw/AP1GczNvnNuUvl7uuNlM4FZTNRmhERs0z0rtZIVu2IVGw7OQqxETUo9SyHJX-ZR8_YudrHyaOkYlOY3yuw7HoyIZLaNFsjxZLYy_wziNoGNBNQsQ1z5kmie2=w1280"
                          alt="Mondraker" referrerpolicy="no-referrer">
                     <img src="https://lh3.googleusercontent.com/pw/AP1GczNFvUlTCOmjG8QnwAncXKpw9T-p4jZWHyEJhaS2txTDdTodzZy_JQJGt0z8nIQfo_TasbEWlCq7GO_lHFywioaCa57rj7gbEOBzYs-n5tnscx2J1PrV=w1280"
@@ -101,21 +100,31 @@ Weight:             16.6 kg</pre>
                          alt="Mondraker" referrerpolicy="no-referrer">
 
                 </div>
-            </div>
-        </div>
-    </div>
+</section>
 
 </main>
 
-<footer class="page-footer">
-</footer>
+<footer class="race-footer">Mondraker Superfoxy R</footer>
 
-<script src="assets/materialize1.0.0.js"></script>
-<!--<script type='text/javascript' src='assets/unitegallery/js/jquery-11.0.min.js'></script>-->
-<script type='text/javascript' src='assets/jquery-3.6.1.js'></script>
-<script type='text/javascript' src='assets/unitegallery/js/unitegallery.min.js'></script>
-<script type='text/javascript' src='assets/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
-<script type="text/javascript" src="assets/page-init.js"></script>
+<script type="module">
+    import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
 
+    const pswpModule = () => import('./assets/photoswipe/photoswipe.esm.min.js');
+
+    function initGallery(selector) {
+        const lightbox = new PhotoSwipeLightbox({ gallery: selector, children: 'img', pswpModule });
+        lightbox.addFilter('domItemData', (itemData, element) => {
+            itemData.src = element.currentSrc || element.src;
+            itemData.width = element.naturalWidth || 1600;
+            itemData.height = element.naturalHeight || 1067;
+            itemData.msrc = element.currentSrc || element.src;
+            itemData.element = element;
+            return itemData;
+        });
+        lightbox.init();
+    }
+
+    initGallery('#gallery');
+</script>
 </body>
 </html>

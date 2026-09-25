@@ -347,8 +347,11 @@ body.race-hero {
 .race-hero .rs-table tr:last-child td { border-bottom: 0; }
 .race-hero .rs-table td.tag { color: var(--accent2); font-weight: 800; }
 .race-hero .rs-table td.t { text-align: right; font-weight: 700; }
+.race-hero .rs-table td.t.dnf { color: var(--muted); font-weight: 600;  text-align: center; }
 .race-hero .rs-table td.note { text-align: right; color: var(--muted); font-weight: 600; }
-.race-hero .rs-table td.pos { text-align: right; color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; }
+.race-hero .rs-table td.pos { text-align: left; color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; width: 1%; white-space: nowrap; padding-left: 8px; }
+/* Simple result tables (no year columns): place/note reads as a continuation right after the time */
+.race-hero .rs-table:not(:has(thead)) td.note { text-align: left; width: 1%; white-space: nowrap; padding-left: 8px; }
 /* Columnar rs-table: multiple year/diff columns */
 .race-hero .rs-table thead th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); text-align: right; padding: 0 0 8px; border-bottom: 1px solid var(--line); }
 .race-hero .rs-table thead th:first-child { text-align: left; }
@@ -367,9 +370,11 @@ body.race-hero {
 .race-hero #gallery.gallery { display: block; columns: 4; column-gap: 12px; }
 .race-hero #gallery.gallery img { width: 100%; margin-bottom: 12px; display: block; border-radius: 12px; filter: saturate(1.05); cursor: zoom-in; }
 .race-hero #results-gallery img, .race-hero #map-gallery img { cursor: zoom-in; }
+.race-hero #map-gallery img + img { margin-top: 12px; }
 @media (max-width: 900px) { .race-hero #gallery.gallery { columns: 2; } }
 
 /* Result screenshot */
+.race-hero #results-gallery { display: flex; flex-direction: column; gap: 16px; }
 .race-hero .result-shot { width: 100%; border-radius: 12px; border: 1px solid var(--line); display: block; }
 .race-hero .result-shot-link { display: block; cursor: zoom-in; }
 .race-hero .lightbox { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(0, 0, 0, 0.92); cursor: zoom-out; }
@@ -377,8 +382,11 @@ body.race-hero {
 .race-hero .lightbox img { max-width: 96vw; max-height: 92vh; border-radius: 8px; }
 
 /* Video */
-.race-hero .video-container { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
+.race-hero .video-container { position: relative; width: min(100%, calc(90vh * 16 / 9)); margin: 0 auto; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
 .race-hero .video-container iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+.race-hero .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; justify-items: center; align-items: start; }
+.race-hero .video-grid video { width: auto; max-width: 100%; height: auto; max-height: 90vh; border-radius: 16px; border: 1px solid var(--line); background: #000; display: block; }
+@media (max-width: 700px) { .race-hero .video-grid { grid-template-columns: 1fr; } }
 
 /* Footer */
 .race-hero footer.race-footer { height: auto; margin-top: 0; border-top: 1px solid var(--line); padding: 30px 0; color: var(--muted); font-size: 14px; text-align: center; }

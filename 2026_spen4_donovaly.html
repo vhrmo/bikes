@@ -1,55 +1,84 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="sk" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>SPEN4 Donovaly 2026</title>
+    <title>SPEN4/HES3 Donovaly 2026</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/materialize1.0.0.css" rel="stylesheet">
-    <link href="assets/site.css" rel="stylesheet">
+    <meta name="referrer" content="no-referrer"/>
+    <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
+    <link rel='stylesheet' href='assets/site.css' type='text/css'/>
+    <style>
+        body.race-hero { --hero-pos: 50% 50%; }
+        @media (max-width: 520px) { body.race-hero { --hero-pos: 50% 50%; } }
+    </style>
 </head>
-<body class="race-report">
-<header>
-    <nav class="_navbar" aria-label="Hlavná navigácia">
-        <a href="index.html#year-2026" class="brand-logo center">SPEN4 Donovaly 2026</a>
-    </nav>
+<body class="race-hero">
+<header class="hero">
+  <img class="hero-bg" src="data/2026/SPEN4_Donovaly/doplniť-hero.jpg" alt="">
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="kicker"><span class="dot"></span>Slovenský pohár v endure · 4. kolo</span>
+      <h1>Donovaly<br>2026</h1>
+      <div class="meta">Bikepark Donovaly · 13. septembra 2026 · Enduro Challenge</div>
+      <div class="badges">
+        <span class="badge series">SPEN4</span>
+        <span class="badge series">HES3</span>
+        <span class="badge">Muži 40+</span>
+        <span class="badge">6 rýchlostných skúšok</span>
+      </div>
+    </div>
+  </div>
 </header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat big"><div class="n">16:49.56</div><div class="range">11:02.40 <small>–</small> 20:56.70</div></div>
+    <div class="stat"><div class="n">12.<small>/14</small></div><div class="l">Muži 40+</div></div>
+    <div class="stat"><div class="n">72.<small>/87</small></div><div class="l">Celkovo Challenge</div></div>
+    <div class="stat"><div class="n">6</div><div class="l">Rýchlostných skúšok</div></div>
+  </div>
+</div>
+
 <main>
-    <div class="valign-wrapper">
-        <div class="row">
-            <h4 class="center-align">Výsledok</h4>
-            <div class="divider"></div>
-            <blockquote>
-                <pre>Čas:     16:49.56
-
-Časy:    11:02.40 - 20:56.70
-
-12. miesto zo 14 v kategórii Muži 40+
-72. miesto z 87 celkovo Enduro Challenge
-
-RS1:     02:26.79
-RS2:     04:40.40
-RS3:     02:29.45
-RS4:     01:53.10
-RS5:     01:02.90
-RS6:     04:16.89</pre>
-            </blockquote>
-        </div>
+<section class="wrap report-narrative">
+  <div class="grid2">
+    <div class="prose">
+      <p><em>Doplniť: priebeh tréningu a pretekov, postrehy z jednotlivých RS a záverečné zhodnotenie.</em></p>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m12 l12 xl10 offset-xl1">
-                <div class="divider"></div>
-                <p><span class="date">13.9.2026</span> - Štvrté kolo Slovenského pohára v endure 2026 na Donovaloch. SPEN / HES.</p>
-                <p><em>Koncept reportu: doplniť priebeh tréningu a pretekov, postrehy z jednotlivých RS a záverečné zhodnotenie.</em></p>
-                <p>
-                    Komplet výsledky: <a href="data/2026/SPEN4_Donovaly/20260913_donovaly_spen.pdf">race</a>,
-                    <a href="data/2026/SPEN4_Donovaly/20260913_donovaly_chalenge.pdf">hobby</a>.
-                </p>
-            </div>
+    <aside>
+      <div class="card">
+        <h3>Časy na RS</h3>
+        <table class="rs-table">
+          <tr><td class="tag">RS1</td><td class="t">2:26.79</td></tr>
+          <tr><td class="tag">RS2</td><td class="t">4:40.40</td></tr>
+          <tr><td class="tag">RS3</td><td class="t">2:29.45</td></tr>
+          <tr><td class="tag">RS4</td><td class="t">1:53.10</td></tr>
+          <tr><td class="tag">RS5</td><td class="t">1:02.90</td></tr>
+          <tr><td class="tag">RS6</td><td class="t">4:16.89</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Odkazy</h3>
+        <div class="linklist">
+          <a href="data/2026/SPEN4_Donovaly/20260913_donovaly_spen.pdf" target="_blank" rel="noopener">Kompletné výsledky — Race (PDF) ↗</a>
+          <a href="data/2026/SPEN4_Donovaly/20260913_donovaly_chalenge.pdf" target="_blank" rel="noopener">Kompletné výsledky — Hobby (PDF) ↗</a>
         </div>
-    </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">Galéria</div>
+  <h2>Fotky z preteku</h2>
+  <div id="gallery" class="gallery">
+    <!-- Doplniť fotky -->
+  </div>
+</section>
 </main>
-<footer class="page-footer"></footer>
+
+<script src="assets/photoswipe/photoswipe.esm.js" type="module"></script>
+<script src="assets/photoswipe/photoswipe-lightbox.esm.js" type="module"></script>
+<script src="assets/page-init-esm.js" type="module"></script>
 </body>
 </html>

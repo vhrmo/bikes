@@ -1,53 +1,81 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="sk" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>SPEN1 Mokrá Lúka 2026</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/materialize1.0.0.css" rel="stylesheet">
-    <link href="assets/site.css" rel="stylesheet">
+    <meta name="referrer" content="no-referrer"/>
+    <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
+    <link rel='stylesheet' href='assets/site.css' type='text/css'/>
+    <style>
+        body.race-hero { --hero-pos: 50% 50%; }
+        @media (max-width: 520px) { body.race-hero { --hero-pos: 50% 50%; } }
+    </style>
 </head>
-<body class="race-report">
-<header>
-    <nav class="_navbar" aria-label="Hlavná navigácia">
-        <a href="index.html#year-2026" class="brand-logo center">SPEN1 Mokrá Lúka 2026</a>
-    </nav>
+<body class="race-hero">
+<header class="hero">
+  <img class="hero-bg" src="data/2026/SPEN1_Mokra_Luka/doplniť-hero.jpg" alt="">
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="kicker"><span class="dot"></span>Slovenský pohár v endure · 1. kolo</span>
+      <h1>Mokrá Lúka<br>2026</h1>
+      <div class="meta">Revúca · 10. mája 2026 · Enduro Challenge</div>
+      <div class="badges">
+        <span class="badge series">SPEN1</span>
+        <span class="badge">Muži 40+</span>
+        <span class="badge">4 rýchlostné skúšky</span>
+      </div>
+    </div>
+  </div>
 </header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat big"><div class="n">18:13.4</div><div class="range">12:26.2 <small>–</small> 19:27.4</div></div>
+    <div class="stat"><div class="n">10.<small>/10</small></div><div class="l">Muži 40+</div></div>
+    <div class="stat"><div class="n">52.<small>/56</small></div><div class="l">Celkovo Challenge</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">Rýchlostné skúšky</div></div>
+  </div>
+</div>
+
 <main>
-    <div class="valign-wrapper">
-        <div class="row">
-            <h4 class="center-align">Výsledok</h4>
-            <div class="divider"></div>
-            <blockquote>
-                <pre>Čas:     18:13.4
-
-Časy:    12:26.2 - 19:27.4
-
-10. miesto z 10 v kategórii Muži 40+
-52. miesto z 56 celkovo Enduro Challenge
-
-RS2:     08:01.4
-RS3:     05:18.3
-RS4:     02:13.7
-RS5:     02:39.9</pre>
-            </blockquote>
-        </div>
+<section class="wrap report-narrative">
+  <div class="grid2">
+    <div class="prose">
+      <p><em>Doplniť: priebeh tréningu a pretekov, postrehy z jednotlivých RS a záverečné zhodnotenie.</em></p>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m12 l12 xl10 offset-xl1">
-                <div class="divider"></div>
-                <p><span class="date">10.5.2026</span> - Úvodné kolo Slovenského pohára v endure 2026 v Mokrej Lúke. SPEN / HES.</p>
-                <p><em>Koncept reportu: doplniť priebeh tréningu a pretekov, postrehy z jednotlivých RS a záverečné zhodnotenie.</em></p>
-                <p>
-                    Komplet výsledky: <a href="data/2026/SPEN1_Mokra_Luka/20260510_revuca_spen.pdf">race</a>,
-                    <a href="data/2026/SPEN1_Mokra_Luka/20260510_revuca_hes.pdf">hobby</a>.
-                </p>
-            </div>
+    <aside>
+      <div class="card">
+        <h3>Časy na RS</h3>
+        <table class="rs-table">
+          <tr><td class="tag">RS2</td><td class="t">8:01.4</td></tr>
+          <tr><td class="tag">RS3</td><td class="t">5:18.3</td></tr>
+          <tr><td class="tag">RS4</td><td class="t">2:13.7</td></tr>
+          <tr><td class="tag">RS5</td><td class="t">2:39.9</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Odkazy</h3>
+        <div class="linklist">
+          <a href="data/2026/SPEN1_Mokra_Luka/20260510_revuca_spen.pdf" target="_blank" rel="noopener">Kompletné výsledky — Race (PDF) ↗</a>
+          <a href="data/2026/SPEN1_Mokra_Luka/20260510_revuca_hes.pdf" target="_blank" rel="noopener">Kompletné výsledky — Hobby (PDF) ↗</a>
         </div>
-    </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">Galéria</div>
+  <h2>Fotky z preteku</h2>
+  <div id="gallery" class="gallery">
+    <!-- Doplniť fotky -->
+  </div>
+</section>
 </main>
-<footer class="page-footer"></footer>
+
+<script src="assets/photoswipe/photoswipe.esm.js" type="module"></script>
+<script src="assets/photoswipe/photoswipe-lightbox.esm.js" type="module"></script>
+<script src="assets/page-init-esm.js" type="module"></script>
 </body>
 </html>
