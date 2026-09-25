@@ -229,11 +229,6 @@ span.badge.spdh {
     letter-spacing: 0.02em;
 }
 
-.date {
-    font-size: 90%;
-    color: #6c757d;
-}
-
 .highlight {
     font-weight: bold;
     font-family: "Courier";
@@ -352,6 +347,8 @@ body.race-hero {
 .race-hero .rs-table tr:last-child td { border-bottom: 0; }
 .race-hero .rs-table td.tag { color: var(--accent2); font-weight: 800; }
 .race-hero .rs-table td.t { text-align: right; font-weight: 700; }
+.race-hero .rs-table td.note { text-align: right; color: var(--muted); font-weight: 600; }
+.race-hero .rs-table td.pos { text-align: right; color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; }
 /* Columnar rs-table: multiple year/diff columns */
 .race-hero .rs-table thead th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); text-align: right; padding: 0 0 8px; border-bottom: 1px solid var(--line); }
 .race-hero .rs-table thead th:first-child { text-align: left; }

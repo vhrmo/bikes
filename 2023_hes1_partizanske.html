@@ -1,49 +1,48 @@
 <!DOCTYPE html>
-<html lang="sk" xmlns="http://www.w3.org/1999/html">
+<html lang="sk">
 <head>
     <title>2023 HES1 Partizánske</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/materialize1.0.0.css" rel="stylesheet">
-    <link rel='stylesheet' href='assets/unitegallery/css/unite-gallery.css' type='text/css'/>
+    <meta name="referrer" content="no-referrer"/>
+    <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
     <link rel='stylesheet' href='assets/site.css' type='text/css'/>
+    <style>
+        body.race-hero { --hero-pos: 50% 50%; }
+        @media (max-width: 520px) { body.race-hero { --hero-pos: 50% 50%; } }
+    </style>
 </head>
-<body>
-<header>
-    <nav class="_navbar">
-        <a href="#" class="brand-logo center">2023 HES1 Partizánske</a>
-    </nav>
+<body class="race-hero">
+<header class="hero">
+  <img class="hero-bg" src="data/2023/HES1_Partizanske/img/hes1_05.jpeg" alt="">
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="kicker"><span class="dot"></span>Hornonitrianska enduro séria · 1. kolo</span>
+      <h1>Partizánske<br>2023</h1>
+      <div class="meta">Partizánske · 14. mája 2023 · HES</div>
+      <div class="badges">
+        <span class="badge series">HES1</span>
+        <span class="badge">Muži</span>
+        <span class="badge">4 rýchlostné skúšky</span>
+      </div>
+    </div>
+  </div>
 </header>
 
+<div class="wrap">
+  <div class="stats">
+    <div class="stat big"><div class="n">19:25.0</div><div class="range">13:40.9 <small>–</small> 38:39.2</div></div>
+    <div class="stat"><div class="n">45.<small>/50</small></div><div class="l">Muži</div></div>
+    <div class="stat"><div class="n">90.<small>/101</small></div><div class="l">Celkovo</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">Rýchlostné skúšky</div></div>
+  </div>
+</div>
+
 <main>
-    <div class="valign-wrapper">
-        <div class="row">
-            <h4 class="center-align">Výsledok</h4>
-            <div class="divider"></div>
-            <p></p>
-            <blockquote>
-            <pre>
-   Čas:       19:25.0
-
-   Časy:      13:40.9 - 38:39.2
-
-   45. miesto z 50 v kategórii Muži
-   90. miesto zo 101 celkovo
-
-   RS1:  05:37.4  (49 z 53)   (2022 RS1: 05:30.9)
-   RS2:  05:04.9  (48 z 53)   (2022 RS3: 04:55.7)
-   RS3:  05:29.1  (47 z 51)   (nová)
-   RS4:  03:13.5  (45 z 51)   (2022 RS2: 02:53.9)
-</pre>
-            </blockquote>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col m12 l12 xl10 offset-xl1">
-                <div class="divider"></div>
-                <p><span class="date">14.5.2023</span> - Príjemný víkend s počasím ideálnym pre preteky.
+<section class="wrap report-narrative">
+  <div class="grid2">
+    <div class="prose">
+                <p>Príjemný víkend s počasím ideálnym pre preteky.
                     V sobotu tréning bez dažďa. V nedeľu mrholenie, ktoré to trochu okorenilo, ale podmienky zostali
                     stále výborné na jazdenie.
                 </p>
@@ -59,27 +58,52 @@
                 </p>
                 <p>
                     V porovnaní s minulým rokom boli časy pomalšie (opatrnejšia jazda s clipmi?):
-                        <li> RS1:  +7 sec</li>
-                        <li> RS2:  +9 sec</li>
-                        <li> RS4: +20 sec</li>
                 </p>
-                <p>
-                    <a href="data/2023/HES1_Partizanske/2023_HES1.pdf">Komplet výsledky</a> a reportáž na
-                    <a href="https://www.mtbiker.sk/clanky/127030/reportaz-vyzivny-uvod-hornonitrianskej-enduro-serie-na-batovych-trailoch.html">MTBIKER.sk</a>.
-                </p>
-            </div>
-        </div>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <div class="divider"></div>
-            </div>
+    <aside>
+      <div class="card">
+        <h3>Časy na RS</h3>
+        <table class="rs-table cols">
+          <thead>
+            <tr><th></th><th>2023</th><th>2022</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="tag">RS1</td><td class="t">5:37.4</td><td class="prev">5:30.9</td></tr>
+            <tr><td class="tag">RS2</td><td class="t">5:04.9</td><td class="prev">4:55.7</td></tr>
+            <tr><td class="tag">RS3</td><td class="t">5:29.1</td><td class="prev">—</td></tr>
+            <tr><td class="tag">RS4</td><td class="t">3:13.5</td><td class="prev">2:53.9</td></tr>
+          </tbody>
+        </table>
+        <div class="rs-note">RS2 = RS3 2022, RS4 = RS2 2022, RS3 nová.</div>
+      </div>
+      <div class="card">
+        <h3>Rozdiel oproti roku 2022</h3>
+        <table class="rs-table cols">
+          <thead>
+            <tr><th></th><th>vs 2022</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="tag">RS1</td><td class="t slower">+7 s</td></tr>
+            <tr><td class="tag">RS2</td><td class="t slower">+9 s</td></tr>
+            <tr><td class="tag">RS4</td><td class="t slower">+20 s</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Odkazy</h3>
+        <div class="linklist">
+          <a href="https://www.mtbiker.sk/clanky/127030/reportaz-vyzivny-uvod-hornonitrianskej-enduro-serie-na-batovych-trailoch.html" target="_blank" rel="noopener">Reportáž na mtbiker.sk ↗</a>
+          <a href="data/2023/HES1_Partizanske/2023_HES1.pdf" target="_blank" rel="noopener">Kompletné výsledky (PDF) ↗</a>
         </div>
-        <div class="row">
-            <div class="col s12">
-                <div id="gallery1" class="gallery">
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">Galéria</div>
+  <h2>Fotky z preteku</h2>
+  <div id="gallery" class="gallery">
                     <img src="data/2023/hes_2023_pozvanka_large.jpeg" alt="HES1">
                     <img src="data/2023/HES1_Partizanske/img/hes1_01.jpg" alt="Partizánske">
                     <img src="data/2023/HES1_Partizanske/img/hes1_02.jpg" alt="Partizánske">
@@ -125,25 +149,30 @@
 
 
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <div class="divider"></div>
-            </div>
-        </div>
-    </div>
+</section>
 </main>
 
-<footer class="page-footer">
-</footer>
+<footer class="race-footer">2023 HES1 Partizánske</footer>
 
-<script src="assets/materialize1.0.0.js"></script>
-<!--<script type='text/javascript' src='assets/unitegallery/js/jquery-11.0.min.js'></script>-->
-<script type='text/javascript' src='assets/jquery-3.6.1.js'></script>
-<script type='text/javascript' src='assets/unitegallery/js/unitegallery.min.js'></script>
-<script type='text/javascript' src='assets/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
-<script type="text/javascript" src="assets/page-init.js"></script>
+<script type="module">
+    import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
 
+    const pswpModule = () => import('./assets/photoswipe/photoswipe.esm.min.js');
+
+    function initGallery(selector) {
+        const lightbox = new PhotoSwipeLightbox({ gallery: selector, children: 'img', pswpModule });
+        lightbox.addFilter('domItemData', (itemData, element) => {
+            itemData.src = element.currentSrc || element.src;
+            itemData.width = element.naturalWidth || 1600;
+            itemData.height = element.naturalHeight || 1067;
+            itemData.msrc = element.currentSrc || element.src;
+            itemData.element = element;
+            return itemData;
+        });
+        lightbox.init();
+    }
+
+    initGallery('#gallery');
+</script>
 </body>
 </html>

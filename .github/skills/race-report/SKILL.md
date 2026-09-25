@@ -172,6 +172,11 @@ Page skeleton, in order:
    - `.prose` on the left with the Slovak first-person narrative. Mark stage
      notes with `<span class="highlight">RS1</span>` (or `.rs`); both render as
      accent text. Do not repeat the total time or a `Komplet výsledky` line here.
+     The narrative's leading date usually equals the report date (already shown
+     in the hero `.meta`) and is redundant — omit it. Keep an explicit date only
+     when the narrative distinguishes a genuinely different day (e.g. a training
+     day on another date); wrap any kept date in `<span class="highlight">`, not
+     the obsolete `date` class (the `.date` CSS has been removed).
    - `aside` on the right with `.card` blocks: a `Časy na RS` `table.rs-table`
      (`td.tag` + `td.t`), an `Odkazy` `.linklist`, and a `Mapa trate` `.card`
      with the map image. In `Odkazy`, order the links report/invitation first
@@ -182,9 +187,18 @@ Page skeleton, in order:
      compress them into one unreadable cell: render them as their own columns in
      a `table.rs-table.cols`. Give the times table a `thead` of year labels and
      each row a `td.tag`, a bold current-year `td.t`, and muted `td.prev` cells
-     for earlier years (`—` when a split is missing). Show differences to each
-     prior year in separate `vs YEAR` columns using `td.t.faster` (green, quicker)
-     and `td.t.slower` (orange, slower); keep any lone stray datapoint in a small
+     for earlier years (`—` when a split is missing). Render status placeholders
+     (`len race`, `vynechané`, `DNF`) as muted `td.note` rather than bold `td.t`,
+     and put any per-RS final position in its own muted `td.pos` column so ranks
+     align down the table (never inline in the time cell). Put the year-over-year
+     DIFFERENCES in their OWN `Rozdiel oproti…` `.card` (separate from the
+     absolute-times card): a `table.rs-table.cols` with a `thead` of `vs YEAR`
+     labels and `td.t.faster` (green, quicker) / `td.t.slower` (orange, slower)
+     cells. When converting a legacy report, MOVE any comparison that lived in
+     the narrative — a monospace `<pre>`/`<blockquote>` grid or an inline `<li>`
+     list of `+/- sec` values — out of the `.prose` into that card, keeping only
+     its introductory sentence in the prose; never leave a monospace comparison
+     block in the narrative. Keep any lone stray datapoint in a small
      `.rs-note` under the table. Preserve published precision and do not reduce
      available historical information when restyling.
 6. Media sections, each `section.wrap` with an `.eyebrow` + `h2`, only when real
@@ -227,8 +241,10 @@ layout retained on older pages — do not restyle those pages globally.
    splits. A draft may explicitly mark missing fields `doplniť`; omit the
    finish block for a known non-start or unfinished event.
 5. Put the narrative in `.container > .row > .col.s12.m12.l12.xl10.offset-xl1`.
-   Start with a `.divider` and a paragraph containing
-   `<span class="date">D.M.YYYY</span> - ...` for race day.
+   Start with a `.divider` and the narrative. Do not prefix a redundant race
+   date (it duplicates the report header); include a date only to distinguish a
+   genuinely different day, wrapped in `<span class="highlight">` (the obsolete
+   `date` class and its CSS have been removed).
 6. Write in Slovak, in the author's direct first-person journal style when
    personal notes exist: expectations and preparation, training, race-day
    experience, notable RS sections, and a short reflection. Use

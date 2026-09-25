@@ -1,70 +1,82 @@
 <!DOCTYPE html>
-<html lang="sk" xmlns="http://www.w3.org/1999/html">
+<html lang="sk">
 <head>
     <title>SPEN2 Košútka 2024</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="referrer" content="no-referrer"/>
-    <link href="assets/materialize1.0.0.css" rel="stylesheet">
-    <link rel='stylesheet' href='assets/unitegallery/css/unite-gallery.css' type='text/css'/>
+    <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
     <link rel='stylesheet' href='assets/site.css' type='text/css'/>
-    <!-- include one of the video skins -->
-    <link href='assets/unitegallery/themes/video/skin-right-no-thumb.css' rel='stylesheet' type='text/css'/>
-    <link href='assets/unitegallery/themes/video/skin-right-thumb.css' rel='stylesheet' type='text/css'/>
-    <link href='assets/unitegallery/themes/video/skin-right-title-only.css' rel='stylesheet' type='text/css'/>
+    <style>
+        body.race-hero { --hero-pos: 50% 50%; }
+        @media (max-width: 520px) { body.race-hero { --hero-pos: 50% 50%; } }
+    </style>
 </head>
-<body>
-<header>
-    <nav class="_navbar">
-        <a href="#" class="brand-logo center">SPEN2 Košútka 2024</a>
-    </nav>
+<body class="race-hero">
+<header class="hero">
+  <img class="hero-bg" src="data/2024/SPEN2_Kosutka/spen2_propozicie1.jpeg" alt="">
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="kicker"><span class="dot"></span>Slovenský pohár v endure · 2. kolo</span>
+      <h1>Košútka<br>2024</h1>
+      <div class="meta">Košútka · 7. júla 2024 · Enduro Challenge</div>
+      <div class="badges">
+        <span class="badge series">SPEN2</span>
+        <span class="badge">Vynechané (dovolenka)</span>
+      </div>
+    </div>
+  </div>
 </header>
 
 <main>
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col m12 l12 xl10 offset-xl1">
-                <p><span class="date">7.7.2024</span> Vynechané pre dovolenku.
-                </p>
-            </div>
-        </div>
+<section class="wrap report-narrative">
+  <div class="grid2">
+    <div class="prose">
+      <p><span class="highlight">7.7.2024</span> Vynechané pre dovolenku.</p>
     </div>
+    <aside>
+      <div class="card" id="map-gallery">
+        <h3>Mapa trate</h3>
+        <img src="data/2024/SPEN2_Kosutka/spen2_mapa.jpeg" alt="Mapa Košútka">
+      </div>
+    </aside>
+  </div>
+</section>
 
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <div class="divider"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <div id="gallery" class="gallery">
-                    <img src="data/2024/SPEN2_Kosutka/spen2_mapa.jpeg" alt="SPEN2 Košútka">
+<section class="wrap">
+  <div class="eyebrow">Propozície</div>
+  <h2>Propozície preteku</h2>
+  <div id="gallery" class="gallery">
                     <img src="data/2024/SPEN2_Kosutka/spen2_propozicie1.jpeg" alt="SPEN2 Košútka">
                     <img src="data/2024/SPEN2_Kosutka/spen2_propozicie2.jpeg" alt="SPEN2 Košútka">
                     <img src="data/2024/SPEN2_Kosutka/spen2_propozicie3.jpeg" alt="SPEN2 Košútka">
                     <img src="data/2024/SPEN2_Kosutka/spen2_propozicie4.jpeg" alt="SPEN2 Košútka">
-
-
-                </div>
-            </div>
-        </div>
-
-    </div>
+  </div>
+</section>
 </main>
 
-<footer class="page-footer">
-</footer>
+<footer class="race-footer">SPEN2 Košútka 2024</footer>
 
-<script src="assets/materialize1.0.0.js"></script>
-<!--<script type='text/javascript' src='assets/unitegallery/js/jquery-11.0.min.js'></script>-->
-<script type='text/javascript' src='assets/jquery-3.6.1.js'></script>
-<script type='text/javascript' src='assets/unitegallery/js/unitegallery.min.js'></script>
-<script type='text/javascript' src='assets/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
-<!-- include Unite Gallery Theme Files -->
-<!--<script type='text/javascript' src='assets/unitegallery/themes/video/ug-theme-video.js'></script>-->
-<script type="text/javascript" src="assets/page-init.js"></script>
+<script type="module">
+    import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
+
+    const pswpModule = () => import('./assets/photoswipe/photoswipe.esm.min.js');
+
+    function initGallery(selector) {
+        const lightbox = new PhotoSwipeLightbox({ gallery: selector, children: 'img', pswpModule });
+        lightbox.addFilter('domItemData', (itemData, element) => {
+            itemData.src = element.currentSrc || element.src;
+            itemData.width = element.naturalWidth || 1600;
+            itemData.height = element.naturalHeight || 1067;
+            itemData.msrc = element.currentSrc || element.src;
+            itemData.element = element;
+            return itemData;
+        });
+        lightbox.init();
+    }
+
+    initGallery('#gallery');
+    initGallery('#map-gallery');
+</script>
 </body>
 </html>

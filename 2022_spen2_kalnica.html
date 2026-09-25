@@ -1,49 +1,38 @@
 <!DOCTYPE html>
-<html lang="sk" xmlns="http://www.w3.org/1999/html">
+<html lang="sk">
 <head>
     <title>SPEN Bikefest Kálnica 2022</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="referrer" content="no-referrer"/>
-    <link href="assets/materialize1.0.0.css" rel="stylesheet">
-    <link rel='stylesheet' href='assets/unitegallery/css/unite-gallery.css' type='text/css'/>
+    <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
     <link rel='stylesheet' href='assets/site.css' type='text/css'/>
-    <!-- include one of the video skins -->
-    <link href='assets/unitegallery/themes/video/skin-right-no-thumb.css' rel='stylesheet' type='text/css'/>
-    <link href='assets/unitegallery/themes/video/skin-right-thumb.css' rel='stylesheet' type='text/css'/>
-    <link href='assets/unitegallery/themes/video/skin-right-title-only.css' rel='stylesheet' type='text/css'/>
+    <style>
+        body.race-hero { --hero-pos: 50% 50%; }
+        @media (max-width: 520px) { body.race-hero { --hero-pos: 50% 50%; } }
+    </style>
 </head>
-<body>
-<header>
-    <nav class="_navbar">
-        <a href="#" class="brand-logo center">SPEN Bikefest Kálnica 2022</a>
-    </nav>
+<body class="race-hero">
+<header class="hero">
+  <img class="hero-bg" src="https://lh3.googleusercontent.com/pw/AL9nZEVhNNVeo6W7ehCORmdQGNl73su3GnZpN1ShJ8Zqo9k7wDwiGTAEIIpDrj_4SYemDt0OrkRGf1XJoOEWL-jWoOS0KG-CAlGch8JPdANKKh38LFwCu2SchNHK5n_do3CgieUJi4PQQlFNAlsGTeROtwjQfw=w2740-h1234-no?authuser=0" alt="">
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="kicker"><span class="dot"></span>Slovenský pohár v endure · 2. kolo</span>
+      <h1>Kálnica<br>2022</h1>
+      <div class="meta">Bikefest Kálnica · 4. júna 2022 · Enduro Challenge</div>
+      <div class="badges">
+        <span class="badge series">SPEN2</span>
+        <span class="badge">Nedokončené (broken linkage)</span>
+      </div>
+    </div>
+  </div>
 </header>
 
 <main>
-    <div class="valign-wrapper">
-        <div class="row">
-            <h4 class="center-align">Výsledok</h4>
-            <div class="divider"></div>
-            <p></p>
-            <blockquote>
-            <pre>
-   RS1:       01:29.90	(~14 race, ~4 hobby)
-   RS2:       03:37.85	(~13 race)
-   RS3:       04:13.70  (~13 race, ~4 hobby)
-   RS4:       DNF
-   RS5:       DNF
-   RS6:       DNF
-</pre>
-            </blockquote>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col m12 l12 xl10 offset-xl1">
-                <div class="divider"></div>
-                <p><span class="date">4.6.2022</span> - Nedokončený pretek - odtrhnutý šroub na kyvadle a takisto
+<section class="wrap report-narrative">
+  <div class="grid2">
+    <div class="prose">
+                <p>Nedokončený pretek - odtrhnutý šroub na kyvadle a takisto
                     odtrhnuté
                     radenie po pádoch na RS2 a RS3.
                 </p>
@@ -70,16 +59,6 @@
                 </ul>
                 Hobby ide 5 RS, Race 6 RS, hobby vynecháva RS2.
                 </p>
-                <!--                <div>-->
-                <div id="gallery1" class="gallery">
-                    <img src="data/2022/img/spen2_Kalnica mapa 2022.jpeg" alt="Mapa Bikepark Kálnica">
-                    <img src="data/2022/img/spen2_mapa_preteku.jpeg" alt="Mapa Scott Enduro race">
-                </div>
-                <!--                </div>-->
-                <p class="center">
-                    Mapa Bikepark Kálnica (<a href="https://stvrb.github.io/FreerideBikeparkKalnica/">3D
-                    vizualizácia</a> )
-                </p>
                 <p>
                     V noci z piatka na sobotu sa spustila búrka, ktorá trate povrchom priblížila k tým v Oščadnici -
                     RS2 a RS3 boli samé blato, šmykľavé korene a na konci RS2 ako bonus premočený rock garden.
@@ -91,24 +70,41 @@
                     V nedeľu som si už len užíval víkend v karavane a odskúšal niekoľko test bikov. A top bolo sledovať
                     tých najlepších v súťaži v zjazde na už spomínanej <span class="highlight">Comeback(5)</span>
                 </p>
-                <p>
-                    Komplet výsledky: <a href="data/2022/20220604_bf22_enduro_race.pdf">race</a>, <a
-                    href="data/2022/20220604_bf22_enduro_hobby.pdf">hobby</a> a reportáž na
-                    <a href="https://www.mtbiker.sk/clanky/125715/reportaz-scott-enduro-race-najstarsie-slovenske-enduro-preteky.html">MTBIKER.sk</a>
-                </p>
-            </div>
-        </div>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <div class="divider"></div>
-            </div>
+    <aside>
+      <div class="card">
+        <h3>Časy na RS</h3>
+        <table class="rs-table cols">
+          <tr><td class="tag">RS1</td><td class="t">01:29.90</td><td class="pos">(~14 race, ~4 hobby)</td></tr>
+          <tr><td class="tag">RS2</td><td class="t">03:37.85</td><td class="pos">(~13 race)</td></tr>
+          <tr><td class="tag">RS3</td><td class="t">04:13.70</td><td class="pos">(~13 race, ~4 hobby)</td></tr>
+          <tr><td class="tag">RS4</td><td class="note" colspan="2">DNF</td></tr>
+          <tr><td class="tag">RS5</td><td class="note" colspan="2">DNF</td></tr>
+          <tr><td class="tag">RS6</td><td class="note" colspan="2">DNF</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Odkazy</h3>
+        <div class="linklist">
+          <a href="https://www.mtbiker.sk/clanky/125715/reportaz-scott-enduro-race-najstarsie-slovenske-enduro-preteky.html" target="_blank" rel="noopener">Reportáž na MTBIKER.sk ↗</a>
+          <a href="data/2022/20220604_bf22_enduro_race.pdf" target="_blank" rel="noopener">Kompletné výsledky — Race (PDF) ↗</a>
+          <a href="data/2022/20220604_bf22_enduro_hobby.pdf" target="_blank" rel="noopener">Kompletné výsledky — Hobby (PDF) ↗</a>
         </div>
-        <div class="row">
-            <div class="col s12">
-                <div id="gallery2" class="gallery">
+      </div>
+      <div class="card" id="map-gallery">
+        <h3>Mapa trate</h3>
+        <img src="data/2022/img/spen2_Kalnica mapa 2022.jpeg" alt="Mapa Bikepark Kálnica">
+        <img src="data/2022/img/spen2_mapa_preteku.jpeg" alt="Mapa Scott Enduro race">
+        <p class="rs-note">Mapa Bikepark Kálnica (<a href="https://stvrb.github.io/FreerideBikeparkKalnica/" target="_blank" rel="noopener">3D vizualizácia</a>)</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">Galéria</div>
+  <h2>Fotky z preteku</h2>
+  <div id="gallery" class="gallery">
                     <img src="data/2022/img/Pozvanka_spen2.jpeg" alt="SPEN2 Kálnica">
                     <img
                         src="https://lh3.googleusercontent.com/pw/AL9nZEUKYi78rsjqYnpRVUq1Iv5LQpMpF3ARq_2iVgO1XcKaE3ATEmTYQDwszaTcZGhOFIP_dz2YLdFobsvNlhDEYytFS_kynhx8Ln6lsl0_6yafBGCMqLESsafv16YFfl4gxh8u_kSDhTuVpDWMjjzwtmYlCA=w2526-h1422-no?authuser=0"
@@ -136,62 +132,41 @@
                     <img
                         src="https://lh3.googleusercontent.com/pw/AL9nZEWpsgO3bbFmY1xKmJKTk7pHzkerI1m0Q-n_9gqQICzibe14RJrNgB2oniSid48TDn2g9qdPMw2FRu618SsVwgWJg834cSaO6JprHso0A1de0cI1K8pTTFSN-EWjfOOTYoEeGG9lsTAUPz-MNVPY4LNb0Q=w2640-h1486-no?authuser=0"
                         alt="Test bike CANYON Spectral 29 CF 8" referrerpolicy="no-referrer">
-
                 </div>
-            </div>
-        </div>
+</section>
 
-        <div class="row">
-            <div class="col s12">
-                <h4 class="center">Výsledkové listiny</h4>
-                <div class="divider"></div>
-                <h5 class="center">RACE Masters 35+</h5>
-                <img class="materialboxed responsive-img" src="data/2022/img/spen2_race_vysl.png">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <div class="divider"></div>
-                <h5 class="center">HOBBY SuperMasters 40+</h5>
-                <img class="materialboxed responsive-img" src="data/2022/img/spen2_hobby_vysl.png">
-            </div>
-        </div>
+<section class="wrap">
+  <div class="eyebrow">Výsledkové listiny</div>
+  <h2>Bikefest Kálnica</h2>
+  <div id="results-gallery">
+    <img class="result-shot" src="data/2022/img/spen2_race_vysl.png" alt="Výsledková listina RACE Masters 35+">
+    <img class="result-shot" src="data/2022/img/spen2_hobby_vysl.png" alt="Výsledková listina HOBBY SuperMasters 40+">
+  </div>
+</section>
 
-        <div class="row">
-            <div class="col s12 xl10 offset-xl1">
-                <h4 class="center">Official Aftermovie</h4>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zDf0jNvQn4w"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
+<section class="wrap">
+  <div class="eyebrow">Video</div>
+  <h2>Official Aftermovie</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/zDf0jNvQn4w" title="SPEN#2 Kálnica - Official Aftermovie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</section>
 
-        <div class="row">
-            <div class="col s12 center">
-                <h4 class="center">2x frajer na záver</h4>
-                <div class="divider"></div>
-                Frajeri na záver z nedeľného donwhill závodu. Takto sa to robí do psej matere :-)
-            </div>
-        </div>
-        <div class="row">
-            <div class="col m6">
+<section class="wrap">
+  <div class="eyebrow">Video</div>
+  <h2>2x frajer na záver</h2>
+  <p>Frajeri na záver z nedeľného donwhill závodu. Takto sa to robí do psej matere :-)</p>
+  <div class="video-grid">
                 <video class="materialboxed responsive-video" width="100%" height="100%"
                        controls="controls" preload="metadata"
                        src="https://lh3.googleusercontent.com/v5dnYmNJueuPTp256U6aCMB4BunuLY7i9jGNruMx35KUqpiYIn8sVk6friHc9nGtjmAItvHLMpZI9cmPomcKRSi2TuGvdFCa_LUSj-xLL-AC6MR1AxmWWGf7hUVDDQE_5MA3dldiCtA_NWyz5ZJx017X_YcfsiZBqEnxa1cLiZFp1LCWuo28DPJd4XcorHxk0pobOU8n5jz9YoR7Op5zJJxMfkL7XDOvjipNGgYafrulZRZCGuslK2emHC_gt4s61U3uDi-C4oI44B_qMwvCvM95NnLVtUTA31VKac33WpzJu_SI75_j4i1m4_kD2VsZ0WCp__JqQR1vyPLdeeeIXifrW_lGUgp7zLOEQPlXwK0O4v57eL_m1QwbR6cnlEbv7Gk65ZZPAp7oVaSuK87wfyLfWCDxC94Q9RsriesuaYQDypj8KDsr5KktE_SPj3VAb0MnYoSkLn-gdR0zTgPPcQunxN5fQA9Q4lqMGBUsQOocDS-Kg1_WqafBUg-UHvvFzXOZNXlmdK4oRjxip-eKgPWI0SijFIuUongrq_y_IBhzq2BXmSThtcM3CnfxguoIiXdNEdxknVnehXGAip3YPXXcyVMpqC46OAatR-ri-gk03blOXEjGwHXIIuflyW9oW9BQa5fGk796wiSTIdGbShE0dyvEsNWMNMQ931YXL_3mc9E_hdVM1C8lqSK4n10bcpUE9Ndql9AdurBb3gCFECNTfnHRSmljGbmCbFghyDQfYfIBXJ6YNR1Y-btPbhbP-RFbY2tXvUzV3WcuwnPhU81ooLukNNebJS078kqDLlkjYmo0o4Ozbc5oTscDYlR9YRWB0jjWwi4tbnzMTecrhoVDGGY74veUKw74SvnnBdgGNczFY7WAhraKtVk0E5VaPzIDwFYd0XEkUhNiW46gKrPBUuzImGqE7ddy-LAlhBLsDOspyIZJ7ss7LdPfu1M1Wd5o9Vad4T9lDZ-nePRB8K6iTzsM3SYE=dv">
                 </video>
-            </div>
-            <div class="col m6">
                 <video class="materialboxed responsive-video" width="100%" height="100%"
                        controls="controls" preload="metadata"
                        src="https://lh3.googleusercontent.com/Hj15RjZ0dbp9RLi6oeCRbmP-LTKu2PcT5zas1JZfFh_HB4oIhleITlFbljZmUUKT55U_EXphnQ1SSua_MmK95I_JD718b3FNSaIlJuryt4EBjs8CpCoQSKkBTTxUEYAQnPNW8Gba-E81OGcdsHfjhBaF1jqNwuwWVAeAEE40-PurKnDpTUnW0d7Zl6CtVLcaYuXHfv93eJ0y-CFsKavQtcJT92-5VwnN_M1dKIDHaf_0uf8g9M22Q0V9oMo4Z9lN5-I3Dq4tZdCeQb7bwiQiOhwrrUwQQ8sL27kF1WIiSnC-U7kUCGCocANb2b2TXW3k5zr6PsFhJ1s3p--78D59LLietSZKvFH_LOhH8t-r2Y9W1vwkB3VobV9KV6uK5sfYj4XbaOp1eWeTbmcwv1Oe1IQPB8IHsc4iF5zjoc_otlZHwSdA9sDlfakSL115nlzpVm73Wjgrk6ejrlCmI_ZhAu8AjeXRy48C8cDYXBJuX4pfZ4AKJcq9LfebxbVHzRDSGcucw-YlVhOcEjw2j2wCiDpcAVmOWK9tuzgZbSHVhdkNyBZn2jPpDx38a7GRrze4ImWAwwsZg8-xfP7YfMAS9GTi_lMRlTrEjq6AuHbKqb8ftEbVtKn9EsKN6O3JqqRKisvYJsXzagkg_JCSiDgAmLh9Z6oFso-Y614HsUgV5R_yZwH2-LNV9A6SpKdFxDXc49x_JW7OMpImTS-bkkxkPLZBKLYZ6olB0cRdD9qssdn3G5gy0oCpqz43P5mCGt_FVwd5vv0-dVMdrSd-ew3N7QouSsUOBterJ5UOWnR2eAqfBsEt0uXyDr2zPhmRkbHlOcRefZqIyCZGcK5tE0AiqAqGaz3lJImhgVT-OZy3UWbqin8-3aUmDYvE0dNFjKD-NXsiC1LT7LcFDHXHvCk3vhr0CjypzcPCq09HCtya0JSE_sPTabJ-71waYP3F2R0hxaa9vPO68tZTH-lWQW-M4LUIS7hW0AFK=dv">
                 </video>
-            </div>
-        </div>
-
-<!--        <div class="row">-->
+  </div>
+</section>
 <!--            <div class="col s12">-->
 <!--                <div id="gallery3" class="video-gallery">-->
 <!--                    &lt;!&ndash;                    https://photos.google.com/share/AF1QipNImM9XjhVruSQeHEMXuNFWYn50MF6MzQFnpiP-NWLJqJrJtqX_8RraQPAcmXwAdQ/photo/AF1QipMhYrXJMuL1MqlS3NwjIy2-lPFZyb5V6yAeGZAq?key=Q3VlbDQ4X1paWnJzM01jejFCdUxrY0swTUF1WWlB&ndash;&gt;-->
@@ -210,20 +185,31 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-    </div>
-
 </main>
 
-<footer class="page-footer">
-</footer>
+<footer class="race-footer">SPEN Bikefest Kálnica 2022</footer>
 
-<script src="assets/materialize1.0.0.js"></script>
-<!--<script type='text/javascript' src='assets/unitegallery/js/jquery-11.0.min.js'></script>-->
-<script type='text/javascript' src='assets/jquery-3.6.1.js'></script>
-<script type='text/javascript' src='assets/unitegallery/js/unitegallery.min.js'></script>
-<script type='text/javascript' src='assets/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
-<!-- include Unite Gallery Theme Files -->
-<!--<script type='text/javascript' src='assets/unitegallery/themes/video/ug-theme-video.js'></script>-->
-<script type="text/javascript" src="assets/page-init.js"></script>
+<script type="module">
+    import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
+
+    const pswpModule = () => import('./assets/photoswipe/photoswipe.esm.min.js');
+
+    function initGallery(selector) {
+        const lightbox = new PhotoSwipeLightbox({ gallery: selector, children: 'img', pswpModule });
+        lightbox.addFilter('domItemData', (itemData, element) => {
+            itemData.src = element.currentSrc || element.src;
+            itemData.width = element.naturalWidth || 1600;
+            itemData.height = element.naturalHeight || 1067;
+            itemData.msrc = element.currentSrc || element.src;
+            itemData.element = element;
+            return itemData;
+        });
+        lightbox.init();
+    }
+
+    initGallery('#gallery');
+    initGallery('#results-gallery');
+    initGallery('#map-gallery');
+</script>
 </body>
 </html>

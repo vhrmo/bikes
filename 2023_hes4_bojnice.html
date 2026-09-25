@@ -1,50 +1,48 @@
 <!DOCTYPE html>
-<html lang="sk" xmlns="http://www.w3.org/1999/html">
+<html lang="sk">
 <head>
     <title>2023 HES4 Bojnice</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/materialize1.0.0.css" rel="stylesheet">
-    <link rel='stylesheet' href='assets/unitegallery/css/unite-gallery.css' type='text/css'/>
+    <meta name="referrer" content="no-referrer"/>
+    <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
     <link rel='stylesheet' href='assets/site.css' type='text/css'/>
+    <style>
+        body.race-hero { --hero-pos: 50% 50%; }
+        @media (max-width: 520px) { body.race-hero { --hero-pos: 50% 50%; } }
+    </style>
 </head>
-<body>
-<header>
-    <nav class="_navbar">
-        <a href="#" class="brand-logo center">2023 HES4 Bojnice</a>
-    </nav>
+<body class="race-hero">
+<header class="hero">
+  <img class="hero-bg" src="data/2023/HES4_Bojnice/img/hesboj%201328.jpg" alt="">
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="kicker"><span class="dot"></span>Hornonitrianska enduro séria · 4. kolo</span>
+      <h1>Bojnice<br>2023</h1>
+      <div class="meta">Bojnice · 8. októbra 2023 · HES</div>
+      <div class="badges">
+        <span class="badge series">HES4</span>
+        <span class="badge">Muži</span>
+        <span class="badge">4 rýchlostné skúšky</span>
+      </div>
+    </div>
+  </div>
 </header>
 
+<div class="wrap">
+  <div class="stats">
+    <div class="stat big"><div class="n">16:51.5</div><div class="range">10:51.7 <small>–</small> 20:39.2</div></div>
+    <div class="stat"><div class="n">59.<small>/61</small></div><div class="l">Muži</div></div>
+    <div class="stat"><div class="n">101.<small>/104</small></div><div class="l">Celkovo</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">Rýchlostné skúšky</div></div>
+  </div>
+</div>
+
 <main>
-    <div class="valign-wrapper">
-        <div class="row">
-            <h4 class="center-align">Výsledok</h4>
-            <div class="divider"></div>
-            <p></p>
-            <blockquote>
-            <pre>
-   Čas:       16:51.5
-
-   Časy:      10:51.7 - 20:39.2
-
-   59. miesto zo 61 v kategórii Muži
-   101. miesto zo 104 celkovo
-
-   RS1:  4:09.0  (64 zo 64, 1:11.3, pád na trati, zničená tretra)
-   RS2:  2:32.0  (52 zo 65, 1:59.1, strata 33s)
-   RS3:  3:24.6  (52 zo 63, 2:37.1, strata 47.5s)
-   RS4:  6:45.8  (51 zo 61, 5:04.2, strata 1:41.6)
-
-</pre>
-            </blockquote>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col m12 l12 xl10 offset-xl1">
-                <div class="divider"></div>
-                <p><span class="date">8.10.2023</span> - Zase ďalší príjemný víkend na krásnych trailoch nad Bojnicami.
+<section class="wrap report-narrative">
+  <div class="grid2">
+    <div class="prose">
+                <p>Zase ďalší príjemný víkend na krásnych trailoch nad Bojnicami.
                     Počasie bolo v sobotu úplne ideálne na jazdenie, v nedeľu sa už citeľne ochladilo s ranným mrholením,
                     ale jazdenie to nijak neovplyvnilo.
                 </p>
@@ -93,27 +91,40 @@
                     výslednom čase a strate <code>1:41.6</code>.
                 </p>
                 <p>
-                <a href="data/2023/HES4_Bojnice/2023_HES4.pdf">Komplet výsledky</a>
-                a reportáž na
-                <a href="https://www.mtbiker.sk/clanky/127513/reportaz-nadherny-zaver-hornonitrianskej-enduro-serie-v-bojniciach.html?fbclid=IwAR1H6-AtmEDcZtdkclRkorEWppp5JDEOSDsTrRYDjUtLcPa6cunkvqJUy2Y">MTBIKER.sk</a>.
-
-            </p>
-            </div>
-        </div>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <div class="divider"></div>
-            </div>
+    <aside>
+      <div class="card">
+        <h3>Časy na RS</h3>
+        <table class="rs-table">
+          <tbody>
+            <tr><td class="tag">RS1</td><td class="t">4:09.0</td></tr>
+            <tr><td class="tag">RS2</td><td class="t">2:32.0</td></tr>
+            <tr><td class="tag">RS3</td><td class="t">3:24.6</td></tr>
+            <tr><td class="tag">RS4</td><td class="t">6:45.8</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Odkazy</h3>
+        <div class="linklist">
+          <a href="https://www.mtbiker.sk/clanky/127513/reportaz-nadherny-zaver-hornonitrianskej-enduro-serie-v-bojniciach.html?fbclid=IwAR1H6-AtmEDcZtdkclRkorEWppp5JDEOSDsTrRYDjUtLcPa6cunkvqJUy2Y" target="_blank" rel="noopener">Reportáž na mtbiker.sk ↗</a>
+          <a href="data/2023/HES4_Bojnice/2023_HES4.pdf" target="_blank" rel="noopener">Kompletné výsledky (PDF) ↗</a>
         </div>
-        <div class="row">
-            <div class="col s12">
-                <div id="gallery1" class="gallery">
+      </div>
+      <div class="card" id="map-gallery">
+        <h3>Mapa trate</h3>
+        <img src="data/2023/HES4_Bojnice/2023_HES4_Bojnice_Mapa.jpeg" alt="Mapa Bojnice">
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">Galéria</div>
+  <h2>Fotky z preteku</h2>
+  <div id="gallery" class="gallery">
 
                     <img src="data/2023/HES4_Bojnice/img/hes4_1.jpeg" alt="hes4">
-                    <img src="data/2023/HES4_Bojnice/2023_HES4_Bojnice_Mapa.jpeg" alt="hes4">
                     <img src="data/2023/HES4_Bojnice/img/hes4_3.jpg" alt="hes4">
                     <img src="data/2023/HES4_Bojnice/img/hes4_2.jpg" alt="hes4">
 
@@ -131,25 +142,31 @@
                     <img src="data/2023/HES4_Bojnice/img/hes4_99.jpeg" alt="hes4">
 
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <div class="divider"></div>
-            </div>
-        </div>
-    </div>
+</section>
 </main>
 
-<footer class="page-footer">
-</footer>
+<footer class="race-footer">2023 HES4 Bojnice</footer>
 
-<script src="assets/materialize1.0.0.js"></script>
-<!--<script type='text/javascript' src='assets/unitegallery/js/jquery-11.0.min.js'></script>-->
-<script type='text/javascript' src='assets/jquery-3.6.1.js'></script>
-<script type='text/javascript' src='assets/unitegallery/js/unitegallery.min.js'></script>
-<script type='text/javascript' src='assets/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
-<script type="text/javascript" src="assets/page-init.js"></script>
+<script type="module">
+    import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
 
+    const pswpModule = () => import('./assets/photoswipe/photoswipe.esm.min.js');
+
+    function initGallery(selector) {
+        const lightbox = new PhotoSwipeLightbox({ gallery: selector, children: 'img', pswpModule });
+        lightbox.addFilter('domItemData', (itemData, element) => {
+            itemData.src = element.currentSrc || element.src;
+            itemData.width = element.naturalWidth || 1600;
+            itemData.height = element.naturalHeight || 1067;
+            itemData.msrc = element.currentSrc || element.src;
+            itemData.element = element;
+            return itemData;
+        });
+        lightbox.init();
+    }
+
+    initGallery('#gallery');
+    initGallery('#map-gallery');
+</script>
 </body>
 </html>

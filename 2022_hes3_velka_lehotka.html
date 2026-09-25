@@ -1,91 +1,103 @@
 <!DOCTYPE html>
-<html lang="sk" xmlns="http://www.w3.org/1999/html">
+<html lang="sk">
 <head>
     <title>HES Veľká Lehôtka</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/materialize1.0.0.css" rel="stylesheet">
-    <link rel='stylesheet' href='assets/unitegallery/css/unite-gallery.css' type='text/css'/>
+    <meta name="referrer" content="no-referrer"/>
+    <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
     <link rel='stylesheet' href='assets/site.css' type='text/css'/>
+    <style>
+        body.race-hero { --hero-pos: 50% 50%; }
+        @media (max-width: 520px) { body.race-hero { --hero-pos: 50% 50%; } }
+    </style>
 </head>
-<body>
-<header>
-    <nav class="_navbar">
-        <a href="#" class="brand-logo center">Veľká Lehôtka</a>
-    </nav>
+<body class="race-hero">
+<header class="hero">
+  <img class="hero-bg" src="data/2022/img/Velka Lehotka start.jpg" alt="">
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="kicker"><span class="dot"></span>Hornonitrianska enduro séria · 3. kolo</span>
+      <h1>Veľká Lehôtka<br>2022</h1>
+      <div class="meta">Veľká Lehôtka · 24. júla 2022 · HES</div>
+      <div class="badges">
+        <span class="badge series">HES3</span>
+        <span class="badge">Muži</span>
+        <span class="badge">3 rýchlostné skúšky</span>
+      </div>
+    </div>
+  </div>
 </header>
 
+<div class="wrap">
+  <div class="stats">
+    <div class="stat big"><div class="n">12:26.4</div><div class="range">9:10.1 <small>–</small> 14:50.4</div></div>
+    <div class="stat"><div class="n">37.<small>/53</small></div><div class="l">Muži</div></div>
+    <div class="stat"><div class="n">61.<small>/88</small></div><div class="l">Celkovo</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Rýchlostné skúšky</div></div>
+  </div>
+</div>
+
 <main>
-    <div class="valign-wrapper">
-        <div class="row">
-            <h4 class="center-align">Výsledok</h4>
-            <div class="divider"></div>
-            <p></p>
-            <blockquote>
-            <pre>
-   Čas:       12:26.4
-
-   Časy:      9:10.1 - 14:50.4
-
-   37. miesto zo 53 v kategórii Muži
-   61. miesto z  88 celkovo
-
-   RS1:       05:18.8	(65)
-   RS2:       03:25.2	(73)
-   RS3:       03:42.4	(56)
-</pre>
-            </blockquote>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col m12 l12 xl10 offset-xl1">
-                <div class="divider"></div>
-                <p><span class="date">24.7.2022</span> - Zase príjemné počasie, krásne trate a super organizácia.
+<section class="wrap report-narrative">
+  <div class="grid2">
+    <div class="prose">
+                <p>Zase príjemné počasie, krásne trate a super organizácia.
                 </p>
-                <p>
-                    <a href="data/2022/2022_HES3.pdf">Komplet výsledky</a>.
-                </p>
-            </div>
-        </div>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <div class="divider"></div>
-            </div>
+    <aside>
+      <div class="card">
+        <h3>Časy na RS</h3>
+        <table class="rs-table cols">
+          <tr><td class="tag">RS1</td><td class="t">05:18.8</td><td class="pos">(65)</td></tr>
+          <tr><td class="tag">RS2</td><td class="t">03:25.2</td><td class="pos">(73)</td></tr>
+          <tr><td class="tag">RS3</td><td class="t">03:42.4</td><td class="pos">(56)</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Odkazy</h3>
+        <div class="linklist">
+          <a href="data/2022/2022_HES3.pdf" target="_blank" rel="noopener">Kompletné výsledky (PDF) ↗</a>
         </div>
-        <div class="row">
-            <div class="col s12">
-                <div id="gallery1" class="gallery">
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">Galéria</div>
+  <h2>Fotky z preteku</h2>
+  <div id="gallery" class="gallery">
                     <img src="data/2022/img/hes1_pozvanka.jpeg" alt="SPEN1">
                     <img src="data/2022/img/Velka Lehotka start.jpg" alt="Veľká Lehôtka">
                     <img src="data/2022/img/Velka Lehotka start2.jpg" alt="Veľká Lehôtka">
                     <img src="data/2022/img/Velka Lehotka.jpg" alt="Veľká Lehôtka">
                     <img src="data/2022/img/Velka Lehotka vitazi.jpeg" alt="Veľká Lehôtka">
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <div class="divider"></div>
-            </div>
-        </div>
-    </div>
-
+</section>
 </main>
 
-<footer class="page-footer">
-</footer>
+<footer class="race-footer">HES Veľká Lehôtka</footer>
 
-<script src="assets/materialize1.0.0.js"></script>
-<!--<script type='text/javascript' src='assets/unitegallery/js/jquery-11.0.min.js'></script>-->
-<script type='text/javascript' src='assets/jquery-3.6.1.js'></script>
-<script type='text/javascript' src='assets/unitegallery/js/unitegallery.min.js'></script>
-<script type='text/javascript' src='assets/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
-<script type="text/javascript" src="assets/page-init.js"></script>
+<script type="module">
+    import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
 
+    const pswpModule = () => import('./assets/photoswipe/photoswipe.esm.min.js');
+
+    function initGallery(selector) {
+        const lightbox = new PhotoSwipeLightbox({ gallery: selector, children: 'img', pswpModule });
+        lightbox.addFilter('domItemData', (itemData, element) => {
+            itemData.src = element.currentSrc || element.src;
+            itemData.width = element.naturalWidth || 1600;
+            itemData.height = element.naturalHeight || 1067;
+            itemData.msrc = element.currentSrc || element.src;
+            itemData.element = element;
+            return itemData;
+        });
+        lightbox.init();
+    }
+
+    initGallery('#gallery');
+</script>
 </body>
 </html>

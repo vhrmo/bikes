@@ -1,50 +1,38 @@
 <!DOCTYPE html>
-<html lang="sk" xmlns="http://www.w3.org/1999/html">
+<html lang="sk">
 <head>
     <title>SPEN3 Žilina 2024</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="referrer" content="no-referrer"/>
-    <link href="assets/materialize1.0.0.css" rel="stylesheet">
-    <link rel='stylesheet' href='assets/unitegallery/css/unite-gallery.css' type='text/css'/>
+    <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
     <link rel='stylesheet' href='assets/site.css' type='text/css'/>
-    <!-- include one of the video skins -->
-    <link href='assets/unitegallery/themes/video/skin-right-no-thumb.css' rel='stylesheet' type='text/css'/>
-    <link href='assets/unitegallery/themes/video/skin-right-thumb.css' rel='stylesheet' type='text/css'/>
-    <link href='assets/unitegallery/themes/video/skin-right-title-only.css' rel='stylesheet' type='text/css'/>
+    <style>
+        body.race-hero { --hero-pos: 50% 50%; }
+        @media (max-width: 520px) { body.race-hero { --hero-pos: 50% 50%; } }
+    </style>
 </head>
-<body>
-<header>
-    <nav class="_navbar">
-        <a href="#" class="brand-logo center">SPEN3 Žilina 2024</a>
-    </nav>
+<body class="race-hero">
+<header class="hero">
+  <img class="hero-bg" src="data/2024/SPEN3_Zilina/vh/rs2_1.jpg" alt="">
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="kicker"><span class="dot"></span>Slovenský pohár v endure · 3. kolo · MSR</span>
+      <h1>Žilina<br>2024</h1>
+      <div class="meta">OKO Trails, Žilina · 28. júla 2024 · Enduro Challenge</div>
+      <div class="badges">
+        <span class="badge series">SPEN3</span>
+        <span class="badge">Nedokončené (zranenie)</span>
+      </div>
+    </div>
+  </div>
 </header>
 
 <main>
-    <div class="valign-wrapper">
-        <div class="row">
-            <h4 class="center-align">Výsledok</h4>
-            <div class="divider"></div>
-            <p></p>
-            <blockquote>
-            <pre>
-
-   RS1:            ...   Jazdila iba race kategória
-   RS2:   6:33.3   ...   2. z 8 hobby 40+
-   RS3:            ...   Jazdila iba race kategória
-   RS4:   5:38.1   ...   8. z 8 hobby 40+
-   RS5:   9:11.4   ...   8. z 8 hobby 40+
-   RS6:            ...   Vynechané pre zranenie
-</pre>
-            </blockquote>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col m12 l12 xl10 offset-xl1">
-                <div class="divider"></div>
-                <p><span class="date">28.7.2024</span> - Preteky sa konali na Žilinských OKӨ trails. Bolo pripravených 6 RS - Hobby jazdili RS 2, 4, 5 a 6.
+<section class="wrap report-narrative">
+  <div class="grid2">
+    <div class="prose">
+                <p>Preteky sa konali na Žilinských OKӨ trails. Bolo pripravených 6 RS - Hobby jazdili RS 2, 4, 5 a 6.
                     Časový limit na pretek bol 5 hodín pre race aj hobby kategórie, e-Bike kategória mala limit 2.5 hodiny. </p>
                 <p>Základňa preteku a štart boli pod športovým hotelom <a href="https://www.sp-resort.sk/">SP resort</a> Petra Sagana.
                     Výšľap na RS začínal asfaltovou cestou na konci ktorej bola občerstvovačka a pokračoval na štart RS single trailom.
@@ -75,29 +63,42 @@
                     Neskôr už doma večer som sa nakoniec rozhodol ísť pre istotu na pohotovosť, lebo bolesť v rebrách sa zhoršovala a nechcel som riskovať vnútorné zranenia.
                     Našťastie sa ukázalo, že to boli iba silné pohmoždeniny a po pár dňoch sa už cítim lepšie.
                 </p>
-                <p>
-                    Komplet výsledky: <a href="data/2024/SPEN3_Zilina/20240728_spen_zilina_SPEN.pdf">race</a>, <a
-                    href="data/2024/SPEN3_Zilina/20240728_spen_zilina_Challengee.pdf">hobby</a>.
-                </p>
-
-            </div>
-        </div>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <div class="divider"></div>
-            </div>
+    <aside>
+      <div class="card">
+        <h3>Časy na RS</h3>
+        <table class="rs-table">
+          <tr><td class="tag">RS1</td><td class="note">len race</td></tr>
+          <tr><td class="tag">RS2</td><td class="t">6:33.3</td></tr>
+          <tr><td class="tag">RS3</td><td class="note">len race</td></tr>
+          <tr><td class="tag">RS4</td><td class="t">5:38.1</td></tr>
+          <tr><td class="tag">RS5</td><td class="t">9:11.4</td></tr>
+          <tr><td class="tag">RS6</td><td class="note">vynechané</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Odkazy</h3>
+        <div class="linklist">
+          <a href="data/2024/SPEN3_Zilina/20240728_spen_zilina_SPEN.pdf" target="_blank" rel="noopener">Kompletné výsledky — Race (PDF) ↗</a>
+          <a href="data/2024/SPEN3_Zilina/20240728_spen_zilina_Challengee.pdf" target="_blank" rel="noopener">Kompletné výsledky — Hobby (PDF) ↗</a>
         </div>
-        <div class="row">
-            <div class="col s12">
-                <div id="gallery" class="gallery">
+      </div>
+      <div class="card" id="map-gallery">
+        <h3>Mapa trate</h3>
+        <img src="data/2024/SPEN3_Zilina/zilina_mapa.jpg" alt="Mapa Žilina">
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">Galéria</div>
+  <h2>Fotky z preteku</h2>
+  <div id="gallery" class="gallery">
                     <img src="data/2024/SPEN3_Zilina/img/MM_00438.jpeg" alt="438 SPEN3 Žilina">
                     <img src="data/2024/SPEN3_Zilina/img/Screenshot%202024-08-03%20at%2012.37.36.png" alt="Šport hotel SP resort Petra Sagana">
                     <img src="data/2024/SPEN3_Zilina/img/Screenshot%202024-08-03%20at%2012.37.14.png" alt="Šport hotel SP resort Petra Sagana">
                     <img src="data/2024/SPEN3_Zilina/img/MM_00440.jpeg" alt="440 SPEN3 Žilina">
-                    <img src="data/2024/SPEN3_Zilina/zilina_mapa.jpg" alt="SPEN3 Žilina">
                     <!--                    <img src="data/2024/spen3/propozicie1.jpg" alt="SPEN3 Žilina">-->
                     <!--                    <img src="data/2024/spen3/propozicie2.jpg" alt="SPEN3 Žilina">-->
                     <!--                    <img src="data/2024/spen3/propozicie3.jpg" alt="SPEN3 Žilina">-->
@@ -132,58 +133,56 @@
 
 
                 </div>
-            </div>
-        </div>
+</section>
 
-        <div class="row">
-            <div class="col s12">
-                <h4 class="center">Výsledkové listiny</h4>
-                <div class="divider"></div>
-                <h5 class="center">Hobby Challenge 40+</h5>
-                <img class="materialboxed responsive-img" src="data/2024/SPEN3_Zilina/vysledky.png" alt="Vysledky">
-            </div>
-        </div>
+<section class="wrap">
+  <div class="eyebrow">Výsledkové listiny</div>
+  <h2>Hobby Challenge 40+</h2>
+  <div id="results-gallery">
+    <img class="result-shot" src="data/2024/SPEN3_Zilina/vysledky.png" alt="Výsledková listina Hobby Challenge 40+">
+  </div>
+</section>
 
-        <div class="container">
-            <div class="row">
-                <div class="col s12 xl10 offset-xl1">
-                    <h4 class="center">Aftermovie</h4>
-                    <div class="video-container">
-                        <iframe title="Majstrovstvá Slovenska v endure na žilinských OKO Trails, KENNY slovenský pohár - aftermovie"
-                                src="https://www.youtube.com/embed/MAmlU-fEaJo"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col s12 xl10 offset-xl1">
-                    <h4 class="center">CTM Racing team's aftermovie</h4>
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/wZrMM5_LeBM?si=ZaX7bq89J-8mg1A3" title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<section class="wrap">
+  <div class="eyebrow">Video</div>
+  <h2>Aftermovie</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/MAmlU-fEaJo" title="Majstrovstvá Slovenska v endure na žilinských OKO Trails, KENNY slovenský pohár - aftermovie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">Video</div>
+  <h2>Aftermovie — CTM Racing team</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/wZrMM5_LeBM?si=ZaX7bq89J-8mg1A3" title="CTM Racing team's aftermovie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</section>
 </main>
 
+<footer class="race-footer">SPEN3 Žilina 2024</footer>
 
-<footer class="page-footer">
-</footer>
+<script type="module">
+    import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
 
-<script src="assets/materialize1.0.0.js"></script>
-<!--<script type='text/javascript' src='assets/unitegallery/js/jquery-11.0.min.js'></script>-->
-<script type='text/javascript' src='assets/jquery-3.6.1.js'></script>
-<script type='text/javascript' src='assets/unitegallery/js/unitegallery.min.js'></script>
-<script type='text/javascript' src='assets/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
-<!-- include Unite Gallery Theme Files -->
-<!--<script type='text/javascript' src='assets/unitegallery/themes/video/ug-theme-video.js'></script>-->
-<script type="text/javascript" src="assets/page-init.js"></script>
+    const pswpModule = () => import('./assets/photoswipe/photoswipe.esm.min.js');
+
+    function initGallery(selector) {
+        const lightbox = new PhotoSwipeLightbox({ gallery: selector, children: 'img', pswpModule });
+        lightbox.addFilter('domItemData', (itemData, element) => {
+            itemData.src = element.currentSrc || element.src;
+            itemData.width = element.naturalWidth || 1600;
+            itemData.height = element.naturalHeight || 1067;
+            itemData.msrc = element.currentSrc || element.src;
+            itemData.element = element;
+            return itemData;
+        });
+        lightbox.init();
+    }
+
+    initGallery('#gallery');
+    initGallery('#results-gallery');
+    initGallery('#map-gallery');
+</script>
 </body>
 </html>

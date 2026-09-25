@@ -1,48 +1,48 @@
 <!DOCTYPE html>
-<html lang="sk" xmlns="http://www.w3.org/1999/html">
+<html lang="sk">
 <head>
     <title>2024 SPEN6 Partizánske</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/materialize1.0.0.css" rel="stylesheet">
-    <link rel='stylesheet' href='assets/unitegallery/css/unite-gallery.css' type='text/css'/>
+    <meta name="referrer" content="no-referrer"/>
+    <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
     <link rel='stylesheet' href='assets/site.css' type='text/css'/>
+    <style>
+        body.race-hero { --hero-pos: 50% 50%; }
+        @media (max-width: 520px) { body.race-hero { --hero-pos: 50% 50%; } }
+    </style>
 </head>
-<body>
-<header>
-    <nav class="_navbar">
-        <a href="#" class="brand-logo center">2024 SPEN6 Partizánske</a>
-    </nav>
+<body class="race-hero">
+<header class="hero">
+  <img class="hero-bg" src="https://www.biker.sk/wp-content/uploads/2024/10/marekmoravik.com-05738.jpg" alt="">
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="kicker"><span class="dot"></span>Slovenský pohár v endure · 6. kolo</span>
+      <h1>Partizánske<br>2024</h1>
+      <div class="meta">Partizánske · 20. októbra 2024 · Enduro Challenge</div>
+      <div class="badges">
+        <span class="badge series">SPEN6</span>
+        <span class="badge">Muži 40+</span>
+        <span class="badge">4 rýchlostné skúšky</span>
+      </div>
+    </div>
+  </div>
 </header>
 
+<div class="wrap">
+  <div class="stats">
+    <div class="stat big"><div class="n">18:42.5</div><div class="range">12:44.5 <small>–</small> 19:27.3</div></div>
+    <div class="stat"><div class="n">6.<small>/7</small></div><div class="l">Muži 40+</div></div>
+    <div class="stat"><div class="n">50.<small>/54</small></div><div class="l">Celkovo Challenge</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">Rýchlostné skúšky</div></div>
+  </div>
+</div>
+
 <main>
-    <div class="valign-wrapper">
-        <div class="row">
-            <h4 class="center-align">Výsledok</h4>
-            <div class="divider"></div>
-            <blockquote>
-            <pre>
-   Čas:       18:42.5   (2023: 19:25.0)
-
-   Časy:      12:44.5 - 19:27.3
-
-    6. miesto zo 7 v kategórii Muži 40+
-   50. miesto z 54 celkovo v Enduro Challenge
-
-   RS1: 05:36.6  (2023: 05:37.4, 2022 05:30.9)
-   RS2: 05:13.9  (2023: 05:04.9, 2022 04:55.7)
-   RS3: 04:33.3  (2023: 05:29.1)
-   RS4: 03:18.7  (2023: 03:13.5, 2022 02:53.9)
-</pre>
-            </blockquote>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col m12 l12 xl10 offset-xl1">
-                <div class="divider"></div>
-                <p><span class="date">20.10.2024</span> - Posledné kolo tohto ročníka SPEN sa malo konať na Babských trailoch
+<section class="wrap report-narrative">
+  <div class="grid2">
+    <div class="prose">
+                <p>Posledné kolo tohto ročníka SPEN sa malo konať na Babských trailoch
                     na Pezinskej babe, ale kvôli jelenej ruji muselo byť presunuté do Partizánskeho. Trate som poznal a tešil som
                     sa, ako si zlepším časy oproti minulému roku. Najmä RS3, kde som minulý rok spadol, bola výzvou.
                     Počasie nám prialo aj keď v nedeľu ráno bolo chladno a na tráve bolo vidieť srieň. Bolo však krásne slnečno
@@ -74,33 +74,52 @@
                     Podobne ako v Bojniciach sa mi jazdilo fajn, ale výsledky boli horšie, ako som čakal. Trate boli super, zábavné a správne náročné
                     a organizácia ako vždy na jednotku. Tu je porovnanie časov voči predchádzajúcim rokom:
                 </p>
-                <blockquote class="centered"><pre>
-         |  2024 vs 2023 |  2023 vs 2022
-    ---- | ------------- | --------------
-    RS1: |     -1 sec    |     +7 sec
-    RS2: |     +9 sec    |     +9 sec
-    RS3: |    -56 sec    |
-    RS4: |     +5 sec    |    +20 sec &#128530;
-                </pre>
-                </blockquote>
-                <p>
-                    Komplet výsledky: <a href="data/2024/SPEN6_Partizanske/20241020_partizanske_spen.pdf">race</a>, <a href="data/2024/SPEN6_Partizanske/20241020_partizanskechalenge.pdf">hobby</a>
-                                        a reportáž na
-                                        <a href="https://www.biker.sk/137605/finale-kenny-slovenskeho-pohara-v-partizanskom-ovladli-lubos-stano-a-natalia-dugelova-galeria/">BIKER.sk</a>.
-                </p>
-            </div>
-        </div>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <div class="divider"></div>
-            </div>
+    <aside>
+      <div class="card">
+        <h3>Časy na RS</h3>
+        <table class="rs-table cols">
+          <thead>
+            <tr><th></th><th>2024</th><th>2023</th><th>2022</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="tag">RS1</td><td class="t">05:36.6</td><td class="prev">05:37.4</td><td class="prev">05:30.9</td></tr>
+            <tr><td class="tag">RS2</td><td class="t">05:13.9</td><td class="prev">05:04.9</td><td class="prev">04:55.7</td></tr>
+            <tr><td class="tag">RS3</td><td class="t">04:33.3</td><td class="prev">05:29.1</td><td class="prev">—</td></tr>
+            <tr><td class="tag">RS4</td><td class="t">03:18.7</td><td class="prev">03:13.5</td><td class="prev">02:53.9</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Rozdiel oproti minulým rokom</h3>
+        <table class="rs-table cols">
+          <thead>
+            <tr><th></th><th>2024 vs 2023</th><th>2023 vs 2022</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="tag">RS1</td><td class="t faster">-1 s</td><td class="t slower">+7 s</td></tr>
+            <tr><td class="tag">RS2</td><td class="t slower">+9 s</td><td class="t slower">+9 s</td></tr>
+            <tr><td class="tag">RS3</td><td class="t faster">-56 s</td><td class="prev">—</td></tr>
+            <tr><td class="tag">RS4</td><td class="t slower">+5 s</td><td class="t slower">+20 s</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Odkazy</h3>
+        <div class="linklist">
+          <a href="https://www.biker.sk/137605/finale-kenny-slovenskeho-pohara-v-partizanskom-ovladli-lubos-stano-a-natalia-dugelova-galeria/" target="_blank" rel="noopener">Reportáž na biker.sk ↗</a>
+          <a href="data/2024/SPEN6_Partizanske/20241020_partizanske_spen.pdf" target="_blank" rel="noopener">Kompletné výsledky — Race (PDF) ↗</a>
+          <a href="data/2024/SPEN6_Partizanske/20241020_partizanskechalenge.pdf" target="_blank" rel="noopener">Kompletné výsledky — Hobby (PDF) ↗</a>
         </div>
-        <div class="row">
-            <div class="col s12">
-                <div id="gallery1" class="gallery">
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">Galéria</div>
+  <h2>Fotky z preteku</h2>
+  <div id="gallery" class="gallery">
 <!--                            <img data-src="https://www.biker.sk/wp-content/uploads/2024/10/marekmoravik.com-05693.jpg" alt="05693" src="https://www.biker.sk/wp-content/uploads/2024/10/marekmoravik.com-05693.jpg">-->
 <!--                            <img data-src="https://www.biker.sk/wp-content/uploads/2024/10/marekmoravik.com-05694.jpg" alt="05694" src="https://www.biker.sk/wp-content/uploads/2024/10/marekmoravik.com-05694.jpg">-->
 <!--                            <img data-src="https://www.biker.sk/wp-content/uploads/2024/10/marekmoravik.com-05695.jpg" alt="05695" src="https://www.biker.sk/wp-content/uploads/2024/10/marekmoravik.com-05695.jpg">-->
@@ -191,48 +210,47 @@
                                 <img data-src="https://www.biker.sk/wp-content/uploads/2024/10/marekmoravik.com-06362.jpg" alt="06362" src="https://www.biker.sk/wp-content/uploads/2024/10/marekmoravik.com-06362.jpg">
 
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <div class="divider"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <h4 class="center">Výsledkové listiny</h4>
-                <div class="divider"></div>
-                <h5 class="center">Hobby Challenge 40+</h5>
-                <img class="materialboxed responsive-img" src="data/2024/SPEN6_Partizanske/vysledky.png">
-            </div>
-        </div>
-    </div>
+</section>
 
-    <div class="container">
-        <div class="row">
-            <div class="col s12 xl10 offset-xl1">
-                <h4 class="center">Aftermovie</h4>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/L7lTU_NnXTo?si=DEFB7XydI0Lr5g1S"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
+<section class="wrap">
+  <div class="eyebrow">Výsledkové listiny</div>
+  <h2>Hobby Challenge 40+</h2>
+  <div id="results-gallery">
+    <img class="result-shot" src="data/2024/SPEN6_Partizanske/vysledky.png" alt="Výsledková listina Hobby Challenge 40+">
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">Video</div>
+  <h2>Aftermovie</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/L7lTU_NnXTo?si=DEFB7XydI0Lr5g1S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</section>
 </main>
 
-<footer class="page-footer">
-</footer>
+<footer class="race-footer">2024 SPEN6 Partizánske</footer>
 
-<script src="assets/materialize1.0.0.js"></script>
-<!--<script type='text/javascript' src='assets/unitegallery/js/jquery-11.0.min.js'></script>-->
-<script type='text/javascript' src='assets/jquery-3.6.1.js'></script>
-<script type='text/javascript' src='assets/unitegallery/js/unitegallery.min.js'></script>
-<script type='text/javascript' src='assets/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
-<script type="text/javascript" src="assets/page-init.js"></script>
+<script type="module">
+    import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
 
+    const pswpModule = () => import('./assets/photoswipe/photoswipe.esm.min.js');
+
+    function initGallery(selector) {
+        const lightbox = new PhotoSwipeLightbox({ gallery: selector, children: 'img', pswpModule });
+        lightbox.addFilter('domItemData', (itemData, element) => {
+            itemData.src = element.currentSrc || element.src;
+            itemData.width = element.naturalWidth || 1600;
+            itemData.height = element.naturalHeight || 1067;
+            itemData.msrc = element.currentSrc || element.src;
+            itemData.element = element;
+            return itemData;
+        });
+        lightbox.init();
+    }
+
+    initGallery('#gallery');
+    initGallery('#results-gallery');
+</script>
 </body>
 </html>
