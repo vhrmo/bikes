@@ -8,25 +8,8 @@
     <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
     <link rel='stylesheet' href='assets/site.css' type='text/css'/>
     <style>
-        /* PhotoSwipe masonry gallery (matches variant1-hero-dark) */
-        #gallery.gallery {
-            display: block;
-            columns: 4;
-            column-gap: 12px;
-        }
-        #gallery.gallery img {
-            width: 100%;
-            margin-bottom: 12px;
-            display: block;
-            border-radius: 12px;
-            filter: saturate(1.05);
-            cursor: zoom-in;
-        }
-        @media (max-width: 900px) {
-            #gallery.gallery { columns: 2; }
-        }
-        #results-gallery img,
-        #map-gallery img { cursor: zoom-in; }
+        body.race-hero { --hero-pos: 50% 20%; }
+        @media (max-width: 520px) { body.race-hero { --hero-pos: 50% 50%; } }
     </style>
 </head>
 <body class="race-hero">

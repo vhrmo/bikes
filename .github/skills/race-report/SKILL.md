@@ -146,6 +146,22 @@ Page skeleton, in order:
    `.kicker` (series + round), `h1` title, `.meta` (venue · date · competition),
    and `.badges` (`.badge.series` for SPEN/HES, plain `.badge` for category and
    other facts). Do not add a standalone "Späť na sezónu" / back link.
+   Prefer a landscape action photo where the rider is roughly centred with
+   headroom above and clearance below; portrait images can only show a slice of
+   the rider in the wide hero band. Because `.hero-bg` uses `object-fit: cover`,
+   bias the crop with a per-page CSS variable in the page's `<style>` block,
+   e.g. `body.race-hero { --hero-pos: 50% 22%; }` (the shared rule reads
+   `object-position: var(--hero-pos, 50% 50%)`), and add a mobile override in a
+   `@media (max-width: 520px)` block when the phone crop needs a different X/Y.
+   `object-position` only pans the axis the image overflows, so a landscape photo
+   in a portrait phone viewport ignores the `--hero-pos` Y; to reframe vertically
+   there, zoom in with `--hero-zoom` (>1) and choose the focal point with
+   `--hero-focus` (transform-origin, e.g. `20% 100%` pushes the top off-screen).
+   Leave fine positioning to a human: set a sensible draft `--hero-pos`, render
+   the page once at a wide and a narrow width, and report the chosen values and
+   any head/bike-clipping trade-off for the human to fine-tune. Do not iterate
+   pixel-by-pixel or spend excessive effort/tokens chasing a perfect crop. Do
+   not stretch or letterbox the image and do not substitute an unrelated photo.
 4. Stat strip: `.wrap > .stats` with four `.stat` cards. The first is
    `.stat.big` and shows the rider's total time in `.n` with the descriptive
    time range below it in `.range` (`best <small>–</small> last`). The other
@@ -157,10 +173,20 @@ Page skeleton, in order:
      notes with `<span class="highlight">RS1</span>` (or `.rs`); both render as
      accent text. Do not repeat the total time or a `Komplet výsledky` line here.
    - `aside` on the right with `.card` blocks: a `Časy na RS` `table.rs-table`
-     (`td.tag` + `td.t`), an `Odkazy` `.linklist` with the result PDFs and any
-     invitation as links that open in a new tab (`target="_blank" rel="noopener"`,
-     labels `Kompletné výsledky — Race (PDF)` / `Hobby (PDF)`), and a
-     `Mapa trate` `.card` with the map image.
+     (`td.tag` + `td.t`), an `Odkazy` `.linklist`, and a `Mapa trate` `.card`
+     with the map image. In `Odkazy`, order the links report/invitation first
+     (e.g. `Reportáž na biker.sk` / `Pozvánka na biker.sk`) and the result PDFs
+     last (`Kompletné výsledky — Race (PDF)` then `Hobby (PDF)`); all links open
+     in a new tab (`target="_blank" rel="noopener"`).
+     When prior-year splits or year-over-year comparisons exist, never drop or
+     compress them into one unreadable cell: render them as their own columns in
+     a `table.rs-table.cols`. Give the times table a `thead` of year labels and
+     each row a `td.tag`, a bold current-year `td.t`, and muted `td.prev` cells
+     for earlier years (`—` when a split is missing). Show differences to each
+     prior year in separate `vs YEAR` columns using `td.t.faster` (green, quicker)
+     and `td.t.slower` (orange, slower); keep any lone stray datapoint in a small
+     `.rs-note` under the table. Preserve published precision and do not reduce
+     available historical information when restyling.
 6. Media sections, each `section.wrap` with an `.eyebrow` + `h2`, only when real
    assets exist:
    - Gallery: `<div id="gallery" class="gallery">` with the race photos as
@@ -245,6 +271,11 @@ layout retained on older pages — do not restyle those pages globally.
    report and index summary rather than left as avoidable placeholders.
 - Render both desktop and narrow mobile widths (320-390px). Check the full
   navbar title, result block wrapping, narrative width, and horizontal overflow.
+- On hero pages, render the draft once at a wide and a narrow width and report
+  the `--hero-pos` values (and any head/bike-clipping trade-off) so a human can
+  fine-tune the crop; do not perfect it yourself. Confirm the `Odkazy` links are
+  ordered report/invitation first and result PDFs last, and that any prior-year
+  splits and diffs survive as readable columns, not dropped data.
 - Verify the season-table link, navbar title link, and all result PDF links.
    Confirm there is no standalone "Späť na sezónu" link in the body or footer.
 - When media exists, confirm images load, galleries initialize, lightboxes

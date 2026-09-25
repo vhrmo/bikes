@@ -300,7 +300,19 @@ body.race-hero {
     overflow: hidden;
     background: var(--bg);
 }
-.race-hero .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+/* Hero photo framing — set per page, optionally inside a media query:
+   --hero-pos   object-position "X Y". With object-fit:cover this only pans the
+                axis the image OVERFLOWS: a landscape photo in a portrait phone
+                viewport is fitted to the height, so only X moves it and Y has no
+                effect. X: 0%=show left, 100%=show right; Y: 0%=keep top, 100%=keep bottom.
+   --hero-zoom  scale (>1) to zoom in; this creates overflow on BOTH axes so you
+                can reframe vertically on mobile.
+   --hero-focus transform-origin "X Y" = the zoom's focal point; only matters when
+                --hero-zoom > 1. E.g. --hero-focus: 20% 100% keeps the bottom and
+                pushes the top of the image above the viewport.
+   --hero-shift translateY (e.g. -20%) to slide the image up/down with no zoom;
+                the uncovered strip blends into the hero's bottom gradient. */
+.race-hero .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--hero-pos, 50% 50%); transform: translateY(var(--hero-shift, 0)) scale(var(--hero-zoom, 1)); transform-origin: var(--hero-focus, 50% 50%); z-index: 0; }
 .race-hero .hero::after {
     content: "";
     position: absolute;
@@ -340,11 +352,25 @@ body.race-hero {
 .race-hero .rs-table tr:last-child td { border-bottom: 0; }
 .race-hero .rs-table td.tag { color: var(--accent2); font-weight: 800; }
 .race-hero .rs-table td.t { text-align: right; font-weight: 700; }
+/* Columnar rs-table: multiple year/diff columns */
+.race-hero .rs-table thead th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); text-align: right; padding: 0 0 8px; border-bottom: 1px solid var(--line); }
+.race-hero .rs-table thead th:first-child { text-align: left; }
+.race-hero .rs-table.cols { font-size: 13px; }
+.race-hero .rs-table.cols td { padding: 9px 0 9px 8px; }
+.race-hero .rs-table.cols td.tag { padding-left: 0; }
+.race-hero .rs-table td.prev { text-align: right; color: var(--muted); font-weight: 600; }
+.race-hero .rs-table td.t.faster { color: var(--good); }
+.race-hero .rs-table td.t.slower { color: var(--accent); }
+.race-hero .rs-note { margin: 10px 0 0; font-size: 12px; color: var(--muted); }
 .race-hero .linklist a { display: block; padding: 11px 0; border-bottom: 1px solid var(--line); font-weight: 600; }
 .race-hero .linklist a:last-child { border-bottom: 0; }
 .race-hero .linklist a:hover { text-decoration: none; color: var(--accent); }
 
-/* Gallery uses UniteGallery (interactive tiles + lightbox); see page-init.js */
+/* PhotoSwipe masonry gallery on hero pages (scoped so the global .gallery{display:none} and legacy UniteGallery pages are unaffected) */
+.race-hero #gallery.gallery { display: block; columns: 4; column-gap: 12px; }
+.race-hero #gallery.gallery img { width: 100%; margin-bottom: 12px; display: block; border-radius: 12px; filter: saturate(1.05); cursor: zoom-in; }
+.race-hero #results-gallery img, .race-hero #map-gallery img { cursor: zoom-in; }
+@media (max-width: 900px) { .race-hero #gallery.gallery { columns: 2; } }
 
 /* Result screenshot */
 .race-hero .result-shot { width: 100%; border-radius: 12px; border: 1px solid var(--line); display: block; }
