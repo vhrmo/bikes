@@ -398,3 +398,169 @@ body.race-hero {
 @media (max-width: 520px) {
     .race-hero .stats { grid-template-columns: 1fr 1fr; }
 }
+
+/* =====================================================================
+   Bikes hub (index.html) — dark timeline theme. Everything is scoped to
+   body.bikes-index so it never leaks onto the race-report pages that also
+   load this stylesheet. Replaces the former Tailwind CDN + index.css.
+   ===================================================================== */
+body.bikes-index {
+    --bg: #0d0f14;
+    --card: #181d28;
+    --line: #252c3a;
+    --txt: #e7ecf3;
+    --muted: #98a2b6;
+    --accent: #ff5a1f;
+    --accent2: #ffd21f;
+    --good: #33d17a;
+    display: block;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--txt);
+    color-scheme: dark;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Hero */
+.bikes-index .hero { position: relative; min-height: 60vh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: var(--bg); }
+.bikes-index .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--hero-pos, 50% 40%); z-index: 0; }
+.bikes-index .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(13,15,20,.25) 0%, rgba(13,15,20,.55) 45%, var(--bg) 100%); }
+.bikes-index .hero-inner { position: relative; z-index: 2; width: 100%; padding: 60px 0 44px; }
+.bikes-index .kicker { display: inline-flex; gap: 10px; align-items: center; text-transform: uppercase; letter-spacing: 0.18em; font-size: 12px; font-weight: 700; color: var(--accent2); margin: 0; }
+.bikes-index .kicker .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.bikes-index .hero h1 { font-size: clamp(38px, 7vw, 84px); line-height: 0.98; font-weight: 800; letter-spacing: -0.02em; margin: 14px 0 10px; color: var(--txt); }
+.bikes-index .hero .meta { color: var(--muted); font-size: 16px; }
+.bikes-index .hero-badges { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+.bikes-index .hero-badges a, .bikes-index .hero-badges span { border: 1px solid var(--line); background: rgba(24,29,40,.6); backdrop-filter: blur(6px); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--txt); text-decoration: none; }
+.bikes-index .hero-badges a.series { border-color: var(--accent); color: var(--accent); }
+
+/* Cards + badges */
+.bikes-index details > summary { list-style: none; }
+.bikes-index details > summary::-webkit-details-marker { display: none; }
+.bikes-index .season-badge { display: inline-flex; align-items: center; gap: 0.35rem; border-radius: 9999px; padding: 0.28rem 0.65rem; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.bikes-index .badge { display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; padding: 0.2rem 0.6rem; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; vertical-align: middle; margin-right: 0.35rem; }
+.bikes-index .badge.spen { background: rgba(59, 130, 246, 0.18); color: rgb(147, 197, 253); }
+.bikes-index .badge.hes { background: rgba(34, 197, 94, 0.18); color: rgb(134, 239, 172); }
+.bikes-index .badge.spdh { background: rgb(51, 65, 85); color: white; }
+.bikes-index .story-card, .bikes-index .season-card { background: var(--card); box-shadow: 0 0 0 1px var(--line); }
+.bikes-index .season-card img { background: #0f131b; }
+.bikes-index .story-card { scroll-margin-top: 5rem; }
+
+/* Schedule tables (subgrid) */
+.bikes-index .race-table { display: contents; }
+.bikes-index .race-table thead, .bikes-index .race-table tbody { display: contents; }
+.bikes-index .race-table tr { display: grid; grid-template-columns: subgrid; grid-column: 1 / -1; }
+.bikes-index .race-table th[colspan="2"] { grid-column: span 2; }
+.bikes-index .race-table td:nth-child(2) .badge { display: flex; width: max-content; margin: 0 0 0.25rem; padding: 0.1rem 0.4rem; font-size: 0.6rem; letter-spacing: 0; }
+.bikes-index .story-card:not(:has(.spdh-toggle[aria-pressed="true"])) .race-table tr.spdh { display: none; }
+.bikes-index .story-card[id^="year-"] > summary { flex-wrap: wrap; }
+.bikes-index .spdh-toggle { display: inline-flex; align-items: center; margin-left: auto; flex-shrink: 0; border: 1px solid rgb(148, 163, 184); border-radius: 9999px; padding: 0.25rem 0.75rem; background: transparent; color: rgb(203, 213, 225); font-size: 0.75rem; font-weight: 700; cursor: pointer; }
+.bikes-index .spdh-toggle[aria-pressed="true"] { border-color: rgb(252, 211, 77); background: rgb(252, 211, 77); color: rgb(15, 23, 42); }
+.bikes-index .spdh-toggle:hover { border-color: white; }
+.bikes-index .spdh-toggle:focus-visible { outline: 2px solid white; outline-offset: 3px; }
+.bikes-index .race-table th, .bikes-index .race-table td { border-bottom: 1px solid var(--line); padding: 0.9rem 0.5rem; vertical-align: top; min-width: 0; white-space: normal; overflow-wrap: anywhere; }
+.bikes-index .race-table td:first-child { white-space: nowrap; }
+.bikes-index .race-table thead th { background: rgba(255, 255, 255, 0.04); color: var(--muted); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.bikes-index :where(.story-card:not(:has(.spdh-toggle[aria-pressed="true"]))) .race-table tbody tr:nth-child(odd of :where(:not(.spdh))),
+.bikes-index :where(.story-card:has(.spdh-toggle[aria-pressed="true"])) .race-table tbody tr:nth-child(odd) { background: rgba(255, 255, 255, 0.035); }
+.bikes-index .race-table tbody tr:hover { background: rgba(255, 90, 31, 0.1); }
+.bikes-index .race-table td a { color: var(--accent2); text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.bikes-index .race-table td a:hover { color: var(--accent); }
+.bikes-index .result-cell { white-space: normal; border-left: 4px solid transparent; padding-left: 0.9rem !important; font-weight: 500; }
+.bikes-index .race-table tr.spdh > .result-cell:empty { border-left-color: var(--line); }
+.bikes-index .status-completed { border-left-color: rgb(34, 197, 94); background: rgba(34, 197, 94, 0.08); }
+.bikes-index .status-skipped { border-left-color: rgb(245, 158, 11); background: rgba(245, 158, 11, 0.08); color: rgb(251, 191, 36); }
+.bikes-index .status-cancelled { border-left-color: rgb(239, 68, 68); background: rgba(239, 68, 68, 0.08); color: rgb(252, 165, 165); }
+.bikes-index .status-future { border-left-color: rgb(148, 163, 184); background: rgba(148, 163, 184, 0.12); color: var(--muted); }
+.bikes-index .status-pill { display: inline-flex; align-items: center; border-radius: 9999px; background: rgba(148, 163, 184, 0.18); padding: 0.2rem 0.6rem; font-size: 0.8rem; font-weight: 700; }
+
+/* Timeline layout */
+.bikes-index .timeline-grid { display: grid; grid-template-columns: [content-start] max-content max-content minmax(0, 1fr) minmax(0, 2fr) [content-end]; row-gap: 2rem; column-gap: 0; align-items: start; }
+.bikes-index .timeline-grid > * { min-width: 0; grid-column: content-start / content-end; }
+.bikes-index .timeline-grid > details[id^="year-"] { display: grid; grid-template-columns: subgrid; row-gap: 0; }
+.bikes-index .timeline-grid > details[id^="year-"]::details-content { display: contents; }
+.bikes-index .timeline-grid > details[id^="year-"] > summary { grid-column: 1 / -1; min-width: 0; background: transparent; }
+.bikes-index .timeline-grid > details[id^="year-"] > summary:hover { background: rgba(255, 255, 255, 0.04); }
+.bikes-index .timeline-grid > details[id^="year-"] > div { display: grid; grid-template-columns: subgrid; grid-column: 1 / -1; padding: 1rem 0; overflow: visible; }
+.bikes-index .timeline-grid > details[id^="year-"]:not([open]) > div { display: none; }
+.bikes-index .timeline-grid > .season-card, .bikes-index .timeline-grid > .season-heading { display: none; }
+@media (min-width: 1024px) {
+    .bikes-index .timeline-grid { grid-template-columns: 19rem 2rem [content-start] max-content max-content max-content minmax(0, 1fr) [content-end]; }
+    .bikes-index .timeline-grid > .season-card, .bikes-index .timeline-grid > .season-heading { display: block; grid-column: 1; }
+}
+
+/* Utility classes reproduced from Tailwind (scoped to the hub page only) */
+.bikes-index .block { display: block; }
+.bikes-index .flex { display: flex; }
+.bikes-index .hidden { display: none; }
+.bikes-index .items-center { align-items: center; }
+.bikes-index .justify-between { justify-content: space-between; }
+.bikes-index .gap-2 { gap: 0.5rem; }
+.bikes-index .gap-3 { gap: 0.75rem; }
+.bikes-index .gap-4 { gap: 1rem; }
+.bikes-index .space-y-2 > * + * { margin-top: 0.5rem; }
+.bikes-index .mx-auto { margin-left: auto; margin-right: auto; }
+.bikes-index .mt-2 { margin-top: 0.5rem; }
+.bikes-index .pt-1 { padding-top: 0.25rem; }
+.bikes-index .p-4 { padding: 1rem; }
+.bikes-index .p-5 { padding: 1.25rem; }
+.bikes-index .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.bikes-index .px-4 { padding-left: 1rem; padding-right: 1rem; }
+.bikes-index .px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
+.bikes-index .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.bikes-index .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.bikes-index .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+.bikes-index .max-w-3xl { max-width: 48rem; }
+.bikes-index .max-w-7xl { max-width: 80rem; }
+.bikes-index .w-full { width: 100%; }
+.bikes-index .h-8 { height: 2rem; }
+.bikes-index .h-80 { height: 20rem; }
+.bikes-index .min-h-screen { min-height: 100vh; }
+.bikes-index .overflow-hidden { overflow: hidden; }
+.bikes-index .overflow-x-auto { overflow-x: auto; }
+.bikes-index .object-contain { object-fit: contain; }
+.bikes-index .object-top { object-position: top; }
+.bikes-index .rounded-3xl { border-radius: 1.5rem; }
+.bikes-index .rounded-full { border-radius: 9999px; }
+.bikes-index .cursor-pointer { cursor: pointer; }
+.bikes-index .transition { transition: all 0.15s ease; }
+.bikes-index .text-left { text-align: left; }
+.bikes-index .uppercase { text-transform: uppercase; }
+.bikes-index .tracking-tight { letter-spacing: -0.015em; }
+.bikes-index .tracking-\[0\.2em\] { letter-spacing: 0.2em; }
+.bikes-index .leading-6 { line-height: 1.5rem; }
+.bikes-index .font-semibold { font-weight: 600; }
+.bikes-index .font-bold { font-weight: 700; }
+.bikes-index .text-xs { font-size: 0.75rem; line-height: 1rem; }
+.bikes-index .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.bikes-index .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.bikes-index .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.bikes-index .text-white { color: #fff; }
+.bikes-index .text-amber-300 { color: rgb(252, 211, 77); }
+.bikes-index .text-slate-300 { color: rgb(203, 213, 225); }
+.bikes-index .text-slate-400, .bikes-index .text-slate-500, .bikes-index .text-slate-600, .bikes-index .text-slate-700 { color: var(--muted); }
+.bikes-index .text-slate-950 { color: var(--txt); }
+.bikes-index .text-emerald-700 { color: rgb(134, 239, 172); }
+.bikes-index .text-sky-700 { color: rgb(125, 211, 252); }
+.bikes-index .text-violet-700 { color: rgb(196, 181, 253); }
+.bikes-index .bg-white { background: var(--card); }
+.bikes-index .bg-slate-100 { background: rgba(255, 255, 255, 0.06); }
+.bikes-index .bg-slate-800 { background: rgb(30, 41, 59); }
+.bikes-index .bg-slate-900 { background: rgb(15, 23, 42); }
+.bikes-index .bg-slate-950 { background: rgb(2, 6, 23); }
+.bikes-index .bg-emerald-50, .bikes-index .bg-emerald-500\/15 { background: rgba(34, 197, 94, 0.15); }
+.bikes-index .bg-sky-50, .bikes-index .bg-sky-500\/15 { background: rgba(56, 189, 248, 0.15); }
+.bikes-index .bg-violet-50, .bikes-index .bg-violet-500\/15 { background: rgba(139, 92, 246, 0.15); }
+.bikes-index .bg-amber-300\/90 { background: rgba(252, 211, 77, 0.9); }
+.bikes-index .season-badge.bg-amber-300\/90 { color: rgb(15, 23, 42); }
+.bikes-index .hover\:-translate-y-0\.5:hover { transform: translateY(-2px); }
+.bikes-index .hover\:bg-slate-700:hover { background: rgb(51, 65, 85); }
+.bikes-index .hover\:bg-slate-800:hover { background: rgb(30, 41, 59); }
+.bikes-index .hover\:bg-slate-900:hover { background: rgb(15, 23, 42); }
+.bikes-index .hover\:text-slate-700:hover { color: var(--muted); }
+@media (min-width: 768px) {
+    .bikes-index .md\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .bikes-index .md\:p-6 { padding: 1.5rem; }
+    .bikes-index .md\:inline-flex { display: inline-flex; }
+    .bikes-index .md\:text-5xl { font-size: 3rem; line-height: 1; }
+}

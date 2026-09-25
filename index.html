@@ -4,10 +4,13 @@
     <title>My Bikes</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/index.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/site.css" type="text/css"/>
+    <style>
+        body.bikes-index { --hero-pos: 50% 30%; }
+        @media (max-width: 520px) { body.bikes-index { --hero-pos: 50% 22%; } }
+    </style>
 </head>
-<body class="min-h-screen">
+<body class="bikes-index">
 <header class="hero">
     <img class="hero-bg" src="data/2024/SPEN5_Bojnice/img/boj-1627.jpg" alt="">
     <div class="hero-inner">
@@ -43,7 +46,7 @@
             </a>
 
             <details id="year-2026" open class="story-card rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
-                <summary class="flex cursor-pointer items-center justify-between gap-4 rounded-3xl bg-slate-950 px-5 py-4 text-white transition hover:bg-slate-900">
+                <summary class="flex cursor-pointer items-center justify-between gap-4 rounded-3xl bg-slate-900 px-5 py-4 text-white transition hover:bg-slate-800">
                     <span class="text-lg font-bold">2026</span>
                     <span class="text-sm text-amber-300">5 kôl SPEN, zatiaľ kalendár</span>
                 </summary>
