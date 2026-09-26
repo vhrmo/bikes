@@ -60,9 +60,14 @@
       <div class="card">
         <h3>Odkazy</h3>
         <div class="linklist">
+          <a href="data/2026/SPEN4_Donovaly/Propozície Donovaly 2026 SPEN a HES.docx.pdf" target="_blank" rel="noopener">Propozície — SPEN a HES (PDF) ↗</a>
           <a href="data/2026/SPEN4_Donovaly/20260913_donovaly_spen.pdf" target="_blank" rel="noopener">Kompletné výsledky — Race (PDF) ↗</a>
           <a href="data/2026/SPEN4_Donovaly/20260913_donovaly_chalenge.pdf" target="_blank" rel="noopener">Kompletné výsledky — Hobby (PDF) ↗</a>
         </div>
+      </div>
+      <div class="card" id="map-gallery">
+        <h3>Mapa trate</h3>
+        <img src="data/2026/SPEN4_Donovaly/donovaly-trail-map.jpg" alt="Mapa trate Donovaly">
       </div>
     </aside>
   </div>
@@ -75,10 +80,33 @@
     <!-- Doplniť fotky -->
   </div>
 </section>
+
+<section class="wrap">
+  <div class="eyebrow">Video</div>
+  <h2>Aftermovie</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/Ne7bAKXqBpo" title="Aftermovie Donovaly 2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</section>
 </main>
 
 <script src="assets/photoswipe/photoswipe.esm.js" type="module"></script>
 <script src="assets/photoswipe/photoswipe-lightbox.esm.js" type="module"></script>
 <script src="assets/page-init-esm.js" type="module"></script>
+<script type="module">
+  import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
+
+  const pswpModule = () => import('./assets/photoswipe/photoswipe.esm.min.js');
+  const lightbox = new PhotoSwipeLightbox({ gallery: '#map-gallery', children: 'img', pswpModule });
+  lightbox.addFilter('domItemData', (itemData, element) => {
+    itemData.src = element.currentSrc || element.src;
+    itemData.width = element.naturalWidth || 1600;
+    itemData.height = element.naturalHeight || 1067;
+    itemData.msrc = element.currentSrc || element.src;
+    itemData.element = element;
+    return itemData;
+  });
+  lightbox.init();
+</script>
 </body>
 </html>

@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/site.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/photoswipe/photoswipe.css" type="text/css"/>
     <style>
         body.bikes-index { --hero-pos: 50% 30%; }
         @media (max-width: 520px) { body.bikes-index { --hero-pos: 50% 22%; } }
@@ -20,7 +21,6 @@
             <div class="meta">Enduro preteky, reporty a bicykle · SPEN · HES · SPDH</div>
             <div class="hero-badges">
                 <a class="series" href="2026_spen_calendar.html">SPEN 2026</a>
-                <a href="#year-2025">Reporty</a>
             </div>
         </div>
     </div>
@@ -30,25 +30,20 @@
     <div class="timeline-grid">
 
             <a href="#year-2026" class="season-card block overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-xl">
-                <img src="data/2026/spen2026_pozvanka.jpg" alt="SPEN 2026" class="h-80 w-full bg-slate-100 object-contain object-top">
+                <img src="data/2026/spen2026_pozvanka.jpg" alt="SPEN 2026" class="h-80 w-full bg-slate-100 object-contain object-top" data-index-lightbox style="--season-image-height: 280px; object-fit: cover; object-position: top">
                 <div class="space-y-2 p-5">
                     <div class="flex items-center justify-between gap-3">
                         <span class="season-badge bg-amber-300/90 text-slate-950">2026</span>
-                        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">SPEN</span>
+                        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">SPEN/HES</span>
                     </div>
-                    <h3 class="text-lg font-bold tracking-tight">Slovenský pohár v enduro 2026</h3>
-                    <p class="text-sm text-slate-500">5 kôl, kalendár sezóny, finále v Bojniciach.</p>
-                    <div class="flex gap-2 pt-1 text-sm font-semibold">
-                        <span class="rounded-full bg-slate-950 px-3 py-1 text-white">Termíny</span>
-                        <span class="rounded-full bg-slate-100 px-3 py-1 text-slate-700">Kalendár</span>
-                    </div>
+                    <h3 class="text-lg tracking-tight">Slovenský pohár v enduro 2026</h3>
                 </div>
             </a>
 
             <details id="year-2026" open class="story-card rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
                 <summary class="flex cursor-pointer items-center justify-between gap-4 rounded-3xl bg-slate-900 px-5 py-4 text-white transition hover:bg-slate-800">
                     <span class="text-lg font-bold">2026</span>
-                    <span class="text-sm text-amber-300">5 kôl SPEN, zatiaľ kalendár</span>
+                    <span class="text-sm text-slate-300">5 kôl SPEN, 4 HES</span>
                 </summary>
                 <div class="overflow-x-auto p-4 md:p-6">
                     <table id="schedule-2026" class="race-table w-full text-left text-sm">
@@ -95,24 +90,20 @@
                 </div>
             </details>
             <a href="#year-2025" class="season-card block overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-xl">
-                <img src="data/2025/spen2025_pozvanka.jpg" alt="SPEN 2025" class="h-80 w-full bg-slate-100 object-contain object-top">
+                <img src="data/2025/spen2025_pozvanka.jpg" alt="SPEN 2025" class="h-80 w-full bg-slate-100 object-contain object-top" data-index-lightbox style="--season-image-height: 280px">
                 <div class="space-y-2 p-5">
                     <div class="flex items-center justify-between gap-3">
-                        <span class="season-badge bg-slate-900 text-white">2025</span>
-                        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">SPEN/SPDH</span>
+                        <span class="season-badge bg-violet-500/15 text-slate-950">2025</span>
+                        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">SPEN/HES</span>
                     </div>
-                    <h3 class="text-lg font-bold tracking-tight">Slovenský pohár v enduro 2025</h3>
-                    <p class="text-sm text-slate-500">Termíny, reporty a výsledky z aktuálnej sezóny.</p>
-                    <div class="flex gap-2 pt-1 text-sm font-semibold">
-                        <span class="rounded-full bg-slate-950 px-3 py-1 text-white">Preteky</span>
-                    </div>
+                    <h3 class="text-lg tracking-tight">Slovenský pohár v enduro 2025</h3>
                 </div>
             </a>
 
             <details id="year-2025" open class="story-card rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
                 <summary class="flex cursor-pointer items-center justify-between gap-4 rounded-3xl bg-slate-900 px-5 py-4 text-white transition hover:bg-slate-800">
                     <span class="text-lg font-bold">2025</span>
-                    <span class="text-sm text-slate-300">SPEN, SPDH a reporty z pretekov</span>
+                    <span class="text-sm text-slate-300">SPEN a HES, reporty z pretekov</span>
                     <button type="button" class="spdh-toggle" aria-pressed="false" aria-controls="schedule-2025" aria-label="Zobraziť SPDH">SPDH</button>
                 </summary>
                 <div class="overflow-x-auto p-4 md:p-6">
@@ -151,18 +142,12 @@
             </details>
             <div class="season-card overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
                 <a href="#year-2024" class="block">
-                    <img src="data/2024/spen2024_pozvanka_v2.jpeg" alt="SPEN 2024" class="h-80 w-full bg-slate-100 object-contain object-top">
+                    <img src="data/2024/spen2024_pozvanka_v2.jpeg" alt="SPEN 2024" class="h-80 w-full bg-slate-100 object-contain object-top" data-index-lightbox style="--season-image-height: 350px">
                 </a>
                 <div class="space-y-2 p-5">
                     <div class="flex items-center justify-between gap-3">
                         <span class="season-badge bg-emerald-500/15 text-emerald-700">2024</span>
                         <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">SPEN/HES</span>
-                    </div>
-                    <h3 class="text-lg font-bold tracking-tight">Preteky 2024</h3>
-                    <p class="text-sm text-slate-500">SPEN, HES a priebežné reporty z roka 2024.</p>
-                    <div class="flex gap-2 pt-1 text-sm font-semibold">
-                        <a href="#year-2024" class="rounded-full bg-slate-950 px-3 py-1 text-white">Preteky</a>
-                        <a class="rounded-full bg-emerald-50 px-3 py-1 text-emerald-700" href="https://www.facebook.com/hornonitrianskaenduroseria/">HES</a>
                     </div>
                 </div>
             </div>
@@ -224,26 +209,21 @@
             </details>
             <div class="season-card overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
                 <a href="#year-2023" class="block">
-                    <img src="data/2023/hes_2023_pozvanka.jpeg" alt="HES 2023" class="h-80 w-full bg-slate-100 object-contain object-top">
+                    <img src="data/2023/hes_2023_pozvanka.jpeg" alt="HES 2023" class="h-80 w-full bg-slate-100 object-contain object-top" data-index-lightbox>
                 </a>
                 <div class="space-y-2 p-5">
                     <div class="flex items-center justify-between gap-3">
                         <span class="season-badge bg-sky-500/15 text-sky-700">2023</span>
-                        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">HES</span>
+                        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">SPEN/HES</span>
                     </div>
-                    <h3 class="text-lg font-bold tracking-tight">Preteky 2023</h3>
-                    <p class="text-sm text-slate-500">HES, SPEN a skryté SPDH termíny.</p>
-                    <div class="flex gap-2 pt-1 text-sm font-semibold">
-                        <a href="#year-2023" class="rounded-full bg-slate-950 px-3 py-1 text-white">Preteky</a>
-                        <a class="rounded-full bg-sky-50 px-3 py-1 text-sky-700" href="https://mobilnacasomiera.sk/vysledky/hes2023.html">Výsledky</a>
-                    </div>
+
                 </div>
             </div>
 
             <details id="year-2023" open class="story-card rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
                 <summary class="flex cursor-pointer items-center justify-between gap-4 rounded-3xl bg-slate-900 px-5 py-4 text-white transition hover:bg-slate-800">
                     <span class="text-lg font-bold">2023</span>
-                    <span class="text-sm text-slate-300">HES, SPEN a archivované SPDH termíny</span>
+                    <span class="text-sm text-slate-300">HES, SPEN a SPDH termíny</span>
                     <button type="button" class="spdh-toggle" aria-pressed="false" aria-controls="schedule-2023" aria-label="Zobraziť SPDH">SPDH</button>
                 </summary>
                 <div class="overflow-x-auto p-4 md:p-6">
@@ -346,18 +326,12 @@
             </details>
             <div class="season-card overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
                 <a href="#year-2022" class="block">
-                    <img src="data/2022/img/Pozvanka_spen1.jpeg" alt="SPEN 2022" class="h-80 w-full bg-slate-100 object-contain object-top">
+                    <img src="data/2022/img/Pozvanka_spen1.jpeg" alt="SPEN 2022" class="h-80 w-full bg-slate-100 object-contain object-top" data-index-lightbox>
                 </a>
                 <div class="space-y-2 p-5">
                     <div class="flex items-center justify-between gap-3">
                         <span class="season-badge bg-violet-500/15 text-violet-700">2022</span>
                         <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">SPEN/HES</span>
-                    </div>
-                    <h3 class="text-lg font-bold tracking-tight">Preteky 2022</h3>
-                    <p class="text-sm text-slate-500">Začiatky enduro sezón, SPEN aj HES.</p>
-                    <div class="flex gap-2 pt-1 text-sm font-semibold">
-                        <a href="#year-2022" class="rounded-full bg-slate-950 px-3 py-1 text-white">Preteky</a>
-                        <a class="rounded-full bg-violet-50 px-3 py-1 text-violet-700" href="https://spdh.sk/enduro/">SPEN</a>
                     </div>
                 </div>
             </div>
@@ -459,6 +433,25 @@
 </main>
 
 <footer class="h-8"></footer>
+
+<script type="module">
+    import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
+
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: 'body',
+        children: '[data-index-lightbox]',
+        pswpModule: () => import('./assets/photoswipe/photoswipe.esm.min.js')
+    });
+    lightbox.addFilter('domItemData', (itemData, element) => {
+        itemData.src = element.currentSrc || element.src;
+        itemData.width = element.naturalWidth || 1600;
+        itemData.height = element.naturalHeight || 1067;
+        itemData.msrc = element.currentSrc || element.src;
+        itemData.element = element;
+        return itemData;
+    });
+    lightbox.init();
+</script>
 
 <script>
     document.querySelectorAll('.spdh-toggle').forEach(function (button) {

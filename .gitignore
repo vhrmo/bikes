@@ -24,11 +24,6 @@ target
 *.log
 *.log.*
 
-# ms office #
-*.xls
-*.xlsx
-*.doc
-*.docx
 
 # bin
 bin/

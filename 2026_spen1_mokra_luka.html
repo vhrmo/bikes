@@ -57,9 +57,14 @@
       <div class="card">
         <h3>Odkazy</h3>
         <div class="linklist">
+          <a href="data/2026/SPEN1_Mokra_Luka/Propozície-HES-Mokrá Lúka 2026.docx.pdf" target="_blank" rel="noopener">Propozície — HES (PDF) ↗</a>
           <a href="data/2026/SPEN1_Mokra_Luka/20260510_revuca_spen.pdf" target="_blank" rel="noopener">Kompletné výsledky — Race (PDF) ↗</a>
           <a href="data/2026/SPEN1_Mokra_Luka/20260510_revuca_hes.pdf" target="_blank" rel="noopener">Kompletné výsledky — Hobby (PDF) ↗</a>
         </div>
+      </div>
+      <div class="card" id="map-gallery">
+        <h3>Mapa trate</h3>
+        <img src="data/2026/SPEN1_Mokra_Luka/mokra-luka-trail-map.jpg" alt="Mapa trate Mokrá Lúka">
       </div>
     </aside>
   </div>
@@ -77,5 +82,20 @@
 <script src="assets/photoswipe/photoswipe.esm.js" type="module"></script>
 <script src="assets/photoswipe/photoswipe-lightbox.esm.js" type="module"></script>
 <script src="assets/page-init-esm.js" type="module"></script>
+<script type="module">
+  import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
+
+  const pswpModule = () => import('./assets/photoswipe/photoswipe.esm.min.js');
+  const lightbox = new PhotoSwipeLightbox({ gallery: '#map-gallery', children: 'img', pswpModule });
+  lightbox.addFilter('domItemData', (itemData, element) => {
+    itemData.src = element.currentSrc || element.src;
+    itemData.width = element.naturalWidth || 1600;
+    itemData.height = element.naturalHeight || 1067;
+    itemData.msrc = element.currentSrc || element.src;
+    itemData.element = element;
+    return itemData;
+  });
+  lightbox.init();
+</script>
 </body>
 </html>
