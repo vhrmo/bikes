@@ -135,10 +135,8 @@ attributes or per-page `<style>` blocks. Reference implementation:
 Page skeleton, in order:
 
 1. `<head>`: `lang="sk"`, UTF-8, responsive viewport, `no-referrer`,
-   `assets/site.css`, and `assets/unitegallery/css/unite-gallery.css` when the
-   page has a gallery. No Materialize. Load the gallery scripts (jQuery,
-   `unitegallery.min.js`, the tiles theme, `assets/page-init.js`) before
-   `</body>`.
+   `assets/site.css`, and `assets/photoswipe/photoswipe.css` when the page has
+   a gallery. No Materialize.
 2. `<body class="race-hero">`.
 3. `header.hero` with the race photo as a real element
    `<img class="hero-bg" src="..." alt="">` (per-page data, no inline styles;
@@ -203,10 +201,9 @@ Page skeleton, in order:
      available historical information when restyling.
 6. Media sections, each `section.wrap` with an `.eyebrow` + `h2`, only when real
    assets exist:
-   - Gallery: `<div id="gallery" class="gallery">` with the race photos as
-     `<img data-src="..." src="...">`, initialized as an interactive UniteGallery
-     (justified tiles + lightbox) by `page-init.js`. Put the map in the sidebar,
-     not the gallery.
+    - Gallery: `<div id="gallery" class="gallery">` with race photos as
+       `<img src="...">`, opened with the PhotoSwipe module pattern used by
+       current hero reports. Put the map in the sidebar, not the gallery.
    - Result screenshot: `img.result-shot` under an accurate category heading,
      wrapped in `a.result-shot-link` targeting a sibling `a.lightbox` (CSS
      `:target` popup) so clicking enlarges the image without any JS library.
@@ -216,15 +213,15 @@ Page skeleton, in order:
 7. Close with `footer.race-footer` containing the race title.
 
 Do not invent facts or substitute unrelated media; the editorial rules below
-still apply. The numbered steps that follow describe the legacy Materialize
-layout retained on older pages — do not restyle those pages globally.
+still apply. The numbered steps that follow describe the legacy layout
+retained on older pages — do not restyle those pages globally.
 
-### Legacy layout (existing Materialize pages)
+### Legacy layout (existing reports)
 
 1. Name the file `YEAR_spenN_venue.html`, with a lowercase ASCII venue slug.
    Reuse the existing event directory and exact asset filenames.
-2. Use `lang="sk"`, UTF-8, a responsive viewport, local
-   `assets/materialize1.0.0.css`, and `assets/site.css`. Preserve Slovak accents.
+2. Use `lang="sk"`, UTF-8, a responsive viewport, and local
+   `assets/site.css`. Preserve Slovak accents.
    Do not import the homepage's Tailwind design into reports.
 3. Put the race title in both `<title>` and the centered navbar link:
    `nav._navbar > a.brand-logo.center`. Link back to `index.html#year-YEAR`.
@@ -259,18 +256,15 @@ layout retained on older pages — do not restyle those pages globally.
 8. Add optional media below the narrative, only when real assets exist:
    - Maps and photos in `.container > .row > .col.s12 > #gallery.gallery`;
      maps first, then personal and other verified race photos with useful alt text.
-   - Result screenshots under `Výsledkové listiny`, using
-     `img.materialboxed.responsive-img` and an accurate category heading.
+    - Result screenshots under `Výsledkové listiny`, using
+       `img.result-shot` and an accurate category heading.
    - An `Aftermovie` heading and `.video-container` with a verified YouTube
      embed, descriptive iframe title, and fullscreen support.
    - Do not substitute a season poster, stock imagery, empty gallery, dummy
      video, or unrelated older race assets for missing race media.
-9. For galleries, load UniteGallery CSS, jQuery, UniteGallery core,
-   `assets/unitegallery/themes/tiles/ug-theme-tiles.js`, and then
-   `assets/page-init.js`. Load Materialize JS before the initializer when
-   using materialboxed images. The shared initializer configures `.gallery`
-   as justified tiles; do not duplicate its initialization. Plain text/PDF
-   drafts need no gallery libraries or scripts. Do not copy unused video skins.
+9. For galleries, use the PhotoSwipe CSS and ESM module pattern from current
+   hero reports. Do not add legacy gallery scripts or jQuery solely for a
+   gallery. Plain text/PDF drafts need no gallery libraries or scripts.
 10. Retain the existing `footer.page-footer`. Link the race name in the
    matching season row of `index.html` to the report. When adding or correcting
    results, synchronize its result cell with the report: total time, the same

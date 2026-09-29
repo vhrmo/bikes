@@ -366,7 +366,7 @@ body.race-hero {
 .race-hero .linklist a:last-child { border-bottom: 0; }
 .race-hero .linklist a:hover { text-decoration: none; color: var(--accent); }
 
-/* PhotoSwipe masonry gallery on hero pages (scoped so the global .gallery{display:none} and legacy UniteGallery pages are unaffected) */
+/* PhotoSwipe masonry gallery on hero pages, scoped to preserve older page behavior */
 .race-hero #gallery.gallery { display: block; columns: 4; column-gap: 12px; }
 .race-hero #gallery.gallery img { width: 100%; margin-bottom: 12px; display: block; border-radius: 12px; filter: saturate(1.05); cursor: zoom-in; }
 .race-hero #results-gallery img, .race-hero #map-gallery img { cursor: zoom-in; }
