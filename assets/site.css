@@ -384,6 +384,7 @@ body.race-hero {
 /* Video */
 .race-hero .video-container { position: relative; width: min(100%, calc(90vh * 16 / 9)); margin: 0 auto; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
 .race-hero .video-container iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+.race-hero .video-container video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000; }
 .race-hero .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; justify-items: center; align-items: start; }
 .race-hero .video-grid video { width: auto; max-width: 100%; height: auto; max-height: 90vh; border-radius: 16px; border: 1px solid var(--line); background: #000; display: block; }
 @media (max-width: 700px) { .race-hero .video-grid { grid-template-columns: 1fr; } }
