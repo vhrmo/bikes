@@ -8,13 +8,13 @@
     <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
     <link rel='stylesheet' href='assets/site.css' type='text/css'/>
     <style>
-        body.race-hero { --hero-pos: 50% 50%; }
-        @media (max-width: 520px) { body.race-hero { --hero-pos: 50% 50%; } }
+        body.race-hero { --hero-pos: 50% 55%; --hero-shift: 10% 10%; --hero-zoom: 1.2;}
+        @media (max-width: 520px) { body.race-hero { --hero-pos: 45% 70%; --hero-shift: 0 -20%; --hero-zoom: 1.2} }
     </style>
 </head>
 <body class="race-hero">
 <header class="hero">
-  <img class="hero-bg" src="data/2026/SPEN4_Donovaly/doplniť-hero.jpg" alt="">
+  <img class="hero-bg" src="data/2026/SPEN4_Donovaly/img/mm-07815.jpg" alt="">
   <div class="hero-inner">
     <div class="wrap">
       <span class="kicker"><span class="dot"></span>Slovenský pohár v endure · 4. kolo</span>
@@ -111,7 +111,17 @@
   <div class="eyebrow">Galéria</div>
   <h2>Fotky z preteku</h2>
   <div id="gallery" class="gallery">
-    <!-- Doplniť fotky -->
+    <img src="data/2026/SPEN4_Donovaly/img/20260912_133404.jpg" alt="Prípravy na Donovaloch">
+    <img src="data/2026/SPEN4_Donovaly/img/20260912_133733.jpg" alt="Výhľad z Donovál">
+    <img src="data/2026/SPEN4_Donovaly/img/20260913_143532.jpg" alt="Výhľad na Donovaly">
+    <img src="data/2026/SPEN4_Donovaly/img/20260913_143535.jpg" alt="Panoráma Donovál">
+    <img src="data/2026/SPEN4_Donovaly/img/mm-07311.jpg" alt="Jazdec na trati">
+    <img src="data/2026/SPEN4_Donovaly/img/mm-07333.jpg" alt="Jazdec na trati v lese">
+    <img src="data/2026/SPEN4_Donovaly/img/mm-07350.jpg" alt="Jazdec na trati">
+    <img src="data/2026/SPEN4_Donovaly/img/mm-07437.jpg" alt="Lanovka na Novej Holi">
+    <img src="data/2026/SPEN4_Donovaly/img/mm-07509.jpg" alt="Jazdec na trati">
+    <img src="data/2026/SPEN4_Donovaly/img/mm-07550.jpg" alt="Jazdec na trati na horskej lúke">
+    <img src="data/2026/SPEN4_Donovaly/img/mm-07815.jpg" alt="Pretekár v lese">
   </div>
 </section>
 
@@ -130,16 +140,20 @@
   import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
 
   const pswpModule = () => import('./assets/photoswipe/photoswipe.esm.min.js');
-  const lightbox = new PhotoSwipeLightbox({ gallery: '#map-gallery', children: 'img', pswpModule });
-  lightbox.addFilter('domItemData', (itemData, element) => {
-    itemData.src = element.currentSrc || element.src;
-    itemData.width = element.naturalWidth || 1600;
-    itemData.height = element.naturalHeight || 1067;
-    itemData.msrc = element.currentSrc || element.src;
-    itemData.element = element;
-    return itemData;
-  });
-  lightbox.init();
+  function initGallery(selector) {
+    const lightbox = new PhotoSwipeLightbox({ gallery: selector, children: 'img', pswpModule });
+    lightbox.addFilter('domItemData', (itemData, element) => {
+      itemData.src = element.currentSrc || element.src;
+      itemData.width = element.naturalWidth || 1600;
+      itemData.height = element.naturalHeight || 1067;
+      itemData.msrc = element.currentSrc || element.src;
+      itemData.element = element;
+      return itemData;
+    });
+    lightbox.init();
+  }
+  initGallery('#gallery');
+  initGallery('#map-gallery');
 </script>
 </body>
 </html>

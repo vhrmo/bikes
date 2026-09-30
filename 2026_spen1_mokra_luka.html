@@ -8,13 +8,13 @@
     <link rel='stylesheet' href='assets/photoswipe/photoswipe.css' type='text/css'/>
     <link rel='stylesheet' href='assets/site.css' type='text/css'/>
     <style>
-        body.race-hero { --hero-pos: 50% 50%; }
-        @media (max-width: 520px) { body.race-hero { --hero-pos: 50% 50%; } }
+        body.race-hero { --hero-pos: 50% 10%; }
+        @media (max-width: 520px) { body.race-hero { --hero-pos: 57% 50%; } }
     </style>
 </head>
 <body class="race-hero">
 <header class="hero">
-  <img class="hero-bg" src="data/2026/SPEN1_Mokra_Luka/doplniť-hero.jpg" alt="">
+  <img class="hero-bg" src="data/2026/SPEN1_Mokra_Luka/img/CIS_3048.jpg" alt="">
   <div class="hero-inner">
     <div class="wrap">
       <span class="kicker"><span class="dot"></span>Slovenský pohár v endure · 1. kolo</span>
@@ -84,7 +84,26 @@
   <div class="eyebrow">Galéria</div>
   <h2>Fotky z preteku</h2>
   <div id="gallery" class="gallery">
-    <!-- Doplniť fotky -->
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_1815.jpg" alt="Zázemie pretekov">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/20260510_091322.jpg" alt="Zázemie pretekov">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/20260510_103409.jpg" alt="Pretekár prichádza do cieľa">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/20260510_103428.jpg" alt="Zázemie pretekov pri štartovej bráne">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/20260510_120630.jpg" alt="Pretekári čakajú na štarte v lese">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_2218.jpg" alt="Pretekár na trati v lese">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_2245.jpg" alt="Pretekár na trati v lese">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_2309.jpg" alt="Pretekár na trati v lese">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_2317.jpg" alt="Pretekár na kamenistom úseku">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_2662.jpg" alt="Pretekár na trati v lese">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_2713.jpg" alt="Pretekár na trati v lese">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_2721.jpg" alt="Pretekár na trati v lese">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_2886.jpg" alt="Pretekár na trati v lese">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_2904.jpg" alt="Pretekár na trati v lese">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_2928.jpg" alt="Pretekár na trati v lese">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_3038.jpg" alt="Pretekár na lesnej trati">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_3048.jpg" alt="Pretekár na trati v lese">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_3118.jpg" alt="Pretekár na trati v lese">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_3123.jpg" alt="Pretekár na trati v lese">
+    <img src="data/2026/SPEN1_Mokra_Luka/img/CIS_3228.jpg" alt="Pretekár na trati v lese">
   </div>
 </section>
 
@@ -105,16 +124,20 @@
   import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
 
   const pswpModule = () => import('./assets/photoswipe/photoswipe.esm.min.js');
-  const lightbox = new PhotoSwipeLightbox({ gallery: '#map-gallery', children: 'img', pswpModule });
-  lightbox.addFilter('domItemData', (itemData, element) => {
-    itemData.src = element.currentSrc || element.src;
-    itemData.width = element.naturalWidth || 1600;
-    itemData.height = element.naturalHeight || 1067;
-    itemData.msrc = element.currentSrc || element.src;
-    itemData.element = element;
-    return itemData;
-  });
-  lightbox.init();
+  function initGallery(selector) {
+    const lightbox = new PhotoSwipeLightbox({ gallery: selector, children: 'img', pswpModule });
+    lightbox.addFilter('domItemData', (itemData, element) => {
+      itemData.src = element.currentSrc || element.src;
+      itemData.width = element.naturalWidth || 1600;
+      itemData.height = element.naturalHeight || 1067;
+      itemData.msrc = element.currentSrc || element.src;
+      itemData.element = element;
+      return itemData;
+    });
+    lightbox.init();
+  }
+  initGallery('#gallery');
+  initGallery('#map-gallery');
 </script>
 </body>
 </html>
